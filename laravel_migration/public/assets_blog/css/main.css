@@ -616,11 +616,11 @@ input[type="text"] {
 /*  Header styles
 /*------------------------------------------------------*/
 .header-top {
-  background-color: #60646d;
+  background-color: #132246;
   padding: 11px 0;
 }
 .header-top p {
-  color: #bbbfc9;
+  color: #092f03;
 }
 .header-top p span {
   color: #fefefe;

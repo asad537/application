@@ -33,6 +33,7 @@ class BannersController extends Controller
             'status' => $request->status ?? 1,
             'position' => $request->position ?? 0,
             'dtAdded' => date('Y-m-d H:i:s'),
+            'button' => 0,
         ]);
 
         return redirect()->route('banners.index')->with('success', 'Banner added successfully');

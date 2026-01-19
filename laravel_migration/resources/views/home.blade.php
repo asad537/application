@@ -1,81 +1,207 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- Hero Section -->
-<section class="hero-wrapper">
+<!-- Hero Section - AMDSOL Style -->
+<section class="hero-section-new">
     <div class="container">
         <div class="row align-items-center">
-            <div class="col-lg-7">
-                <div class="hero-tag">MEDICAL BILLING SERVICES</div>
-                <h1 class="hero-title">The Medical Billing Service <br>Provider for <span class="text-usa">USA</span> Healthcare</h1>
+            <div class="col-lg-6 col-12 order-2 order-lg-1">
+                <span class="hero-badge">MEDICAL BILLING SERVICES</span>
+                <h1 class="hero-main-title">
+                    <span class="text-primary-gradient">The Medical Billing Service</span><br>
+                    Provider for <span class="usa-underline">USA</span> Healthcare
+                </h1>
+                <p class="hero-description">
+                    AMDSOL is the USA's top medical billing firm – deploying the best practices in medical billing and coding for physicians looking to outsource billing and coding to an expert 3rd party billing agency.
+                </p>
+                <p class="hero-description-small">
+                    Our certified medical coders and billers help healthcare organizations recover Aged Receivables and resolve insurance Claim Denials, as well.
+                </p>
                 
-                <p class="hero-subtitle">BellMedEx is the USA's top medical billing firm - deploying the best practices in medical billing and coding for physicians looking to outsource billing and coding to an expert 3rd party billing agency.</p>
-                <p class="hero-subtitle">Our certified medical coders and billers help healthcare organizations recover Aged Receivables and resolve insurance Claim Denials, as well.</p>
-                
-                <form action="{{ url('contact-us.php') }}" method="POST" class="hero-form-inline">
+                <!-- Inline Form -->
+                <form action="{{ url('contact-us.php') }}" method="POST" class="hero-inline-form">
                     @csrf
-                    <input type="text" name="name" class="form-control" placeholder="Name" required>
-                    <input type="email" name="email" class="form-control" placeholder="Email" required>
-                    <input type="text" name="phone" class="form-control" placeholder="Phone Number" required>
-                    <button type="submit" class="submit-btn">BOOK A FREE CONSULTATION</button>
-                </form>
-
-                <div class="hero-rating-wrap">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_Logo.svg" alt="Google">
-                    <div class="rating-info">
-                        <span class="rating-score">Google Rating 4.8</span>
-                        <div class="rating-stars">
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
-                            <i class="fa fa-star"></i>
+                    <div class="form-row-inline">
+                        <input type="text" name="name" class="form-input-hero" placeholder="Name" required>
+                        <input type="email" name="email" class="form-input-hero" placeholder="Email" required>
+                        <input type="text" name="phone" class="form-input-hero" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-action-row">
+                        <button type="submit" class="btn-consultation">GET A FREE REVENUE ADUIT</button>
+                        <div class="google-rating">
+                            <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png" alt="Google" class="google-logo">
+                            <div class="rating-info">
+                                <span class="rating-text">Google Rating</span>
+                                <div class="stars-row">
+                                    <span class="rating-number">4.8</span>
+                                    <span class="stars">★★★★★</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
-            <div class="col-lg-5">
-                <div class="hero-img-box">
-                    <div class="hero-purple-bg"></div>
-                    <img src="{{ asset('images/hero_doctor.png') }}" alt="Doctor" class="hero-main-img">
-                    <!-- Note: The text swirling around the image would ideally be a PNG overlay or SVG text-path -->
-                    <div class="swirling-text">
-                        <!-- Placeholder for swirling icons/text -->
+            
+            <div class="col-lg-6 col-12 mt-4 mt-lg-0 order-1 order-lg-2">
+                <div class="hero-image-wrapper">
+                    <!-- Floating Icons -->
+                    <div class="floating-icon icon-cloud">
+                        <i class="fa fa-stethoscope"></i>
                     </div>
+                    <div class="floating-icon icon-ai">
+                        <i class="fa fa-heartbeat"></i>
+                        <span>RCM</span>
+                    </div>
+                    <div class="floating-icon icon-rocket">
+                        <i class="fa fa-hospital-o"></i>
+                    </div>
+                    
+                    <!-- Circular Badge -->
+                    <div class="circular-badge">
+                        <svg viewBox="0 0 200 200" class="circular-text-svg">
+                            <defs>
+                                <path id="circlePath" d="M 100, 100 m -75, 0 a 75,75 0 1,1 150,0 a 75,75 0 1,1 -150,0"/>
+                            </defs>
+                            <text>
+                                <textPath href="#circlePath" class="circular-text-path">
+                                    SPECIALTY - SPECIFIC • 99% CLEAN CLAIMS •
+                                </textPath>
+                            </text>
+                        </svg>
+                    </div>
+                    
+                    <!-- Doctor Image - Dynamic from Slider (visible on all devices) -->
+                    @if(isset($banners) && $banners->count() > 0)
+                        <img src="{{ asset('images/banners/' . $banners->first()->images) }}" alt="{{ $banners->first()->alt ?? 'Medical Professional' }}" class="hero-doctor-img">
+                    @else
+                        <img src="{{ asset('images/hero_doctor.png') }}" alt="Medical Professional" class="hero-doctor-img">
+                    @endif
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Stats Strip -->
-<section class="stats-strip">
+<!-- Stats Strip - Dark Blue -->
+<!-- Trust Bar -->
+<div class="trust-bar-stats">
     <div class="container">
-        <div class="row stat-row">
-            <div class="col-md-4">
-                <div class="stat-unit">
-                    <i class="fa fa-star"></i>
-                    <span>1500+ Satisfied Providers</span>
+        <div class="trust-stats-wrapper">
+            <div class="trust-stat-item">
+                <div class="trust-stat-icon">
+                    <i class="fa fa-stethoscope"></i>
+                </div>
+                <div class="trust-stat-text">
+                    <span class="trust-stat-title">Trusted by</span>
+                    <span class="trust-stat-value">500+ Physicians</span>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="stat-unit">
-                    <i class="fa fa-heartbeat"></i>
-                    <span>Serving More Than 75 Specialties</span>
+            
+            <div class="trust-stat-item">
+                <div class="trust-stat-icon">
+                    <i class="fa fa-plus-square"></i>
+                </div>
+                <div class="trust-stat-text">
+                    <span class="trust-stat-title">Catering to</span>
+                    <span class="trust-stat-value">40+ Specialties</span>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="stat-unit">
-                    <i class="fa fa-user-md"></i>
-                    <span>1200+ Billing and Coding Experts</span>
+            
+            <div class="trust-stat-item">
+                <div class="trust-stat-icon">
+                    <i class="fa fa-code"></i>
+                </div>
+                <div class="trust-stat-text">
+                    <span class="trust-stat-title">1100+ Certified</span>
+                    <span class="trust-stat-value">Medical Billers & Coders</span>
+                </div>
+            </div>
+            
+            <div class="trust-stat-item">
+                <div class="trust-stat-icon">
+                    <i class="fa fa-shield"></i>
+                </div>
+                <div class="trust-stat-text">
+                    <span class="trust-stat-title">HIPAA</span>
+                    <span class="trust-stat-value">Compliant</span>
+                </div>
+            </div>
+            
+            <div class="trust-stat-item">
+                <div class="trust-stat-icon trust-stat-badge-img">
+                    <i class="fa fa-lock"></i>
+                </div>
+                <div class="trust-stat-text">
+                    <span class="trust-stat-title">SOC2</span>
+                    <span class="trust-stat-value">Certified</span>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+<!-- Services Overview Section -->
+<section class="services-overview-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="section-title-main">Overview of <span class="text-primary-gradient">Medical Billing<br>Services</span> in the USA</h2>
+            <p class="section-description">Medical Billing Services provide organized solutions to assist with billing for healthcare providers by transforming clinical data into billable insurance claims. Through electronic medical billing and structuring clinical billing processes, healthcare providers are able to accurately capture diagnoses, procedures and charges and submit them to payers.</p>
+            <p class="section-description-sub">Beyond claim creation, medical billing typically involves the use of physician accounts management solutions and/or medical billing management. This may include tracking of patient claims invoicing, resolving claim rejections, tracking of outstanding balances and providing financial reports to facilitate improved Revenue Cycle Planning for healthcare organizations. Core components of this service include:</p>
+
+           
+      </div>
+
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card-hover">
+                    <div class="service-icon-box">
+                        <i class="fa fa-user-md"></i>
+                    </div>
+                    <h4 class="service-card-title">Medical Billing Consultation</h4>
+                    <p class="service-card-text">Expert patient billers offer the most complete medical billing services that entail handling check-in/out, claims, payments, and denials for health care providers.</p>
+                    <a href="#" class="service-explore-btn">Explore More</a>
+                </div>
+      </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card-hover">
+                    <div class="service-icon-box">
+                        <i class="fa fa-code"></i>
+                    </div>
+                    <h4 class="service-card-title">Medical Coding</h4>
+                    <p class="service-card-text">Clinical coding officers translate patient services into ICD-10 and CPT codes and generate a clean "super-bill" for the biller to submit to the insurance payer.</p>
+                    <a href="#" class="service-explore-btn">Explore More</a>
+                </div>
+      </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card-hover">
+                    <div class="service-icon-box">
+                        <i class="fa fa-id-card"></i>
+                    </div>
+                    <h4 class="service-card-title">Provider Credentialing</h4>
+                    <p class="service-card-text">Provider enrollment services by our credentialing specialists help healthcare providers join the network of desirable payors with maximum privileges.</p>
+                    <a href="#" class="service-explore-btn">Explore More</a>
+                </div>
+      </div>
+
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="service-card-hover">
+                    <div class="service-icon-box">
+                        <i class="fa fa-heartbeat"></i>
+                    </div>
+                    <h4 class="service-card-title">Healthcare RCM</h4>
+                    <p class="service-card-text">Revenue cycle management services are specialty-specific, which means a physician's bespoke demands are met by a dedicated medical biller.</p>
+                    <a href="#" class="service-explore-btn">Explore More</a>
+                </div>
+            </div>
+    </div>
+  </div>
 </section>
+
 
 <!-- Software Partners -->
-<section class="py-5 bg-white border-bottom">
+<!-- <section class="py-5 bg-white border-bottom">
     <div class="container text-center">
         <p class="mb-4 text-uppercase font-weight-bold" style="letter-spacing: 2px; color: #aaa; font-size: 13px;">Working with major software vendors</p>
         <div class="d-flex flex-wrap justify-content-center align-items-center" style="gap: 40px; filter: grayscale(1); opacity: 0.5;">
@@ -87,47 +213,10 @@
             <h4 class="mb-0">DrChrono</h4>
         </div>
     </div>
-</section>
+</section> -->
 
-<!-- Main Services Section -->
-<section class="service-grid">
-    <div class="container">
-        <div class="text-center mb-5 pb-3">
-            <h2 style="font-size: 38px;">Healthcare Professional Services</h2>
-            <p class="mx-auto" style="max-width: 700px; font-size: 17px;">We provide comprehensive revenue cycle management solutions designed to streamline your practice's financial performance.</p>
-        </div>
-        
-        <div class="row">
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card-bell">
-                    <div>
-                        <div class="icon-circle"><i class="fa fa-stethoscope"></i></div>
-                        <h4>Medical Billing</h4>
-                        <p>Our expert billers ensure your claims are submitted correctly from day one, reducing denials and accelerating cash flow.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card-bell">
-                    <div>
-                        <div class="icon-circle"><i class="fa fa-code"></i></div>
-                        <h4>Medical Coding</h4>
-                        <p>Certified coders meticulously review documentation to ensure ICD-10 and CPT compliance, maximizing your reimbursement.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card-bell">
-                    <div>
-                        <div class="icon-circle"><i class="fa fa-id-card"></i></div>
-                        <h4>Provider Credentialing</h4>
-                        <p>Simplifying the complex payer enrollment process so you can start seeing patients and getting paid faster.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
+
 
 <!-- Expertise Full Width Section -->
 <section class="expertise-section">
@@ -152,21 +241,191 @@
     </div>
 </section>
 
-<!-- Trust & KPI Highlight -->
-<section class="py-100 bg-white">
+<!-- Specialties Section -->
+<section class="specialties-section">
     <div class="container">
-        <div class="row text-center align-items-center">
-            <div class="col-md-4">
-                <h3 class="font-weight-bold" style="font-size: 50px; color: var(--primary);">4.8/5</h3>
-                <p class="text-uppercase font-weight-bold">Google Reviews</p>
+        <h2 class="specialties-title text-center">
+            Which Medical Specialties Do We Serve<br>
+            with Expert Billing?
+        </h2>
+        <p class="specialties-subtitle text-center">
+            Our medical billing company caters to a wide range of specialties, spanning from primary care to surgical centers,
+            serving small and mid-sized practices.
+        </p>
+
+        <div class="specialties-grid">
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/GYN.png') }}" alt="OB/GYN">
+                </div>
+                <div class="specialty-name">OB/GYN</div>
             </div>
-            <div class="col-md-4">
-                <h3 class="font-weight-bold" style="font-size: 50px; color: var(--primary);">96%</h3>
-                <p class="text-uppercase font-weight-bold">Happiness Score</p>
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/Neurology.png') }}" alt="Neurology">
+                </div>
+                <div class="specialty-name">Neurology</div>
             </div>
-            <div class="col-md-4">
-                <h3 class="font-weight-bold" style="font-size: 50px; color: var(--primary);">1.2K+</h3>
-                <p class="text-uppercase font-weight-bold">Billing Experts</p>
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/Orthopedics.png') }}" alt="Orthopedics">
+                </div>
+                <div class="specialty-name">Orthopedics</div>
+            </div>
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/Podiatry.png') }}" alt="Podiatry">
+                </div>
+                <div class="specialty-name">Podiatry</div>
+            </div>
+
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/Cardiology.png') }}" alt="Cardiology">
+                </div>
+                <div class="specialty-name">Cardiology</div>
+            </div>
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/Nephrology.png') }}" alt="Nephrology">
+                </div>
+                <div class="specialty-name">Nephrology</div>
+            </div>
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/Psychiatry.png') }}" alt="Psychiatry">
+                </div>
+                <div class="specialty-name">Psychiatry</div>
+            </div>
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/Primary-Care.png') }}" alt="Primary Care">
+                </div>
+                <div class="specialty-name">Primary Care</div>
+            </div>
+
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/Endocrinology.png') }}" alt="Endocrinology">
+                </div>
+                <div class="specialty-name">Endocrinology</div>
+            </div>
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/Internal-Medicine.png') }}" alt="Internal Medicine">
+                </div>
+                <div class="specialty-name">Internal Medicine</div>
+            </div>
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/Pain-Management.png') }}" alt="Pain Management">
+                </div>
+                <div class="specialty-name">Pain Management</div>
+            </div>
+            <div class="specialty-item">
+                <div class="specialty-icon">
+                    <img src="{{ asset('assets/images/servicess/Infectious-Disease.png') }}" alt="Infectious Disease">
+                </div>
+                <div class="specialty-name">Infectious Disease</div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ url('contact-us.php') }}" class="specialties-cta-btn">
+                View More Specialties
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Our Success in Numbers -->
+<section class="success-metrics-section">
+    <div class="container">
+        <h2 class="success-metrics-title text-center">Our Success in <span class="text-primary-gradient">Numbers</span></h2>
+        <div class="success-metrics-grid">
+            <div class="success-metric">
+                <div class="success-metric-value">500M+</div>
+                <div class="success-metric-label">Value of claims processed</div>
+            </div>
+            <div class="success-metric">
+                <div class="success-metric-value">24</div>
+                <div class="success-metric-label">Accounts Receivable Days</div>
+            </div>
+            <div class="success-metric">
+                <div class="success-metric-value">48 Hours</div>
+                <div class="success-metric-label">Turn Around Time (TAT)</div>
+            </div>
+            <div class="success-metric">
+                <div class="success-metric-value">99%</div>
+                <div class="success-metric-label">Customer Retention</div>
+            </div>
+            <div class="success-metric">
+                <div class="success-metric-value">2.7M</div>
+                <div class="success-metric-label">Number of Claims Processed</div>
+            </div>
+            <div class="success-metric">
+                <div class="success-metric-value">98%</div>
+                <div class="success-metric-label">First Pass Clean Claims Rate</div>
+            </div>
+            <div class="success-metric">
+                <div class="success-metric-value">5%–10%</div>
+                <div class="success-metric-label">Revenue Improvement</div>
+            </div>
+            <div class="success-metric">
+                <div class="success-metric-value">30%</div>
+                <div class="success-metric-label">Reduction in A/R</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dedicated Accounts Managers Section -->
+<section class="dedicated-accounts-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="dedicated-accounts-image-wrap">
+                    <div class="dedicated-accounts-circle"></div>
+                    <img src="{{ asset('assets/images/dedicated-accounts-doctors.webp') }}" alt="Dedicated Accounts Managers" class="dedicated-accounts-img">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <h2 class="dedicated-accounts-title">
+                    Dedicated Accounts Managers &amp; Expert<br>
+                    <span class="text-primary-gradient">Medical Billers for Health Centers</span>
+                </h2>
+                <p class="dedicated-accounts-text">
+                    Healthcare organizations are at the heart of our medical billing and collections team. From primary care physicians to specialty clinics,
+                    our dedicated clinical coding officers and claims examiners implement a precision-driven approach so that revenue flows smoothly and claim
+                    denials fade away.
+                </p>
+
+                <div class="row g-3 dedicated-accounts-cards">
+                    <div class="col-md-12">
+                        <div class="dedicated-accounts-card dedicated-accounts-card-negative">
+                            <div class="dac-icon dac-icon-negative">
+                                <span>&times;</span>
+                            </div>
+                            <p class="mb-0">
+                                Traditional agencies have a 50% failure rate with provider credentialing and patient billing.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="dedicated-accounts-card dedicated-accounts-card-positive">
+                            <div class="dac-icon dac-icon-positive">
+                                <span>&check;</span>
+                            </div>
+                            <p class="mb-0">
+                                Our medical billing organization has a 97% pass rate with support for denied claims as well.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="{{ url('contact-us.php') }}" class="btn btn-outline-primary dedicated-accounts-cta">
+                    Claim Free Practice Audit
+                </a>
             </div>
         </div>
     </div>

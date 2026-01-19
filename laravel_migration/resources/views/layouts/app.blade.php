@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <title>@yield('title', $site->meta_title ?? $site->default_meta_title)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="@yield('meta_description', $site->meta_descr ?? $site->default_meta_descr)">
     <meta name="keywords" content="@yield('meta_keywords', $site->meta_keywords ?? $site->default_meta_keywords)">
     <meta name="google-site-verification" content="b4ou-sLla8wDu3s7-gAB9K_J5Hhlta_vKlWr5mFLZqo" />
@@ -23,7 +24,7 @@
     <link href="{{ asset('assets/css/css_slider.css') }}" type="text/css" rel="stylesheet" media="all">
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
     <link href="{{ asset('assets/css/style.css') }}" rel='stylesheet' type='text/css' />
-    <link href="{{ asset('assets/css/bellmedex.css') }}" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('assets/css/bellmedex.css') }}?v={{ filemtime(public_path('assets/css/bellmedex.css')) }}" rel='stylesheet' type='text/css' />
     <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
     
     <!-- google fonts -->
@@ -72,48 +73,157 @@
 </div>
 
 <header>
-    <div class="container d-flex align-items-center justify-content-between">
-        <div id="logo">
-            <a href="{{ url('/') }}"><img src="{{ asset('images/logo.png') }}" alt="Logo" style="max-height: 50px;"></a>
-        </div>
-        <nav class="d-none d-lg-block">
-            <ul class="menu d-flex align-items-center mb-0">
-                <li class="dropdown-li">
-                    <a href="#" class="nav-link">Services <i class="fa fa-angle-down ml-1"></i></a>
-                    <ul class="dropdown-custom">
-                        @foreach($service_list as $il)
-                        <li><a href="{{ url($il->seokey . '/') }}">{{ $il->title }}</a></li>
-                        @endforeach
-                    </ul>
-                </li>
-                <li class="dropdown-li">
-                    <a href="#" class="nav-link">Specialties <i class="fa fa-angle-down ml-1"></i></a>
-                </li>
-                <li class="dropdown-li">
-                    <a href="#" class="nav-link">Solutions <i class="fa fa-angle-down ml-1"></i></a>
-                </li>
-                <li class="dropdown-li">
-                    <a href="#" class="nav-link">Pricing</a>
-                </li>
-                <li class="dropdown-li">
-                    <a href="#" class="nav-link">For You <i class="fa fa-angle-down ml-1"></i></a>
-                </li>
-                <li class="dropdown-li">
-                    <a href="#" class="nav-link">Resources <i class="fa fa-angle-down ml-1"></i></a>
-                </li>
-                <li>
-                    <a href="{{ url('contact-us.php') }}" class="talk-btn">
-                        Talk To An Expert <i class="fa fa-arrow-right ml-2"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- Mobile Toggle -->
-        <div class="d-lg-none">
-            <i class="fa fa-bars font-24"></i>
+    <div class="container">
+        <div class="header-flex">
+            <div id="logo">
+                <a href="{{ url('/') }}">
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo-img">
+                </a>
+            </div>
+            
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <ul class="menu">
+                    <li class="dropdown-li">
+                        <a href="{{ url('/') }}" class="nav-link">Home</a>
+                    </li>
+                    <li class="dropdown-li">
+                        <a href="{{ url('about-us') }}" class="nav-link">About Us</a>
+                    </li>
+                    <li class="dropdown-li">
+                        <a href="#" class="nav-link">Services <i class="fa fa-caret-down"></i></a>
+                        <ul class="dropdown-custom">
+                            @foreach($service_list as $il)
+                            <li><a href="{{ url($il->seokey . '/') }}">{{ $il->title }}</a></li>
+                            @endforeach
+                        </ul>
+                    </li>
+                    <li class="dropdown-li">
+                        <a href="{{ url('case-studies') }}" class="nav-link">Case Studies</a>
+                    </li>
+                    <li class="dropdown-li">
+                        <a href="#" class="nav-link">Specialties <i class="fa fa-caret-down"></i></a>
+                        <ul class="dropdown-custom">
+                            <li><a href="#">Cardiology</a></li>
+                            <li><a href="#">General Practice</a></li>
+                            <li><a href="#">Neurology</a></li>
+                            <li><a href="#">Pediatrics</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-li">
+                        <a href="{{ url('blog') }}" class="nav-link">Blog</a>
+                    </li>
+                    <li class="dropdown-li">
+                        <a href="{{ url('contact-us.php') }}" class="nav-link">Contact</a>
+                    </li>
+                    <li>
+                        <a href="{{ url('contact-us.php') }}" class="talk-btn">
+                            Talk To An Expert <i class="fa fa-arrow-right ml-2"></i>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Mobile Toggle Button -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fa fa-bars"></i>
+            </button>
         </div>
     </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav-header">
+            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="mobile-logo">
+            <button class="mobile-nav-close" id="mobileNavClose">
+                <i class="fa fa-times"></i>
+            </button>
+        </div>
+        <ul class="mobile-menu">
+            <li><a href="{{ url('/') }}">Home</a></li>
+            <li><a href="{{ url('about-us') }}">About Us</a></li>
+            <li class="mobile-dropdown">
+                <a href="#" class="mobile-dropdown-toggle">Services <i class="fa fa-angle-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                    @foreach($service_list as $il)
+                    <li><a href="{{ url($il->seokey . '/') }}">{{ $il->title }}</a></li>
+                    @endforeach
+                </ul>
+            </li>
+            <li><a href="{{ url('case-studies') }}">Case Studies</a></li>
+            <li class="mobile-dropdown">
+                <a href="#" class="mobile-dropdown-toggle">Specialties <i class="fa fa-angle-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="#">Cardiology</a></li>
+                    <li><a href="#">General Practice</a></li>
+                    <li><a href="#">Neurology</a></li>
+                    <li><a href="#">Pediatrics</a></li>
+                </ul>
+            </li>
+            <li><a href="{{ url('blog') }}">Blog</a></li>
+            <li><a href="{{ url('contact-us.php') }}">Contact</a></li>
+            <li class="mobile-cta">
+                <a href="{{ url('contact-us.php') }}" class="talk-btn-mobile">
+                    Talk To An Expert <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileNavClose = document.getElementById('mobileNavClose');
+    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+    const mobileDropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+    
+    // Open mobile menu
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+            mobileNavOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+    }
+    
+    // Close mobile menu
+    function closeMobileMenu() {
+        mobileNav.classList.remove('active');
+        mobileNavOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    if (mobileNavClose) {
+        mobileNavClose.addEventListener('click', closeMobileMenu);
+    }
+    
+    if (mobileNavOverlay) {
+        mobileNavOverlay.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Mobile dropdown toggle
+    mobileDropdownToggles.forEach(function(toggle) {
+        toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            const parent = this.parentElement;
+            const isActive = parent.classList.contains('active');
+            
+            // Close all dropdowns
+            document.querySelectorAll('.mobile-dropdown').forEach(function(dropdown) {
+                dropdown.classList.remove('active');
+            });
+            
+            // Toggle current dropdown
+            if (!isActive) {
+                parent.classList.add('active');
+            }
+        });
+    });
+});
+</script>
 
 @yield('content')
 
