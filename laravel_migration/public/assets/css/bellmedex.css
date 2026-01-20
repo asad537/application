@@ -2960,9 +2960,9 @@ header .container {
    ======================================== */
 
 .bell-footer {
-    background: #191919;
+    background: var(--primary);
     padding: 60px 0 20px;
-    color: #777;
+    color: #ffffff;
 }
 
 .bell-footer .fa,
@@ -2973,10 +2973,10 @@ header .container {
 }
 
 .bell-footer h4 {
-    color: #eee;
+    color: #ffffff;
     font-size: 20px;
-    margin-bottom: 20px;
-    font-weight: 600;
+    margin-bottom: 25px;
+    font-weight: 700;
 }
 
 .bell-footer ul {
@@ -2989,7 +2989,7 @@ header .container {
 }
 
 .bell-footer ul li a {
-    color: #777;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
     text-decoration: none;
     transition: 0.3s;
@@ -3001,13 +3001,13 @@ header .container {
 }
 
 .bell-footer p {
-    color: #777;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 14px;
     line-height: 1.8;
 }
 
 .footer-bottom {
-    border-top: 1px solid #333;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     margin-top: 40px;
     padding-top: 20px;
     text-align: center;
@@ -3016,6 +3016,7 @@ header .container {
 .footer-bottom p {
     margin: 0;
     font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 @media (max-width: 991px) {

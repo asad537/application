@@ -517,50 +517,7 @@
     </div>
 </section>
 
-<!-- Knowledge Center Section -->
-<section class="knowledge-center-section">
-    <div class="container">
-        <h2 class="knowledge-title">Knowledge Center</h2>
-        <p class="knowledge-subtitle">
-            Get the latest healthcare industry insights to learn more about making your practice more profitable.
-        </p>
 
-        <div class="knowledge-grid">
-            <!-- Articles -->
-            <div class="knowledge-card">
-                <div class="knowledge-card-header" style="background-image: url('{{ asset('assets/images/6b2eb-image-1.jpg') }}');">
-                    <h3>Articles</h3>
-                </div>
-                <div class="knowledge-card-body">
-                    <p>Discover health IT news and learn more about the ongoing trends around you with our article hub!</p>
-                    <a href="{{ url('blog') }}" class="knowledge-btn">View Articles</a>
-                </div>
-            </div>
-
-            <!-- Case Studies -->
-            <div class="knowledge-card">
-                <div class="knowledge-card-header" style="background-image: url('{{ asset('assets/images/40e33-image-3.jpg') }}');">
-                    <h3>Case Studies</h3>
-                </div>
-                <div class="knowledge-card-body">
-                    <p>Discover how AMDSol has helped medical practices overcome their billing challenges.</p>
-                    <a href="{{ url('case-studies') }}" class="knowledge-btn">View Case Studies</a>
-                </div>
-            </div>
-
-            <!-- Testimonials -->
-            <div class="knowledge-card">
-                <div class="knowledge-card-header" style="background-image: url('{{ asset('assets/images/c3e47-testim.jpg') }}');">
-                    <h3>Testimonials</h3>
-                </div>
-                <div class="knowledge-card-body">
-                    <p>Make informed decisions about your practice success with real-time feedback. Explore Clients' thoughts!</p>
-                    <a href="#" class="knowledge-btn">View Testimonials</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- CRADD Section -->
 
@@ -762,7 +719,50 @@
 </section>
 
 <!-- Recent Blogs -->
+<!-- Knowledge Center Section -->
+<section class="knowledge-center-section">
+    <div class="container">
+        <h2 class="knowledge-title">Knowledge Center</h2>
+        <p class="knowledge-subtitle">
+            Get the latest healthcare industry insights to learn more about making your practice more profitable.
+        </p>
 
+        <div class="knowledge-grid">
+            <!-- Articles -->
+            <div class="knowledge-card">
+                <div class="knowledge-card-header" style="background-image: url('{{ asset('assets/images/6b2eb-image-1.jpg') }}');">
+                    <h3>Articles</h3>
+                </div>
+                <div class="knowledge-card-body">
+                    <p>Discover health IT news and learn more about the ongoing trends around you with our article hub!</p>
+                    <a href="{{ url('blog') }}" class="knowledge-btn">View Articles</a>
+                </div>
+            </div>
+
+            <!-- Case Studies -->
+            <div class="knowledge-card">
+                <div class="knowledge-card-header" style="background-image: url('{{ asset('assets/images/40e33-image-3.jpg') }}');">
+                    <h3>Case Studies</h3>
+                </div>
+                <div class="knowledge-card-body">
+                    <p>Discover how AMDSol has helped medical practices overcome their billing challenges.</p>
+                    <a href="{{ url('case-studies') }}" class="knowledge-btn">View Case Studies</a>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="knowledge-card">
+                <div class="knowledge-card-header" style="background-image: url('{{ asset('assets/images/c3e47-testim.jpg') }}');">
+                    <h3>Testimonials</h3>
+                </div>
+                <div class="knowledge-card-body">
+                    <p>Make informed decisions about your practice success with real-time feedback. Explore Clients' thoughts!</p>
+                    <a href="#" class="knowledge-btn">View Testimonials</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 @endsection
 
 @section('scripts')
