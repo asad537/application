@@ -338,6 +338,230 @@
     </div>
 </section>
 
+<!-- EHR Section -->
+<section class="ehr-section">
+    <div class="container text-center">
+        <h2 class="ehr-title">We work with these EHRs</h2>
+        <p class="ehr-subtitle">
+            Our medical billing specialists know the workarounds of all the EHRs. We help you submit clean claims no matter which EHR you use.
+        </p>
+
+        <div class="ehr-grid">
+            <!-- AdvancedMD -->
+            <div class="ehr-card">
+                <img src="{{ asset('assets/images/erp/advanceMd.jpg') }}" alt="AdvancedMD" class="ehr-logo-img">
+            </div>
+            <!-- CareCloud -->
+            <div class="ehr-card">
+                <img src="{{ asset('assets/images/erp/careCloud.jpg') }}" alt="CareCloud" class="ehr-logo-img">
+            </div>
+            <!-- Nextgen -->
+            <div class="ehr-card">
+                <img src="{{ asset('assets/images/erp/nextgen.jpg') }}" alt="NextGen" class="ehr-logo-img">
+            </div>
+            <!-- Practice Fusion -->
+            <div class="ehr-card">
+                <img src="{{ asset('assets/images/erp/practice-fusion.jpg') }}" alt="Practice Fusion" class="ehr-logo-img">
+            </div>
+            <!-- ProgonCIS -->
+            <div class="ehr-card">
+                <img src="{{ asset('assets/images/erp/progonCIS-1.jpg') }}" alt="ProgonCIS" class="ehr-logo-img">
+            </div>
+            <!-- Harris CareTracker -->
+            <div class="ehr-card">
+                <img src="{{ asset('assets/images/erp/ACharrislogo-ohxzf0388pokf3vw05kiv3vp7kphzla0j3aup75618@2x.jpg') }}" alt="Harris CareTracker" class="ehr-logo-img">
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <a href="#" class="ehr-explore-btn">Explore More</a>
+        </div>
+    </div>
+</section>
+
+<!-- AI Dashboard Section -->
+<section class="ai-dashboard-section">
+    <div class="container">
+        <h2 class="dashboard-slider-title">How AMDSOL's AI Agents Can Help You Automate Medical Billing?</h2>
+        
+        <div id="aiDashboardCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators" style="bottom: -50px;">
+                <li data-target="#aiDashboardCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#aiDashboardCarousel" data-slide-to="1"></li>
+                <li data-target="#aiDashboardCarousel" data-slide-to="2"></li>
+                <li data-target="#aiDashboardCarousel" data-slide-to="3"></li>
+                <li data-target="#aiDashboardCarousel" data-slide-to="4"></li>
+                <li data-target="#aiDashboardCarousel" data-slide-to="5"></li>
+                <li data-target="#aiDashboardCarousel" data-slide-to="6"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <!-- Slide 1: DEXA -->
+                <div class="item active">
+                    <div class="dashboard-slide-container">
+                        <div class="dashboard-info">
+                            <h3>DEXA – Denial Experience and Analytics Agent</h3>
+                            <p>DEXA revolutionizes denial management by turning payer rejections into revenue opportunities. This AI agent detects, analyzes, and resolves denials in real time. <strong>DEXA documents each call outcome</strong> in real time and <strong>updates claim statuses</strong> automatically in the EHR or billing software.</p>
+                            <p>More importantly, this AI RCM tool <strong>auto-categorizes</strong> critical denials, generates appeal letters, and even calls payers to verify claim details.</p>
+                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                        </div>
+                        <div class="dashboard-image-box">
+                            <img src="{{ asset('assets/images/dashboard/DEXA-Dashboard.webp') }}" alt="DEXA Dashboard" class="dashboard-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2: CLAIR -->
+                <div class="item">
+                    <div class="dashboard-slide-container">
+                        <div class="dashboard-info">
+                            <h3>CLAIR – Claim Status and Insurance Follow-up Agent</h3>
+                            <p>CLAIR automates the tedious task of following up on outstanding claims. It <strong>communicates directly with insurance portals</strong> to retrieve real-time adjudication status, reducing the need for manual follow-up calls.</p>
+                            <p>By identifying bottlenecks early, CLAIR ensures that <strong>unpaid claims are addressed immediately</strong>, significantly shortening your AR days and improving cash flow.</p>
+                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                        </div>
+                        <div class="dashboard-image-box">
+                            <img src="{{ asset('assets/images/dashboard/CLAIR-Dashboard.webp') }}" alt="CLAIR Dashboard" class="dashboard-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3: CODIN -->
+                <div class="item">
+                    <div class="dashboard-slide-container">
+                        <div class="dashboard-info">
+                            <h3>CODIN – AI-powered Medical Coding Agent</h3>
+                            <p>CODIN uses advanced NLP to scan clinical documentation and <strong>assign accurate ICD-10 and CPT codes</strong>. It minimizes human error and ensures compliance with ever-changing coding guidelines.</p>
+                            <p>This intelligent agent <strong>flags potential coding issues</strong> before submission, drastically reducing the chances of medical necessity denials.</p>
+                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                        </div>
+                        <div class="dashboard-image-box">
+                            <img src="{{ asset('assets/images/dashboard/CODIN-Dashboard.webp') }}" alt="CODIN Dashboard" class="dashboard-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 4: ARIS -->
+                <div class="item">
+                    <div class="dashboard-slide-container">
+                        <div class="dashboard-info">
+                            <h3>ARIS – Accounts Receivable Insurance Specialist</h3>
+                            <p>ARIS specializes in managing your aging accounts. It <strong>prioritizes high-value claims</strong> and those nearing timely filing limits, ensuring no revenue is left on the table.</p>
+                            <p>With ARIS, your team can focus on complex cases while the AI handles <strong>routine AR tasks and reporting</strong> with precision and speed.</p>
+                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                        </div>
+                        <div class="dashboard-image-box">
+                            <img src="{{ asset('assets/images/dashboard/ARIS-Dashboard.webp') }}" alt="ARIS Dashboard" class="dashboard-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 5: ELIXA -->
+                <div class="item">
+                    <div class="dashboard-slide-container">
+                        <div class="dashboard-info">
+                            <h3>ELIXA – Eligibility and Insurance Verification Agent</h3>
+                            <p>ELIXA ensures that every patient's insurance is <strong>verified before the appointment</strong>. It checks coverage, co-pays, and deductibles in seconds, preventing eligibility-related denials.</p>
+                            <p>By automating the front-end of the revenue cycle, ELIXA <strong>enhances patient experience</strong> and reduces administrative burden on your front-desk staff.</p>
+                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                        </div>
+                        <div class="dashboard-image-box">
+                            <img src="{{ asset('assets/images/dashboard/ELIXA-Dashboard.webp') }}" alt="ELIXA Dashboard" class="dashboard-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 6: PRIA -->
+                <div class="item">
+                    <div class="dashboard-slide-container">
+                        <div class="dashboard-info">
+                            <h3>PRIA – Prior Authorization Agent</h3>
+                            <p>PRIA streamlines the complex prior authorization process. It <strong>collects required clinical data</strong> and submits requests to payers automatically, tracking them until approval is received.</p>
+                            <p>With PRIA, you can <strong>reduce treatment delays</strong> and ensure that all services rendered are pre-approved for payment.</p>
+                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                        </div>
+                        <div class="dashboard-image-box">
+                            <img src="{{ asset('assets/images/dashboard/PRIA-Dashboard.webp') }}" alt="PRIA Dashboard" class="dashboard-img">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 7: REMITA -->
+                <div class="item">
+                    <div class="dashboard-slide-container">
+                        <div class="dashboard-info">
+                            <h3>REMITA – Payment Posting and Remittance Advice Agent</h3>
+                            <p>REMITA automates the posting of payments and adjustments from ERAs and EOBs. It <strong>reconciles payments against claims</strong> with 100% accuracy, highlighting any discrepancies.</p>
+                            <p>Speed up your closing process and <strong>get real-time visibility</strong> into your practice's financial health with REMITA's intelligent posting.</p>
+                            <a href="#" class="dashboard-btn">See How AI Agents Can Help</a>
+                        </div>
+                        <div class="dashboard-image-box">
+                            <img src="{{ asset('assets/images/dashboard/REMITA-Dashboard.webp') }}" alt="REMITA Dashboard" class="dashboard-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Left and right controls -->
+            <a class="left carousel-control" href="#aiDashboardCarousel" data-slide="prev" style="background: none; width: 5%;">
+                <span class="fa fa-chevron-left" style="position: absolute; top: 50%; left: -20px; font-size: 30px;"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#aiDashboardCarousel" data-slide="next" style="background: none; width: 5%;">
+                <span class="fa fa-chevron-right" style="position: absolute; top: 50%; right: -20px; font-size: 30px;"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Knowledge Center Section -->
+<section class="knowledge-center-section">
+    <div class="container">
+        <h2 class="knowledge-title">Knowledge Center</h2>
+        <p class="knowledge-subtitle">
+            Get the latest healthcare industry insights to learn more about making your practice more profitable.
+        </p>
+
+        <div class="knowledge-grid">
+            <!-- Articles -->
+            <div class="knowledge-card">
+                <div class="knowledge-card-header" style="background-image: url('{{ asset('assets/images/6b2eb-image-1.jpg') }}');">
+                    <h3>Articles</h3>
+                </div>
+                <div class="knowledge-card-body">
+                    <p>Discover health IT news and learn more about the ongoing trends around you with our article hub!</p>
+                    <a href="{{ url('blog') }}" class="knowledge-btn">View Articles</a>
+                </div>
+            </div>
+
+            <!-- Case Studies -->
+            <div class="knowledge-card">
+                <div class="knowledge-card-header" style="background-image: url('{{ asset('assets/images/40e33-image-3.jpg') }}');">
+                    <h3>Case Studies</h3>
+                </div>
+                <div class="knowledge-card-body">
+                    <p>Discover how AMDSol has helped medical practices overcome their billing challenges.</p>
+                    <a href="{{ url('case-studies') }}" class="knowledge-btn">View Case Studies</a>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="knowledge-card">
+                <div class="knowledge-card-header" style="background-image: url('{{ asset('assets/images/c3e47-testim.jpg') }}');">
+                    <h3>Testimonials</h3>
+                </div>
+                <div class="knowledge-card-body">
+                    <p>Make informed decisions about your practice success with real-time feedback. Explore Clients' thoughts!</p>
+                    <a href="#" class="knowledge-btn">View Testimonials</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- CRADD Section -->
 
 
@@ -450,35 +674,35 @@
         <h2 class="success-metrics-title text-center">Our Success in <span class="text-primary-gradient">Numbers</span></h2>
         <div class="success-metrics-grid">
             <div class="success-metric">
-                <div class="success-metric-value">500M+</div>
+                <div class="success-metric-value"><span class="counter" data-target="500">0</span>M+</div>
                 <div class="success-metric-label">Value of claims processed</div>
             </div>
             <div class="success-metric">
-                <div class="success-metric-value">24</div>
+                <div class="success-metric-value"><span class="counter" data-target="24">0</span></div>
                 <div class="success-metric-label">Accounts Receivable Days</div>
             </div>
             <div class="success-metric">
-                <div class="success-metric-value">48 Hours</div>
+                <div class="success-metric-value"><span class="counter" data-target="48">0</span> Hours</div>
                 <div class="success-metric-label">Turn Around Time (TAT)</div>
             </div>
             <div class="success-metric">
-                <div class="success-metric-value">99%</div>
+                <div class="success-metric-value"><span class="counter" data-target="99">0</span>%</div>
                 <div class="success-metric-label">Customer Retention</div>
             </div>
             <div class="success-metric">
-                <div class="success-metric-value">2.7M</div>
+                <div class="success-metric-value"><span class="counter" data-target="2.7">0</span>M</div>
                 <div class="success-metric-label">Number of Claims Processed</div>
             </div>
             <div class="success-metric">
-                <div class="success-metric-value">98%</div>
+                <div class="success-metric-value"><span class="counter" data-target="98">0</span>%</div>
                 <div class="success-metric-label">First Pass Clean Claims Rate</div>
             </div>
             <div class="success-metric">
-                <div class="success-metric-value">5%–10%</div>
+                <div class="success-metric-value">5%–<span class="counter" data-target="10">0</span>%</div>
                 <div class="success-metric-label">Revenue Improvement</div>
             </div>
             <div class="success-metric">
-                <div class="success-metric-value">30%</div>
+                <div class="success-metric-value"><span class="counter" data-target="30">0</span>%</div>
                 <div class="success-metric-label">Reduction in A/R</div>
             </div>
         </div>
@@ -538,26 +762,47 @@
 </section>
 
 <!-- Recent Blogs -->
-<section class="py-100 bg-light">
-    <div class="container">
-        <div class="text-center mb-5">
-            <h2>Latest From Our Blog</h2>
-        </div>
-        <div class="row">
-            @foreach($recent_blogs->take(3) as $blog)
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm border-0">
-                    <img src="{{ asset('assets/images/'.$blog->image) }}" class="card-img-top" alt="{{ $blog->title }}" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <small class="text-muted">{{ date('M d, Y', strtotime($blog->date)) }}</small>
-                        <h5 class="card-title mt-2">{{ $blog->title }}</h5>
-                        <a href="{{ url('blog/'.$blog->seokey) }}" class="btn btn-link p-0 text-indigo font-weight-bold">Read More →</a>
-                    </div>
-                </div>
-            </div>
-            @endforeach
-        </div>
-    </div>
-</section>
 
+@endsection
+
+@section('scripts')
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const counters = document.querySelectorAll('.counter');
+    
+    const animateCounter = (counter) => {
+        const target = parseFloat(counter.getAttribute('data-target'));
+        const duration = 2000; // 2 seconds
+        const stepTime = 20;
+        const totalSteps = duration / stepTime;
+        const increment = target / totalSteps;
+        let current = 0;
+
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                counter.textContent = target % 1 === 0 ? target : target.toFixed(1);
+                clearInterval(timer);
+            } else {
+                counter.textContent = current % 1 === 0 ? Math.floor(current) : current.toFixed(1);
+            }
+        }, stepTime);
+    };
+
+    const observerOption = {
+        threshold: 0.5
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOption);
+
+    counters.forEach(counter => observer.observe(counter));
+});
+</script>
 @endsection

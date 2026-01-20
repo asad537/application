@@ -282,5 +282,6 @@ document.addEventListener('DOMContentLoaded', function() {
     </a>
 </div>
 
+@yield('scripts')
 </body>
 </html>
