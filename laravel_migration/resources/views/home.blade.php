@@ -338,6 +338,112 @@
     </div>
 </section>
 
+<!-- CRADD Section -->
+
+
+<!-- Circular Workflow Section -->
+<section class="circular-workflow-section">
+    <div class="container">
+        <h2 class="circular-workflow-title text-center">
+            Medical <span class="text-primary-gradient">Billing</span> Work Flow
+        </h2>
+        <p class="circular-workflow-subtitle text-center">
+            A comprehensive 9-step circular methodology that ensures excellence in medical billing and revenue cycle management
+        </p>
+
+        <div class="circular-workflow-wrapper">
+            <div class="circular-workflow-diagram">
+                <!-- Center Text -->
+                <div class="circular-workflow-center">
+                    <h3>MEDICAL BILLING</h3>
+                    <h4>WORK FLOW</h4>
+                </div>
+
+                <!-- Step 1: Insurance Verification -->
+                <div class="circular-step step-1">
+                    <div class="circular-step-content">
+                        <div class="circular-step-number">01</div>
+                        <i class="fa fa-shield"></i>
+                        <h5>Insurance<br>Verification</h5>
+                    </div>
+                </div>
+
+                <!-- Step 2: Patient Demographic Entry -->
+                <div class="circular-step step-2">
+                    <div class="circular-step-content">
+                        <div class="circular-step-number">02</div>
+                        <i class="fa fa-user"></i>
+                        <h5>Patient<br>Demographic<br>Entry</h5>
+                    </div>
+                </div>
+
+                <!-- Step 3: CPT & ICD-10 Coding -->
+                <div class="circular-step step-3">
+                    <div class="circular-step-content">
+                        <div class="circular-step-number">03</div>
+                        <i class="fa fa-code"></i>
+                        <h5>CPT & ICD-10<br>Coding</h5>
+                    </div>
+                </div>
+
+                <!-- Step 4: Charge Entry -->
+                <div class="circular-step step-4">
+                    <div class="circular-step-content">
+                        <div class="circular-step-number">04</div>
+                        <i class="fa fa-calculator"></i>
+                        <h5>Charge<br>Entry</h5>
+                    </div>
+                </div>
+
+                <!-- Step 5: Claim Submission -->
+                <div class="circular-step step-5">
+                    <div class="circular-step-content">
+                        <div class="circular-step-number">05</div>
+                        <i class="fa fa-file-text"></i>
+                        <h5>Claim<br>Submission</h5>
+                    </div>
+                </div>
+
+                <!-- Step 6: Payment Posting -->
+                <div class="circular-step step-6">
+                    <div class="circular-step-content">
+                        <div class="circular-step-number">06</div>
+                        <i class="fa fa-money"></i>
+                        <h5>Payment<br>Posting</h5>
+                    </div>
+                </div>
+
+                <!-- Step 7: A/R Follow Up -->
+                <div class="circular-step step-7">
+                    <div class="circular-step-content">
+                        <div class="circular-step-number">07</div>
+                        <i class="fa fa-desktop"></i>
+                        <h5>A/R<br>Follow Up</h5>
+                    </div>
+                </div>
+
+                <!-- Step 8: Denial Management -->
+                <div class="circular-step step-8">
+                    <div class="circular-step-content">
+                        <div class="circular-step-number">08</div>
+                        <i class="fa fa-cog"></i>
+                        <h5>Denial<br>Management</h5>
+                    </div>
+                </div>
+
+                <!-- Step 9: Reporting -->
+                <div class="circular-step step-9">
+                    <div class="circular-step-content">
+                        <div class="circular-step-number">09</div>
+                        <i class="fa fa-bar-chart"></i>
+                        <h5>Reporting</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- Our Success in Numbers -->
 <section class="success-metrics-section">
     <div class="container">

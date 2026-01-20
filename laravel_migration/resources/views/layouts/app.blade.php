@@ -8,13 +8,20 @@
     <meta name="google-site-verification" content="b4ou-sLla8wDu3s7-gAB9K_J5Hhlta_vKlWr5mFLZqo" />
     <meta name="ROBOTS" CONTENT="INDEX,FOLLOW">
     <script>
-        addEventListener("load", function () {
-            setTimeout(hideURLbar, 0);
-        }, false);
-
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
+        // Save scroll position before page unload
+        window.addEventListener('beforeunload', function() {
+            sessionStorage.setItem('scrollPosition', window.scrollY);
+        });
+        
+        // Restore scroll position after page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const scrollPosition = sessionStorage.getItem('scrollPosition');
+            if (scrollPosition) {
+                setTimeout(function() {
+                    window.scrollTo(0, parseInt(scrollPosition));
+                }, 100);
+            }
+        });
     </script>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -24,7 +31,7 @@
     <link href="{{ asset('assets/css/css_slider.css') }}" type="text/css" rel="stylesheet" media="all">
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
     <link href="{{ asset('assets/css/style.css') }}" rel='stylesheet' type='text/css' />
-    <link href="{{ asset('assets/css/bellmedex.css') }}?v={{ filemtime(public_path('assets/css/bellmedex.css')) }}" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('assets/css/bellmedex.css') }}?v={{ time() }}" rel='stylesheet' type='text/css' />
     <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">
     
     <!-- google fonts -->
@@ -230,16 +237,16 @@ document.addEventListener('DOMContentLoaded', function() {
 <footer class="bell-footer">
     <div class="container">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-4 col-md-6">
                 <img src="{{ asset('images/logo.png') }}" class="mb-4" style="max-height: 60px; filter: brightness(0) invert(1);">
-                <p class="text-white-50">AMDSol is a premier medical billing organization dedicated to streamlining healthcare provider operations through innovative RCM solutions and expert support.</p>
+                <p>AMDSol is a premier medical billing organization dedicated to streamlining healthcare provider operations through innovative RCM solutions and expert support.</p>
                 <div class="icon-social mt-4">
-                    <a href="{{ $site->facebook ?? '#' }}" class="text-white mr-3"><span class="fa fa-facebook"></span></a>
-                    <a href="{{ $site->twitter ?? '#' }}" class="text-white mr-3"><span class="fa fa-twitter"></span></a>
-                    <a href="{{ $site->linkedin ?? '#' }}" class="text-white mr-3"><span class="fa fa-linkedin"></span></a>
+                    <a href="{{ $site->facebook ?? '#' }}"><span class="fa fa-facebook"></span></a>
+                    <a href="{{ $site->twitter ?? '#' }}"><span class="fa fa-twitter"></span></a>
+                    <a href="{{ $site->linkedin ?? '#' }}"><span class="fa fa-linkedin"></span></a>
                 </div>
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-2 col-md-6">
                 <h4>Quick Links</h4>
                 <ul class="list-unstyled">
                     <li><a href="{{ url('/') }}">Home</a></li>
@@ -248,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <li><a href="{{ url('contact-us.php') }}">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-6">
                 <h4>Our Services</h4>
                 <ul class="list-unstyled">
                     @foreach($service_list as $il)
@@ -256,7 +263,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     @endforeach
                 </ul>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-md-6">
                 <h4>Stay Connected</h4>
                 <p><span class="fa fa-map-marker mr-2"></span> {{ $site->address ?? '' }}</p>
                 <p><span class="fa fa-phone mr-2"></span> {{ $site->phone ?? '' }}</p>
