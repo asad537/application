@@ -46,7 +46,36 @@ class HomeController extends Controller
             $query->whereIn('type', $request->types);
         }
 
-        $blogs = $query->orderBy('id', 'DESC')->paginate(3);
+        $blogs = $query->orderBy('id', 'DESC')->paginate(6);
+
+        if ($request->ajax()) {
+            $html = '';
+            foreach ($blogs as $blog) {
+                $image = $blog->image ? asset('assets/images/' . $blog->image) : asset('assets/images/article-1.jpg');
+                $date = \Carbon\Carbon::parse($blog->date)->format('M d Y');
+                $url = url('blog/' . $blog->seokey);
+                $title = $blog->title;
+                $text = strip_tags($blog->text);
+                
+                $html .= '
+                <div class="article-card">
+                    <img src="' . $image . '" alt="' . $title . '">
+                    <div class="card-content">
+                        <div class="category-label">Blog Post</div>
+                        <h3>' . $title . '</h3>
+                        <p>' . $text . '</p>
+                    </div>
+                    <div class="card-footer">
+                        <span class="date">' . $date . '</span>
+                        <a href="' . $url . '" class="read-more-btn">Read More »</a>
+                    </div>
+                </div>';
+            }
+            return response()->json([
+                'html' => $html,
+                'next_page' => $blogs->nextPageUrl()
+            ]);
+        }
 
         $data['data'] = $blogs;
         $data['recent_blogs'] = Blog::where('display', '1')->orderBy('date', 'DESC')->limit(6)->get();
