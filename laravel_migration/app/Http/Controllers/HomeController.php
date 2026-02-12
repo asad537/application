@@ -349,6 +349,16 @@ class HomeController extends Controller
         return view('radiology', $data);
     }
 
+    public function physician_billing()
+    {
+        $data["meta_title"] = "Expert Physician Billing Services | AMD SOL";
+        $data["meta_keywords"] = "Physician Billing Services, Physician RCM, Medical Billing for Physicians";
+        $data["meta_descr"] = "Optimize your practice's revenue with our comprehensive physician billing services. We ensure accurate claims, faster reimbursements, and reduced denials.";
+        $data["site"] = $this->site_settings;
+
+        return view('physician_billing', $data);
+    }
+
     public function about()
     {
         $data["meta_title"] = "About Us | AMD SOL";

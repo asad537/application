@@ -32,6 +32,7 @@ Route::get('hospital-billing-services', [HomeController::class, 'hospital_billin
 Route::get('pediatric-billing-services', [HomeController::class, 'pediatric']);
 Route::get('neurology-billing-services', [HomeController::class, 'neurology']);
 Route::get('radiology-billing-services', [HomeController::class, 'radiology']);
+Route::get('physician-billing-services', [HomeController::class, 'physician_billing']);
 Route::get('request-demo', [HomeController::class, 'demo']);
 Route::post('request-demo', [HomeController::class, 'demo']);
 
