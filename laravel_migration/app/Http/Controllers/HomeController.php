@@ -106,6 +106,16 @@ class HomeController extends Controller
 
     public function services_page(Request $request, $seokey)
     {
+        // Custom view for Electronic Health Records
+        if ($seokey === 'electronic-health-records') {
+            return view('electronic_health_records');
+        }
+
+        // Custom view for Practice Management
+        if ($seokey === 'practice-management') {
+            return view('practice_management');
+        }
+
         $service = ServicePage::where('seokey', $seokey)->firstOrFail();
         
         if ($request->isMethod('post')) {
