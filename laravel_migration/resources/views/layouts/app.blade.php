@@ -103,8 +103,9 @@
                         </ul>
                     </li>
                     <li class="dropdown-li">
-                        <a href="{{ url('services') }}" class="nav-link">Services <i class="fa fa-caret-down"></i></a>
+                        <a href="#" class="nav-link">Services <i class="fa fa-caret-down"></i></a>
                         <ul class="dropdown-custom">
+                            <li><a href="{{ url('services') }}">Medical Billing Services</a></li>
                             @foreach($service_list as $il)
                             <li><a href="{{ url($il->seokey) }}">{{ $il->title }}</a></li>
                             @endforeach
@@ -169,8 +170,9 @@
                 </ul>
             </li>
             <li class="mobile-dropdown">
-                <a href="{{ url('services') }}" class="mobile-dropdown-toggle">Services <i class="fa fa-angle-down"></i></a>
+                <a href="#" class="mobile-dropdown-toggle">Services <i class="fa fa-angle-down"></i></a>
                 <ul class="mobile-dropdown-menu">
+                    <li><a href="{{ url('services') }}">Medical Billing Services</a></li>
                     @foreach($service_list as $il)
                             <li><a href="{{ url($il->seokey) }}">{{ $il->title }}</a></li>
                     @endforeach
