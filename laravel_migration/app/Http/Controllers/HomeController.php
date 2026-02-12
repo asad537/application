@@ -145,6 +145,17 @@ class HomeController extends Controller
         return response()->view('sitemap', compact('blogs', 'services', 'static'))->header('Content-Type', 'text/xml');
     }
 
+    public function services()
+    {
+        $data["services"] = ServicePage::where('display', '1')->orderBy('id', 'ASC')->get();
+        $data["meta_title"] = "Our Services | AMD SOL";
+        $data["meta_keywords"] = "Medical Billing Services, Healthcare Solutions, RCM Services";
+        $data["meta_descr"] = "Explore our comprehensive range of medical billing and healthcare management services tailored to optimize your practice's revenue cycle.";
+        $data["site"] = $this->site_settings;
+
+        return view('services', $data);
+    }
+
     public function about()
     {
         $data["meta_title"] = "About Us | AMD SOL";

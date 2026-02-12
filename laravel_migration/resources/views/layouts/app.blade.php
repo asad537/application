@@ -84,7 +84,7 @@
         <div class="header-flex">
             <div id="logo">
                 <a href="{{ url('/') }}">
-                    <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo-img">
+                    <img src="{{ asset('images/logo_white.png') }}" alt="Logo" class="logo-img">
                 </a>
             </div>
             
@@ -98,10 +98,10 @@
                         <a href="{{ url('about-us') }}" class="nav-link">About Us</a>
                     </li>
                     <li class="dropdown-li">
-                        <a href="#" class="nav-link">Services <i class="fa fa-caret-down"></i></a>
+                        <a href="{{ url('services') }}" class="nav-link">Services <i class="fa fa-caret-down"></i></a>
                         <ul class="dropdown-custom">
                             @foreach($service_list as $il)
-                            <li><a href="{{ url($il->seokey . '/') }}">{{ $il->title }}</a></li>
+                            <li><a href="{{ url($il->seokey) }}">{{ $il->title }}</a></li>
                             @endforeach
                         </ul>
                     </li>
@@ -141,7 +141,7 @@
     <!-- Mobile Navigation -->
     <div class="mobile-nav" id="mobileNav">
         <div class="mobile-nav-header">
-            <img src="{{ asset('images/logo.png') }}" alt="Logo" class="mobile-logo">
+            <img src="{{ asset('images/logo_white.png') }}" alt="Logo" class="mobile-logo">
             <button class="mobile-nav-close" id="mobileNavClose">
                 <i class="fa fa-times"></i>
             </button>
@@ -150,10 +150,10 @@
             <li><a href="{{ url('/') }}">Home</a></li>
             <li><a href="{{ url('about-us') }}">About Us</a></li>
             <li class="mobile-dropdown">
-                <a href="#" class="mobile-dropdown-toggle">Services <i class="fa fa-angle-down"></i></a>
+                <a href="{{ url('services') }}" class="mobile-dropdown-toggle">Services <i class="fa fa-angle-down"></i></a>
                 <ul class="mobile-dropdown-menu">
                     @foreach($service_list as $il)
-                    <li><a href="{{ url($il->seokey . '/') }}">{{ $il->title }}</a></li>
+                            <li><a href="{{ url($il->seokey) }}">{{ $il->title }}</a></li>
                     @endforeach
                 </ul>
             </li>
