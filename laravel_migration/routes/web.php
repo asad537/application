@@ -24,6 +24,7 @@ Route::get('case-studies', [HomeController::class, 'case_studies']);
 Route::get('case-study/{seokey}', [HomeController::class, 'case_study_detail']);
 Route::get('specialties', [HomeController::class, 'specialties']);
 Route::get('cardiology-billing-services', [HomeController::class, 'cardiology']);
+Route::get('medical-billing-outsourcing', [HomeController::class, 'outsource_billing']);
 
 
 // Auth routes

@@ -113,7 +113,7 @@
                     <li class="dropdown-li">
                         <a href="#" class="nav-link">Our Expertise <i class="fa fa-caret-down"></i></a>
                         <ul class="dropdown-custom">
-                            <li><a href="#">Outsource Medical Billing</a></li>
+                            <li><a href="{{ url('medical-billing-outsourcing') }}">Outsource Medical Billing</a></li>
                             <li><a href="#">Small Practices</a></li>
                             <li><a href="#">Large Practices</a></li>
                             <li><a href="#">Denial Management</a></li>
@@ -179,7 +179,7 @@
             <li class="mobile-dropdown">
                 <a href="#" class="mobile-dropdown-toggle">Our Expertise <i class="fa fa-angle-down"></i></a>
                 <ul class="mobile-dropdown-menu">
-                    <li><a href="#">Outsource Medical Billing</a></li>
+                    <li><a href="{{ url('medical-billing-outsourcing') }}">Outsource Medical Billing</a></li>
                     <li><a href="#">Small Practices</a></li>
                     <li><a href="#">Large Practices</a></li>
                     <li><a href="#">Denial Management</a></li>

@@ -269,6 +269,16 @@ class HomeController extends Controller
         return view('cardiology', $data);
     }
 
+    public function outsource_billing()
+    {
+        $data["meta_title"] = "Medical Billing Outsourcing Services | AMD SOL";
+        $data["meta_keywords"] = "Medical Billing Outsourcing, RCM Outsourcing, Healthcare Billing Solutions";
+        $data["meta_descr"] = "Maximize your practice collections and reduce errors by outsourcing your medical billing to AMD SOL's expert team.";
+        $data["site"] = $this->site_settings;
+
+        return view('outsource', $data);
+    }
+
     public function about()
     {
         $data["meta_title"] = "About Us | AMD SOL";
