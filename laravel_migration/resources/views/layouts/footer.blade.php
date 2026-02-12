@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">
-                <img src="{{ asset('images/logo.png') }}" class="mb-4" style="max-height: 60px; filter: brightness(0) invert(1);">
+                <img src="{{ asset('images/logo_white.png') }}" class="mb-4" style="max-height: 60px;">
                 <p>AMDSol is a premier medical billing organization dedicated to streamlining healthcare provider operations through innovative RCM solutions and expert support.</p>
                 <div class="icon-social mt-4">
                     <a href="{{ $site->facebook ?? '#' }}"><span class="fa fa-facebook"></span></a>
