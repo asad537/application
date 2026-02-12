@@ -279,6 +279,16 @@ class HomeController extends Controller
         return view('outsource', $data);
     }
 
+    public function denial_management()
+    {
+        $data["meta_title"] = "Effective Denial Management Services | AMD SOL";
+        $data["meta_keywords"] = "Denial Management, Claim Denials, Medical Billing Denials, Healthcare RCM";
+        $data["meta_descr"] = "Reduce claim denials and recover revenue faster with AMD SOL's comprehensive denial management services. We identify root causes and resolve issues promptly.";
+        $data["site"] = $this->site_settings;
+
+        return view('denial_management', $data);
+    }
+
     public function about()
     {
         $data["meta_title"] = "About Us | AMD SOL";

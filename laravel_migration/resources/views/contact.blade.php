@@ -11,21 +11,17 @@
         box-sizing: border-box;
     }
 
+    /* Standard container for alignment with logo */
     .contact-container {
-        max-width: 1440px;
+        max-width: 1200px;
         width: 100%;
         margin: 0 auto;
-        overflow: hidden;
-        padding: 0;
+        padding: 0 20px;
     }
 
-    /* Responsive Typography */
-    /* Scoped font-size adjustments if needed, but avoiding global 'html' override to prevent 'zoomed' header/footer */
-    
     /* Contact Hero Section */
     .contact-hero-section {
         width: 100%;
-        max-width: 100%;
         min-height: 448px;
         background-color: #1a3a5c;
         background: url('{{ asset('assets/images/contact/contact-img/contactus.png') }}');
@@ -36,7 +32,6 @@
         display: flex;
         align-items: center;
         overflow: hidden;
-        padding: 60px 20px;
         margin: 0;
     }
 
@@ -58,29 +53,6 @@
         z-index: 1;
     }
 
-    @media (max-width: 1024px) {
-        .contact-hero-section {
-            min-height: 400px;
-            background-size: cover;
-            background-position: center right;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .contact-hero-section {
-            min-height: 350px;
-            padding: 40px 20px;
-            background-position: center;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .contact-hero-section {
-            min-height: 300px;
-            padding: 30px 15px;
-        }
-    }
-
     .contact-hero-section::before {
         content: '';
         position: absolute;
@@ -95,8 +67,7 @@
     .contact-hero-content {
         position: relative;
         z-index: 2;
-        padding-left: 97px;
-        max-width: 100%;
+        max-width: 600px;
     }
 
     .contact-hero-section h1 {
@@ -115,89 +86,39 @@
 
     .contact-hero-section p {
         text-align: left;
-        width: 387px;
-        height: 54px;
         font-weight: 500;
         font-size: 18px;
         color: white;
         line-height: 1.5;
         letter-spacing: 2%;
         margin-top: 0;
-        padding: 2px;
     }
 
     @media (max-width: 1024px) {
-        .contact-hero-content {
-            padding-left: 50px;
-        }
-
         .contact-hero-section h1 {
             font-size: 30px;
-            margin-bottom: 3px;
         }
-
         .contact-hero-section p {
             font-size: 16px;
-            margin-top: 0;
-
         }
     }
 
     @media (max-width: 768px) {
-        .contact-hero-content {
-            padding-left: 20px;
-            padding-right: 20px;
-            text-align: left;
+        .contact-hero-section {
+            min-height: 350px;
         }
-
         .contact-hero-section h1 {
             font-size: 28px;
-            max-width: 100%;
-            width: auto;
-            height: auto;
-            margin-bottom: 3px;
-            padding-bottom: 0;
-            position: relative;
-        }
-
-        .contact-hero-section p {
-            font-size: 16px;
-            max-width: 65%;
-            width: auto;
-            height: auto;
-            margin-top: 0;
-            text-align: left;
-            position: relative;
-            top: auto;
-            left: auto;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .contact-hero-content {
-            padding-left: 20px;
-            padding-right: 15px;
-        }
-
-        .contact-hero-section h1 {
-            font-size: 24px;
-            margin-bottom: 3px;
-        }
-
-        .contact-hero-section p {
-            font-size: 14px;
         }
     }
 
     /* Contact Get in Touch Section */
     .contact-touch-section {
-        padding: 80px 40px;
+        padding: 80px 0;
         background-color: #f8f9fa;
     }
 
     .contact-touch-container {
-        max-width: 1200px;
-        margin: 0 auto;
         display: flex;
         gap: 60px;
         align-items: center;
@@ -270,8 +191,8 @@
     }
 
     .contact-touch-images img {
-        width: 457px;
-        max-width: 100%;
+        width: 100%;
+        max-width: 457px;
         height: auto;
         border-radius: 8px;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -281,13 +202,11 @@
         .contact-touch-container {
             flex-direction: column;
         }
-
         .contact-touch-title {
             font-size: 36px;
         }
-
         .contact-touch-section {
-            padding: 60px 20px;
+            padding: 60px 0;
         }
     }
 
@@ -297,7 +216,7 @@
         background: #001f3f;
         position: relative;
         overflow: hidden;
-        padding: 60px 40px;
+        padding: 60px 0;
     }
 
     .contact-cta-section::before {
@@ -338,32 +257,18 @@
         line-height: 1.5;
     }
 
-    @media (max-width: 768px) {
-        .contact-cta-section {
-            padding: 50px 20px;
-        }
-
-        .contact-cta-title {
-            font-size: 32px;
-        }
-
-        .contact-cta-subtitle {
-            font-size: 15px;
-        }
-    }
-
     /* Contact Form Section */
     .contact-form-section {
-        padding: 80px 40px;
+        padding: 80px 0;
         background: #f5f5f5;
     }
 
     .contact-form-container {
         max-width: 1000px;
-        height: auto;
         margin: -130px auto 0;
         position: relative;
         z-index: 10;
+        width: 90%;
     }
 
     .contact-form-box {
@@ -419,12 +324,6 @@
         transition: all 0.3s;
     }
 
-    .contact-form-textarea:focus {
-        outline: none;
-        border-color: #001f3f;
-        box-shadow: 0 0 0 3px rgba(0, 31, 63, 0.1);
-    }
-
     .contact-form-checkbox-wrapper {
         display: flex;
         align-items: flex-start;
@@ -476,19 +375,13 @@
     }
 
     @media (max-width: 768px) {
-        .contact-form-section {
-            padding: 60px 20px;
-        }
-
         .contact-form-box {
             padding: 35px 25px;
         }
-
         .contact-form-row {
             flex-direction: column;
             gap: 0;
         }
-
         .contact-form-group {
             margin-bottom: 24px;
         }
@@ -496,18 +389,19 @@
 </style>
 
 <div class="contact-main-wrapper">
-    <div class="contact-container">
-
-        <!-- Contact Hero Section -->
-        <section class="contact-hero-section">
+    <!-- Contact Hero Section -->
+    <section class="contact-hero-section">
+        <div class="contact-container">
             <div class="contact-hero-content">
                 <h1>Contact Us</h1>
                 <p>We would love to hear from you. Feel free to reach out using the below details.</p>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact Get in Touch Section -->
-        <section class="contact-touch-section">
+    <!-- Contact Get in Touch Section -->
+    <section class="contact-touch-section">
+        <div class="contact-container">
             <div class="contact-touch-container">
                 <div class="contact-touch-left">
                     <h2 class="contact-touch-title">Get in Touch</h2>
@@ -518,7 +412,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
                                     d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                            </svg>
+                                </svg>
                         </div>
                         <div class="contact-touch-info-content">
                             <h3>Head Office</h3>
@@ -531,7 +425,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
                                     d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
-                            </svg>
+                                </svg>
                         </div>
                         <div class="contact-touch-info-content">
                             <h3>Email Us</h3>
@@ -544,7 +438,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                 <path
                                     d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" />
-                            </svg>
+                                </svg>
                         </div>
                         <div class="contact-touch-info-content">
                             <h3>Call Us</h3>
@@ -560,79 +454,81 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Contact CTA Section - Tell us about yourself -->
-        <section class="contact-cta-section">
+    <!-- Contact CTA Section - Tell us about yourself -->
+    <section class="contact-cta-section">
+        <div class="contact-container">
             <div class="contact-cta-content">
                 <h1 class="contact-cta-title">Tell us about yourself</h1>
                 <p class="contact-cta-subtitle">Our mission is to make a difference in healthcare.</p>
             </div>
-        </section>
-        <section class="contact-form-section">
-            <div class="contact-form-container">
-                <div class="contact-form-box">
-                    @if(session('red_msg'))
-                        <div class="alert alert-danger">{{ session('red_msg') }}</div>
-                    @endif
-                    @if(session('green_msg'))
-                        <div class="alert alert-success">{{ session('green_msg') }}</div>
-                    @endif
-                    
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
+        </div>
+    </section>
 
-                    <form method="post" action="{{ url('contact-us.php') }}">
-                        @csrf
-                        <div class="contact-form-row">
-                            <div class="contact-form-group">
-                                <label class="contact-form-label">First Name</label>
-                                <input type="text" class="contact-form-input" name="first_name" required>
-                            </div>
-                            <div class="contact-form-group">
-                                <label class="contact-form-label">Last Name</label>
-                                <input type="text" class="contact-form-input" name="last_name" required>
-                            </div>
-                        </div>
+    <section class="contact-form-section">
+        <div class="contact-form-container">
+            <div class="contact-form-box">
+                @if(session('red_msg'))
+                    <div class="alert alert-danger">{{ session('red_msg') }}</div>
+                @endif
+                @if(session('green_msg'))
+                    <div class="alert alert-success">{{ session('green_msg') }}</div>
+                @endif
+                
+                @if ($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
 
-                        <div class="contact-form-group" style="margin-bottom: 24px;">
-                            <label class="contact-form-label">Email</label>
-                            <input type="email" class="contact-form-input" name="email" required>
+                <form method="post" action="{{ url('contact-us.php') }}">
+                    @csrf
+                    <div class="contact-form-row">
+                        <div class="contact-form-group">
+                            <label class="contact-form-label">First Name</label>
+                            <input type="text" class="contact-form-input" name="first_name" required>
                         </div>
+                        <div class="contact-form-group">
+                            <label class="contact-form-label">Last Name</label>
+                            <input type="text" class="contact-form-input" name="last_name" required>
+                        </div>
+                    </div>
 
-                        <div class="contact-form-group" style="margin-bottom: 24px;">
-                            <label class="contact-form-label">Phone</label>
-                            <input type="tel" class="contact-form-input" name="phone" required>
-                        </div>
+                    <div class="contact-form-group" style="margin-bottom: 24px;">
+                        <label class="contact-form-label">Email</label>
+                        <input type="email" class="contact-form-input" name="email" required>
+                    </div>
 
-                        <div class="contact-form-group" style="margin-bottom: 24px;">
-                            <label class="contact-form-label">Message</label>
-                            <textarea class="contact-form-textarea" name="message" required></textarea>
-                        </div>
+                    <div class="contact-form-group" style="margin-bottom: 24px;">
+                        <label class="contact-form-label">Phone</label>
+                        <input type="tel" class="contact-form-input" name="phone" required>
+                    </div>
 
-                        <div class="contact-form-checkbox-wrapper">
-                            <input type="checkbox" class="contact-form-checkbox" id="consent">
-                            <label for="consent" class="contact-form-checkbox-label">
-                                By Clicking On This Box, You Consent To Receive SMS Messages From AmdSol And Agree To
-                                The <a href="#">Privacy Policy</a>.
-                            </label>
-                        </div>
+                    <div class="contact-form-group" style="margin-bottom: 24px;">
+                        <label class="contact-form-label">Message</label>
+                        <textarea class="contact-form-textarea" name="message" required></textarea>
+                    </div>
 
-                        <div class="contact-form-submit-wrapper">
-                            <button type="submit" class="contact-form-submit">Get Started</button>
-                        </div>
-                    </form>
-                </div>
+                    <div class="contact-form-checkbox-wrapper">
+                        <input type="checkbox" class="contact-form-checkbox" id="consent">
+                        <label for="consent" class="contact-form-checkbox-label">
+                            By Clicking On This Box, You Consent To Receive SMS Messages From AmdSol And Agree To
+                            The <a href="#">Privacy Policy</a>.
+                        </label>
+                    </div>
+
+                    <div class="contact-form-submit-wrapper">
+                        <button type="submit" class="contact-form-submit">Get Started</button>
+                    </div>
+                </form>
             </div>
-        </section>
-
-    </div>
+        </div>
+    </section>
 </div>
 @endsection
