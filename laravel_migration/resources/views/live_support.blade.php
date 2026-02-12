@@ -83,18 +83,17 @@
 
     /* Support Section */
     .support-section {
-        width: 100%;
-        max-width: 1140px;
+        width: 90%;
+        max-width: 800px;
         margin: 0 auto;
         position: relative;
         top: -80px;
         z-index: 10;
-        padding: 0 20px;
     }
 
     .support-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
         background: #fff;
         border-radius: 8px;
         overflow: hidden;
@@ -103,7 +102,7 @@
     }
 
     .support-card {
-        padding: 40px 15px;
+        padding: 60px 20px;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -111,23 +110,15 @@
         justify-content: center;
         cursor: pointer;
         transition: all 0.3s ease;
-        border-right: 1px solid #e1e8ed;
-        border-bottom: none;
+        border-bottom: 1px solid #e1e8ed;
     }
 
-    /* Ensure all but last card have right border */
-    .support-card {
+    .support-card:nth-child(odd) {
         border-right: 1px solid #e1e8ed;
-        border-bottom: none;
     }
 
-    .support-card:nth-child(n) {
-        border-right: 1px solid #e1e8ed;
+    .support-card:nth-last-child(-n+2) {
         border-bottom: none;
-    }
-
-    .support-card:last-child {
-        border-right: none;
     }
 
     .support-card img {
@@ -136,7 +127,7 @@
     }
 
     .support-card h3 {
-        font-size: 1rem;
+        font-size: 1.1rem;
         color: #002b5c;
         margin: 0;
         font-weight: 700;
@@ -184,7 +175,7 @@
     .compliance-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
+        gap: 30px;
         max-width: 100%;
         margin: 0 auto;
     }
