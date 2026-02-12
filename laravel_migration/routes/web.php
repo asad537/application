@@ -28,6 +28,7 @@ Route::get('medical-billing-outsourcing', [HomeController::class, 'outsource_bil
 Route::get('denial-management-services', [HomeController::class, 'denial_management']);
 Route::get('large-practices', [HomeController::class, 'large_practices']);
 Route::get('small-practices', [HomeController::class, 'small_practices']);
+Route::get('hospital-billing-services', [HomeController::class, 'hospital_billing']);
 Route::get('request-demo', [HomeController::class, 'demo']);
 Route::post('request-demo', [HomeController::class, 'demo']);
 

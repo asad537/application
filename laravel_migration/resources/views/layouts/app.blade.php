@@ -118,7 +118,7 @@
                             <li><a href="{{ url('large-practices') }}">Large Practices</a></li>
                             <li><a href="{{ url('denial-management-services') }}">Denial Management</a></li>
                             <li><a href="#">Physician Billing Services</a></li>
-                            <li><a href="#">Hospital Billing Services</a></li>
+                            <li><a href="{{ url('hospital-billing-services') }}">Hospital Billing Services</a></li>
                         </ul>
                     </li>
                   
@@ -184,7 +184,7 @@
                     <li><a href="{{ url('large-practices') }}">Large Practices</a></li>
                     <li><a href="{{ url('denial-management-services') }}">Denial Management</a></li>
                     <li><a href="#">Physician Billing Services</a></li>
-                    <li><a href="#">Hospital Billing Services</a></li>
+                    <li><a href="{{ url('hospital-billing-services') }}">Hospital Billing Services</a></li>
                 </ul>
             </li>
             <li><a href="{{ url('case-studies') }}">Case Studies</a></li>

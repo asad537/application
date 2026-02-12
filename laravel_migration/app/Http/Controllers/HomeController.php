@@ -309,6 +309,16 @@ class HomeController extends Controller
         return view('small_practices', $data);
     }
 
+    public function hospital_billing()
+    {
+        $data["meta_title"] = "Full-Service Hospital Billing Solutions | AMD SOL";
+        $data["meta_keywords"] = "Hospital Billing Services, Hospital RCM, Medical Billing for Hospitals";
+        $data["meta_descr"] = "Streamline your hospital's revenue cycle with our expert billing services. Maximize reimbursements, reduce denials, and ensure compliance.";
+        $data["site"] = $this->site_settings;
+
+        return view('hospital_billing', $data);
+    }
+
     public function about()
     {
         $data["meta_title"] = "About Us | AMD SOL";
