@@ -116,6 +116,11 @@ class HomeController extends Controller
             return view('practice_management');
         }
 
+        // Custom view for Specialty EHR
+        if ($seokey === 'specialty-ehr') {
+            return view('specialty_ehr');
+        }
+
         $service = ServicePage::where('seokey', $seokey)->firstOrFail();
         
         if ($request->isMethod('post')) {

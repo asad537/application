@@ -95,7 +95,12 @@
                         <a href="{{ url('/') }}" class="nav-link">Home</a>
                     </li>
                     <li class="dropdown-li">
-                        <a href="{{ url('about-us') }}" class="nav-link">About Us</a>
+                        <a href="#" class="nav-link">Company <i class="fa fa-caret-down"></i></a>
+                        <ul class="dropdown-custom">
+                            <li><a href="{{ url('about-us') }}">About Us</a></li>
+                            <li><a href="{{ url('contact-us.php') }}">Contact</a></li>
+                            <li><a href="{{ url('blog') }}">Blog</a></li>
+                        </ul>
                     </li>
                     <li class="dropdown-li">
                         <a href="{{ url('services') }}" class="nav-link">Services <i class="fa fa-caret-down"></i></a>
@@ -106,8 +111,17 @@
                         </ul>
                     </li>
                     <li class="dropdown-li">
-                        <a href="{{ url('case-studies') }}" class="nav-link">Case Studies</a>
+                        <a href="#" class="nav-link">Our Expertise <i class="fa fa-caret-down"></i></a>
+                        <ul class="dropdown-custom">
+                            <li><a href="#">Outsource Medical Billing</a></li>
+                            <li><a href="#">Small Practices</a></li>
+                            <li><a href="#">Large Practices</a></li>
+                            <li><a href="#">Denial Management</a></li>
+                            <li><a href="#">Physician Billing Services</a></li>
+                            <li><a href="#">Hospital Billing Services</a></li>
+                        </ul>
                     </li>
+                  
                     <li class="dropdown-li">
                         <a href="#" class="nav-link">Specialties <i class="fa fa-caret-down"></i></a>
                         <ul class="dropdown-custom">
@@ -117,12 +131,10 @@
                             <li><a href="#">Pediatrics</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown-li">
-                        <a href="{{ url('blog') }}" class="nav-link">Blog</a>
+                      <li class="dropdown-li">
+                        <a href="{{ url('case-studies') }}" class="nav-link">Case Studies</a>
                     </li>
-                    <li class="dropdown-li">
-                        <a href="{{ url('contact-us.php') }}" class="nav-link">Contact</a>
-                    </li>
+
                     <li>
                         <a href="{{ url('contact-us.php') }}" class="talk-btn">
                             Talk To An Expert <i class="fa fa-arrow-right ml-2"></i>
@@ -148,13 +160,31 @@
         </div>
         <ul class="mobile-menu">
             <li><a href="{{ url('/') }}">Home</a></li>
-            <li><a href="{{ url('about-us') }}">About Us</a></li>
+            <li class="mobile-dropdown">
+                <a href="#" class="mobile-dropdown-toggle">Company <i class="fa fa-angle-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="{{ url('about-us') }}">About Us</a></li>
+                    <li><a href="{{ url('contact-us.php') }}">Contact</a></li>
+                    <li><a href="{{ url('blog') }}">Blog</a></li>
+                </ul>
+            </li>
             <li class="mobile-dropdown">
                 <a href="{{ url('services') }}" class="mobile-dropdown-toggle">Services <i class="fa fa-angle-down"></i></a>
                 <ul class="mobile-dropdown-menu">
                     @foreach($service_list as $il)
                             <li><a href="{{ url($il->seokey) }}">{{ $il->title }}</a></li>
                     @endforeach
+                </ul>
+            </li>
+            <li class="mobile-dropdown">
+                <a href="#" class="mobile-dropdown-toggle">Our Expertise <i class="fa fa-angle-down"></i></a>
+                <ul class="mobile-dropdown-menu">
+                    <li><a href="#">Outsource Medical Billing</a></li>
+                    <li><a href="#">Small Practices</a></li>
+                    <li><a href="#">Large Practices</a></li>
+                    <li><a href="#">Denial Management</a></li>
+                    <li><a href="#">Physician Billing Services</a></li>
+                    <li><a href="#">Hospital Billing Services</a></li>
                 </ul>
             </li>
             <li><a href="{{ url('case-studies') }}">Case Studies</a></li>
@@ -167,8 +197,7 @@
                     <li><a href="#">Pediatrics</a></li>
                 </ul>
             </li>
-            <li><a href="{{ url('blog') }}">Blog</a></li>
-            <li><a href="{{ url('contact-us.php') }}">Contact</a></li>
+
             <li class="mobile-cta">
                 <a href="{{ url('contact-us.php') }}" class="talk-btn-mobile">
                     Talk To An Expert <i class="fa fa-arrow-right ml-2"></i>
