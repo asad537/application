@@ -136,7 +136,7 @@
                     </li>
 
                     <li>
-                        <a href="{{ url('contact-us.php') }}" class="talk-btn">
+                        <a href="{{ url('request-demo') }}" class="talk-btn">
                             Talk To An Expert <i class="fa fa-arrow-right ml-2"></i>
                         </a>
                     </li>
@@ -199,7 +199,7 @@
             </li>
 
             <li class="mobile-cta">
-                <a href="{{ url('contact-us.php') }}" class="talk-btn-mobile">
+                <a href="{{ url('request-demo') }}" class="talk-btn-mobile">
                     Talk To An Expert <i class="fa fa-arrow-right ml-2"></i>
                 </a>
             </li>

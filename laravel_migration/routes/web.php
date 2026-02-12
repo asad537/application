@@ -26,6 +26,8 @@ Route::get('specialties', [HomeController::class, 'specialties']);
 Route::get('cardiology-billing-services', [HomeController::class, 'cardiology']);
 Route::get('medical-billing-outsourcing', [HomeController::class, 'outsource_billing']);
 Route::get('denial-management-services', [HomeController::class, 'denial_management']);
+Route::get('request-demo', [HomeController::class, 'demo']);
+Route::post('request-demo', [HomeController::class, 'demo']);
 
 
 // Auth routes

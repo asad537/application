@@ -316,6 +316,41 @@ class HomeController extends Controller
         return view('contact', $data);
     }
 
+    public function demo(Request $request)
+    {
+        if ($request->isMethod('post')) {
+            $this->submit_demo_form($request->all());
+            return redirect('request-demo')->with('green_msg', 'Thank you for your interest! We will contact you shortly to schedule your demo.');
+        }
+
+        $data["meta_title"] = "Request a Demo | AMD SOL";
+        $data["meta_keywords"] = "Request a Demo, Medical Billing Demo, AMD SOL Demo";
+        $data["meta_descr"] = "Experience streamlined billing and optimized workflows. Request a demo to see how AMD SOL can transform your practice's revenue cycle.";
+        $data["site"] = $this->site_settings;
+
+        return view('demo', $data);
+    }
+
+    protected function submit_demo_form($form)
+    {
+        $firstName = $form['firstName'] ?? '';
+        $lastName = $form['lastName'] ?? '';
+        $name = trim("$firstName $lastName");
+        $email = $form['email'] ?? '';
+        $phone = $form['phone'] ?? '';
+        $practice = $form['practiceName'] ?? '';
+        $physicians = $form['physicians'] ?? '';
+        $comments = $form['message'] ?? '';
+
+        $messageText = "$name requested a Demo <br><br>Name  : $name<br>Email : $email<br>Phone : $phone<br>Practice : $practice<br>Physicians: $physicians<br>Message : $comments";
+        
+        Mail::html($messageText, function ($message) use ($name, $email) {
+            $message->to('info@amdsol.com')
+                    ->subject("Demo Request From $name - AMD SOL")
+                    ->from($email, $name);
+        });
+    }
+
     protected function submit_contact_form($form)
     {
         $firstName = $form['first_name'] ?? '';
