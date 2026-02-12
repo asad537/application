@@ -299,6 +299,16 @@ class HomeController extends Controller
         return view('large_practices', $data);
     }
 
+    public function small_practices()
+    {
+        $data["meta_title"] = "Medical Billing for Small Practices | AMD SOL";
+        $data["meta_keywords"] = "Small Medical Practice Billing, Solo Provider Billing, Independent Clinic RCM";
+        $data["meta_descr"] = "Scale your small practice with our dedicated billing services. We handle the paperwork so you can focus on patient care.";
+        $data["site"] = $this->site_settings;
+
+        return view('small_practices', $data);
+    }
+
     public function about()
     {
         $data["meta_title"] = "About Us | AMD SOL";
