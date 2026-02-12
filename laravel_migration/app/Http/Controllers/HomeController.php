@@ -121,6 +121,16 @@ class HomeController extends Controller
             return view('specialty_ehr');
         }
 
+        // Custom view for Patient Services
+        if ($seokey === 'patient-services') {
+            return view('patient_services');
+        }
+
+        // Custom view for Live Support
+        if ($seokey === 'live-support') {
+            return view('live_support');
+        }
+
         $service = ServicePage::where('seokey', $seokey)->firstOrFail();
         
         if ($request->isMethod('post')) {
