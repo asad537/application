@@ -308,16 +308,23 @@ class HomeController extends Controller
 
     protected function submit_contact_form($form)
     {
-        // Simple port of the helper function
-        $name = $form['name'] ?? '';
+        $firstName = $form['first_name'] ?? '';
+        $lastName = $form['last_name'] ?? '';
+        
+        if ($firstName || $lastName) {
+            $name = trim("$firstName $lastName");
+        } else {
+            $name = $form['name'] ?? '';
+        }
+
         $email = $form['email'] ?? '';
-        $subject = $form['subject'] ?? '';
+        $subject = $form['subject'] ?? 'Website Inquiry';
         $phone = $form['phone'] ?? '';
-        $comments = $form['comments'] ?? '';
+        $comments = $form['message'] ?? ($form['comments'] ?? '');
 
         $messageText = "$name From Contact Us <br><br>Name  : $name<br>Phone : $phone<br>Subject : $subject<br>Email : $email<br>Message : $comments";
         
-        Mail::html($messageText, function ($message) use ($name, $email) {
+        Mail::html($messageText, function ($message) use ($name, $email, $subject) {
             $message->to('info@amdsol.com')
                     ->subject("Contact Us From $name - AMD SOL")
                     ->from($email, $name);

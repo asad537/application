@@ -149,15 +149,18 @@ header {
     background: var(--primary-dark) !important;
     position: sticky !important;
     top: 0;
-    z-index: 1000;
+    z-index: 9999;
     box-shadow: none;
     transition: all 0.3s ease;
     padding: 0 !important;
     border-bottom: none;
+    overflow: visible !important;
 }
 
 header .container {
     padding: 15px 15px;
+    position: relative;
+    overflow: visible !important;
 }
 
 .header-flex {
@@ -174,6 +177,7 @@ header .container {
 /* Desktop Navigation */
 .desktop-nav {
     display: block;
+    overflow: visible !important;
 }
 
 .menu {
@@ -627,7 +631,7 @@ header .container {
     transition: all 0.25s ease;
     padding: 5px 0;
     list-style: none;
-    z-index: 999;
+    z-index: 99999;
     border: 1px solid rgba(0, 0, 0, 0.04);
 }
 

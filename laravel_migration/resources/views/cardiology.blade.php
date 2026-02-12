@@ -27,8 +27,11 @@
             max-width: 1440px;
             width: 100%;
             margin: 0 auto;
-            overflow: hidden;
             padding: 0;
+        }
+        
+        header .container {
+            overflow: visible !important;
         }
 
         /* Responsive Typography */
@@ -1182,6 +1185,10 @@
             /* Enable overflow hidden to contain wave */
             min-height: 280px;
             margin: 40px;
+        }
+        
+        .cta-pricing-section {
+            padding-bottom: 80px;
         }
 
         .cta-container::before {
