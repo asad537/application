@@ -115,7 +115,7 @@
                         <ul class="dropdown-custom">
                             <li><a href="{{ url('medical-billing-outsourcing') }}">Outsource Medical Billing</a></li>
                             <li><a href="#">Small Practices</a></li>
-                            <li><a href="#">Large Practices</a></li>
+                            <li><a href="{{ url('large-practices') }}">Large Practices</a></li>
                             <li><a href="{{ url('denial-management-services') }}">Denial Management</a></li>
                             <li><a href="#">Physician Billing Services</a></li>
                             <li><a href="#">Hospital Billing Services</a></li>
@@ -181,8 +181,8 @@
                 <ul class="mobile-dropdown-menu">
                     <li><a href="{{ url('medical-billing-outsourcing') }}">Outsource Medical Billing</a></li>
                     <li><a href="#">Small Practices</a></li>
-                    <li><a href="#">Large Practices</a></li>
-                    <li><a href="#">Denial Management</a></li>
+                    <li><a href="{{ url('large-practices') }}">Large Practices</a></li>
+                    <li><a href="{{ url('denial-management-services') }}">Denial Management</a></li>
                     <li><a href="#">Physician Billing Services</a></li>
                     <li><a href="#">Hospital Billing Services</a></li>
                 </ul>
