@@ -83,17 +83,18 @@
 
     /* Support Section */
     .support-section {
-        width: 90%;
-        max-width: 800px;
+        width: 100%;
+        max-width: 1140px;
         margin: 0 auto;
         position: relative;
         top: -80px;
         z-index: 10;
+        padding: 0 20px;
     }
 
     .support-grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         background: #fff;
         border-radius: 8px;
         overflow: hidden;
@@ -102,7 +103,7 @@
     }
 
     .support-card {
-        padding: 60px 20px;
+        padding: 40px 15px;
         text-align: center;
         display: flex;
         flex-direction: column;
@@ -110,15 +111,23 @@
         justify-content: center;
         cursor: pointer;
         transition: all 0.3s ease;
-        border-bottom: 1px solid #e1e8ed;
-    }
-
-    .support-card:nth-child(odd) {
         border-right: 1px solid #e1e8ed;
+        border-bottom: none;
     }
 
-    .support-card:nth-last-child(-n+2) {
+    /* Ensure all but last card have right border */
+    .support-card {
+        border-right: 1px solid #e1e8ed;
         border-bottom: none;
+    }
+
+    .support-card:nth-child(n) {
+        border-right: 1px solid #e1e8ed;
+        border-bottom: none;
+    }
+
+    .support-card:last-child {
+        border-right: none;
     }
 
     .support-card img {
@@ -127,7 +136,7 @@
     }
 
     .support-card h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
         color: #002b5c;
         margin: 0;
         font-weight: 700;
@@ -150,7 +159,7 @@
 
     /* Compliance Section */
     .compliance-section {
-        padding: 80px 20px;
+        padding: 80px 97px;
         margin-top: -42px; /* Adjusted to overlap nicely */
         background-color: #f8f9fa;
         text-align: center;
@@ -174,9 +183,9 @@
 
     .compliance-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 30px;
-        max-width: 1200px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 100%;
         margin: 0 auto;
     }
 
@@ -253,7 +262,7 @@
 
     /* FAQs Section */
     .faq-section {
-        padding: 80px 20px;
+        padding: 80px 97px;
         background-color: #fff;
         text-align: center;
     }
@@ -343,7 +352,7 @@
 
     /* CTA Section */
     .cta-section {
-        padding: 60px 20px;
+        padding: 60px 97px;
         background-color: #fff;
         display: flex;
         justify-content: center;
@@ -355,7 +364,7 @@
         border-radius: 50px;
         padding: 60px 80px;
         text-align: center;
-        max-width: 1100px;
+        max-width: 100%;
         width: 100%;
         position: relative;
         overflow: hidden;
@@ -428,6 +437,7 @@
     @media (max-width: 1024px) {
         .hero-section h1 { font-size: 36px; }
         .hero-content { padding-left: 50px; }
+        .compliance-section, .faq-section, .cta-section { padding-left: 50px; padding-right: 50px; }
     }
 
     @media (max-width: 768px) {
@@ -439,10 +449,12 @@
         .compliance-grid { grid-template-columns: 1fr; }
         .cta-container { padding: 40px 30px; border-radius: 30px; }
         .cta-container h2 { font-size: 1.8rem; }
+        .compliance-section, .faq-section, .cta-section { padding-left: 30px; padding-right: 30px; }
     }
     
     @media (max-width: 600px) {
         .support-section { width: 95%; }
+        .compliance-section, .faq-section, .cta-section { padding-left: 20px; padding-right: 20px; }
     }
 </style>
 
