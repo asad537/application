@@ -249,6 +249,26 @@ class HomeController extends Controller
         return view('services', $data);
     }
 
+    public function specialties()
+    {
+        $data["meta_title"] = "Medical Billing Services for All Specialties | AMD SOL";
+        $data["meta_keywords"] = "Medical Billing Specialties, OB/GYN, Neurology, Orthopedics, Pediatrics";
+        $data["meta_descr"] = "We offer accurate, compliant, and revenue-driven billing solutions for healthcare providers across all medical specialties.";
+        $data["site"] = $this->site_settings;
+
+        return view('specialties', $data);
+    }
+
+    public function cardiology()
+    {
+        $data["meta_title"] = "Expert Cardiology Billing Services | AMD SOL";
+        $data["meta_keywords"] = "Cardiology Billing, Medical Billing for Cardiologists, Cardiology RCM";
+        $data["meta_descr"] = "Streamline your cardiology practice with our expert billing services. We handle complex cardiac procedure coding, insurance verification, and denial management.";
+        $data["site"] = $this->site_settings;
+
+        return view('cardiology', $data);
+    }
+
     public function about()
     {
         $data["meta_title"] = "About Us | AMD SOL";

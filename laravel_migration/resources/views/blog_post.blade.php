@@ -159,12 +159,12 @@
     }
 </style>
 
-<div class="blog-hero">
+<!-- <div class="blog-hero">
     <div class="hero-container">
         <h1>{{ $data->title }}</h1>
         <p>By {{ $data->author }} | {{ \Carbon\Carbon::parse($data->date)->format('M d, Y') }}</p>
     </div>
-</div>
+</div> -->
 
 <div class="blog-content-section">
     <div class="container">
