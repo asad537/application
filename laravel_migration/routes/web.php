@@ -29,6 +29,7 @@ Route::get('denial-management-services', [HomeController::class, 'denial_managem
 Route::get('large-practices', [HomeController::class, 'large_practices']);
 Route::get('small-practices', [HomeController::class, 'small_practices']);
 Route::get('hospital-billing-services', [HomeController::class, 'hospital_billing']);
+Route::get('pediatric-billing-services', [HomeController::class, 'pediatric']);
 Route::get('request-demo', [HomeController::class, 'demo']);
 Route::post('request-demo', [HomeController::class, 'demo']);
 

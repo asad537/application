@@ -126,9 +126,9 @@
                         <a href="{{ url('specialties') }}" class="nav-link">Specialties <i class="fa fa-caret-down"></i></a>
                         <ul class="dropdown-custom">
                             <li><a href="{{ url('cardiology-billing-services') }}">Cardiology</a></li>
+                            <li><a href="{{ url('pediatric-billing-services') }}">Pediatric</a></li>
                             <li><a href="#">Radiology</a></li>
                             <li><a href="#">Neurology</a></li>
-                            <li><a href="#">Pediatrics</a></li>
                         </ul>
                     </li>
                       <li class="dropdown-li">
@@ -194,7 +194,7 @@
                     <li><a href="{{ url('cardiology-billing-services') }}">Cardiology</a></li>
                     <li><a href="#">General Practice</a></li>
                     <li><a href="#">Neurology</a></li>
-                    <li><a href="#">Pediatrics</a></li>
+                    <li><a href="{{ url('pediatric-billing-services') }}">Pediatrics</a></li>
                 </ul>
             </li>
 

@@ -319,6 +319,16 @@ class HomeController extends Controller
         return view('hospital_billing', $data);
     }
 
+    public function pediatric()
+    {
+        $data["meta_title"] = "Pediatric Billing Services | AMD SOL";
+        $data["meta_keywords"] = "Pediatric Medical Billing, Childcare Billing Services, Pediatric RCM";
+        $data["meta_descr"] = "Optimized billing solutions for pediatric practices. We handle claims, reimbursements, and compliance so you can focus on child care.";
+        $data["site"] = $this->site_settings;
+
+        return view('pediatric', $data);
+    }
+
     public function about()
     {
         $data["meta_title"] = "About Us | AMD SOL";
