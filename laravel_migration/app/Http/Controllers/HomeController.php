@@ -145,6 +145,16 @@ class HomeController extends Controller
         return response()->view('sitemap', compact('blogs', 'services', 'static'))->header('Content-Type', 'text/xml');
     }
 
+    public function about()
+    {
+        $data["meta_title"] = "About Us | AMD SOL";
+        $data["meta_keywords"] = "About AMD SOL, Medical Billing, Healthcare Solutions";
+        $data["meta_descr"] = "Learn more about AMD SOL, a leading medical billing company providing top-notch healthcare solutions.";
+        $data["site"] = $this->site_settings;
+
+        return view('about_us', $data);
+    }
+
     public function contact(Request $request)
     {
         if ($request->isMethod('post')) {

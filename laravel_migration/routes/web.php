@@ -15,6 +15,7 @@ Route::get('sitemap.xml', [HomeController::class, 'sitemap']);
 Route::get('blog', [HomeController::class, 'blog']);
 Route::get('blog/{seokey}', [HomeController::class, 'blog_post']);
 
+Route::get('about-us', [HomeController::class, 'about']);
 Route::get('contact-us.php', [HomeController::class, 'contact']);
 Route::post('contact-us.php', [HomeController::class, 'contact']);
 
