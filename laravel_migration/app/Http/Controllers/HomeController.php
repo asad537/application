@@ -10,6 +10,7 @@ use App\Models\Blog;
 use App\Models\HomeSetting;
 use App\Models\StaticPage;
 use App\Models\ServicePage;
+use App\Models\CaseStudy;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
 
@@ -71,6 +72,44 @@ class HomeController extends Controller
         $data['meta_descr'] = $blog->meta_description;
 
         return view('blog_post', $data);
+    }
+
+    public function case_studies(Request $request)
+    {
+        $query = CaseStudy::where('display', 1);
+
+        if ($request->has('q') && $request->q != '') {
+            $q = $request->q;
+            $query->where(function($w) use ($q) {
+                $w->where('title', 'LIKE', "%$q%")
+                  ->orWhere('text', 'LIKE', "%$q%");
+            });
+        }
+
+        $case_studies = $query->orderBy('date', 'DESC')->paginate(8);
+        
+        $data["case_studies"] = $case_studies;
+        $data["meta_title"] = "Case Studies | AMD SOL";
+        $data["meta_keywords"] = "Case Studies, Medical Billing, Healthcare Solutions";
+        $data["meta_descr"] = "Explore our success stories and detailed case studies on how we help healthcare providers.";
+        $data["site"] = $this->site_settings;
+
+        return view('case_studies', $data);
+    }
+
+    public function case_study_detail($seokey)
+    {
+        $case_study = CaseStudy::where('seokey', $seokey)->firstOrFail();
+        
+        $data['data'] = $case_study;
+        $data['recent_case_studies'] = CaseStudy::where('display', 1)->where('id', '!=', $case_study->id)->limit(5)->get();
+        $data['site'] = $this->site_settings;
+
+        $data['meta_title'] = $case_study->meta_title ?? $case_study->title;
+        $data['meta_keywords'] = $case_study->meta_keywords;
+        $data['meta_descr'] = $case_study->meta_description;
+
+        return view('case_study_detail', $data);
     }
 
     public function check_page($seokey)

@@ -39,7 +39,13 @@
                         <span class="feather-icon"><i data-feather="book-open"></i></span>
                         <span class="nav-link-text">Blogs</span>
                     </a>
-                </li>   
+                </li>
+                <li class="nav-item {{ Request::is('admin/case_studies*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ url('admin/case_studies') }}">
+                        <span class="feather-icon"><i data-feather="briefcase"></i></span>
+                        <span class="nav-link-text">Case Studies</span>
+                    </a>
+                </li>
                 <li class="nav-item {{ Request::is('admin/testimonials*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ url('admin/testimonials') }}">
                         <span class="feather-icon"><i data-feather="message-circle"></i></span>

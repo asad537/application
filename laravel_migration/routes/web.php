@@ -20,6 +20,9 @@ Route::get('about-us', [HomeController::class, 'about']);
 Route::get('contact-us.php', [HomeController::class, 'contact']);
 Route::post('contact-us.php', [HomeController::class, 'contact']);
 
+Route::get('case-studies', [HomeController::class, 'case_studies']);
+Route::get('case-study/{seokey}', [HomeController::class, 'case_study_detail']);
+
 
 // Auth routes
 Route::get('signin', [App\Http\Controllers\Admin\AuthController::class, 'showLoginForm'])->name('login');
@@ -38,6 +41,7 @@ Route::prefix('admin')->middleware(['auth'])->group(function () {
     Route::resource('service-pages', App\Http\Controllers\Admin\ServiceController::class);
     Route::resource('static-pages', App\Http\Controllers\Admin\StaticPageController::class);
     Route::resource('testimonials', App\Http\Controllers\Admin\TestimonialController::class);
+    Route::resource('case_studies', App\Http\Controllers\Admin\CaseStudyController::class);
     
     Route::get('profile', [App\Http\Controllers\Admin\ProfileController::class, 'index']);
     Route::post('profile', [App\Http\Controllers\Admin\ProfileController::class, 'update']);
