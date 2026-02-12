@@ -329,6 +329,26 @@ class HomeController extends Controller
         return view('pediatric', $data);
     }
 
+    public function neurology()
+    {
+        $data["meta_title"] = "Specialized Neurology Medical Billing Services | AMD SOL";
+        $data["meta_keywords"] = "Neurology Billing Services, Neurology Coding, Neurology RCM, Medical Billing for Neurologists";
+        $data["meta_descr"] = "Maximize your neurology practice revenue with our specialized billing and coding services. We handle complex neurology claims, reduce denials, and ensure compliance.";
+        $data["site"] = $this->site_settings;
+
+        return view('neurology', $data);
+    }
+
+    public function radiology()
+    {
+        $data["meta_title"] = "Radiology Billing Services & RCM Solutions | AMD SOL";
+        $data["meta_keywords"] = "Radiology Billing Services, Radiology Coding, Medical Billing for Radiologists, Imaging Center RCM";
+        $data["meta_descr"] = "Expert radiology billing services to streamline your imaging center's revenue cycle. We handle complex radiology coding, claim submissions, and denial management.";
+        $data["site"] = $this->site_settings;
+
+        return view('radiology', $data);
+    }
+
     public function about()
     {
         $data["meta_title"] = "About Us | AMD SOL";
