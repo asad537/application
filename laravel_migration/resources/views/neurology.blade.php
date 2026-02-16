@@ -143,15 +143,17 @@
         align-items: center;
         justify-content: center;
         padding: 30px;
+        
     }
 
     .healthcare-doctor-image {
         width: 100%;
         max-width: 500px;
-        height: auto;
+        height: 350px;
         object-fit: cover;
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        
     }
 
     .healthcare-text-section {
@@ -159,7 +161,7 @@
     }
 
     .healthcare-main-heading {
-        font-size: 34px;
+        font-size: 25px;
         font-weight: 700;
         color: #002147;
         line-height: 1.2;
@@ -169,7 +171,7 @@
     }
 
     .healthcare-description-text {
-        font-size: 16px;
+        font-size: 1.5rem;
         font-weight: 400;
         line-height: 1.8;
         text-align: left;
@@ -266,46 +268,60 @@
 
     .simplify-billing-wrapper {
         width: 100%;
-        padding: 80px 97px;
+        padding: 35px 97px;
         background-color: #fff;
     }
 
     .simplify-billing-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 60px;
+        gap: 30px;
         max-width: 1200px;
         margin: 0 auto;
         align-items: center;
     }
 
+    .simplify-text-section {
+        padding-right: 15px;
+    }
+
+    .simplify-image-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .simplify-main-heading {
-        font-size: 32px;
+        font-size: 26px;
         font-weight: 700;
         color: #002147;
-        margin-bottom: 25px;
+        margin-bottom: 12px;
         border: none;
         text-align: left;
+        line-height: 1.2;
     }
 
     .simplify-description-text {
-        font-size: 16px;
+        font-size: 14px;
         color: #666;
-        line-height: 1.8;
-        margin-bottom: 30px;
+        line-height: 1.5;
+        margin-bottom: 15px;
+        text-align: justify;
     }
 
     .simplify-features-list {
         list-style: none;
         padding: 0;
+        margin: 0;
     }
 
     .simplify-features-list li {
-        font-size: 16px;
+        font-size: 14px;
         color: #333;
-        margin-bottom: 15px;
-        padding-left: 30px;
+        margin-bottom: 8px;
+        padding-left: 22px;
         position: relative;
+        line-height: 1.4;
     }
 
     .simplify-features-list li::before {
@@ -314,22 +330,32 @@
         left: 0;
         color: #002147;
         font-weight: bold;
-        font-size: 24px;
+        font-size: 18px;
         line-height: 1;
     }
 
     .simplify-billing-image {
         width: 100%;
-        max-width: 500px;
+        max-width: 450px;
         height: auto;
+        max-height: 320px;
         object-fit: cover;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
 
     @media (max-width: 968px) {
         .simplify-billing-grid {
             grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        .simplify-text-section {
+            padding-right: 0;
+        }
+
+        .simplify-billing-image {
+            max-width: 100%;
         }
     }
 
@@ -521,7 +547,7 @@
         }
 
         .simplify-billing-wrapper {
-            padding: 80px 50px;
+            padding: 35px 50px;
         }
 
         .impact-numbers-wrapper {
@@ -551,7 +577,7 @@
         }
 
         .simplify-billing-wrapper {
-            padding: 80px 30px;
+            padding: 30px 30px;
         }
 
         .impact-numbers-wrapper {
@@ -586,7 +612,7 @@
         }
 
         .simplify-billing-wrapper {
-            padding: 80px 20px;
+            padding: 30px 20px;
         }
 
         .impact-numbers-wrapper {

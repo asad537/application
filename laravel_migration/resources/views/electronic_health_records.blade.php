@@ -274,7 +274,7 @@
         border-radius: 18px;
         padding: 40px;
         display: flex;
-        align-items: flex-start;
+        align-items: center;
         gap: 25px;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }

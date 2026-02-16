@@ -221,9 +221,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 40px 97px;
+        padding: 30px 97px;
         background-color: #ffffff;
-        margin-bottom: 40px;
+        margin-bottom: 0;
     }
 
     .healthcare-services-container {
@@ -258,21 +258,29 @@
     }
 
     .healthcare-text-section {
-        padding: 0px 40px;
+        padding: 0px 0px;
     }
 
     .healthcare-main-heading {
-        font-size: 32px;
+        font-size: 2rem;
         font-weight: 700;
         color: #002147;
         line-height: 1.2;
         margin-bottom: 20px;
         border: none;
         text-align: left;
+        white-space: nowrap;
+    }
+
+    .healthcare-content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: flex-start;
     }
 
     .healthcare-description-text {
-        font-size: 15px;
+        font-size: 16px;
         font-weight: 400;
         line-height: 1.6;
         text-align: left;
@@ -304,6 +312,7 @@
 
         .healthcare-main-heading {
             font-size: 28px;
+            white-space: normal;
         }
 
         .healthcare-description-text {
@@ -364,7 +373,7 @@
          .billing-services-container {
            width: 100%;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 20px 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -372,7 +381,7 @@
 
         .billing-header-section {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
         }
 
         .billing-main-title {
@@ -391,8 +400,8 @@
         .services-grid-wrapper {
             display: grid;
             grid-template-columns: repeat(4, 250px);
-            gap: 30px;
-            padding: 20px 0;
+            gap: 20px;
+            padding: 10px 0;
             justify-content: center;
             margin: 0 auto;
             max-width: fit-content;
@@ -575,10 +584,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 60px 97px;
+            padding: 20px 97px;
             background-color: #f8f9fa;
-            margin-top: 60px;
-            margin-bottom: 60px;
+            margin-top: 0;
+            margin-bottom: 20px;
         }
 
         .outsource-content-container {
@@ -586,7 +595,7 @@
             width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            gap: 40px;
             align-items: center;
         }
 
@@ -629,7 +638,7 @@
 
         .outsource-heading {
             width: 100%;
-            font-size: 29px;
+            font-size: 25px;
             font-weight: 700;
             color: #1a1a2e;
             line-height: 1.3;
@@ -637,9 +646,9 @@
         }
 
         .outsource-description {
-            font-size: 1.05rem;
+            font-size: 1.2rem;
             font-weight: 400;
-            line-height: 1.8;
+            line-height: 1.3;
             color: #4a4a4a;
             text-align: justify;
         }
@@ -647,7 +656,7 @@
         @media (max-width: 968px) {
             .outsource-content-container {
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 30px;
                 width: 95%;
             }
 
@@ -667,7 +676,7 @@
 
         @media (max-width: 640px) {
             .outsource-section-wrapper {
-                padding: 40px 15px;
+                padding: 30px 15px;
             }
 
             .outsource-content-container {
@@ -692,7 +701,7 @@
         /* Comparison Section */
         .comparison-section-wrapper {
             width: 100%;
-            padding: 60px 20px;
+            padding: 30px 20px;
             background-color: #ffffff;
         }
 
@@ -707,7 +716,7 @@
             font-weight: 700;
             color: #002147;
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
             line-height: 1.3;
             display: inline-block;
             padding-bottom: 12px;
@@ -716,7 +725,7 @@
 
         .comparison-heading-wrapper {
             text-align: center;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
         }
 
         .comparison-grid {
@@ -832,7 +841,7 @@
         @media (max-width: 968px) {
             .comparison-main-heading {
                 font-size: 2rem;
-                margin-bottom: 40px;
+                margin-bottom: 30px;
             }
 
             .comparison-grid {
@@ -890,7 +899,7 @@
 
         @media (max-width: 640px) {
             .comparison-section-wrapper {
-                padding: 40px 15px;
+                padding: 30px 15px;
             }
             
             .comparison-container {
@@ -899,7 +908,7 @@
 
             .comparison-main-heading {
                 font-size: 1.6rem;
-                margin-bottom: 30px;
+                margin-bottom: 25px;
             }
 
             .comparison-mobile-heading {
@@ -911,11 +920,11 @@
             }
 
             .comparison-heading-wrapper {
-                margin-bottom: 30px;
+                margin-bottom: 25px;
             }
 
             .comparison-mobile-section {
-                margin-bottom: 30px;
+                margin-bottom: 25px;
             }
         }
 
@@ -1032,7 +1041,7 @@
         }
         /* Billing Solutions Section */
         .billing-solutions {
-            padding: 35px 20px 30px;
+            padding: 20px 20px 20px;
             text-align: center;
             background-color: #ffffff;
             width: 100%;
@@ -1049,7 +1058,7 @@
             font-size: 14px;
             font-weight: 400;
             color: #333;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
 
         @media (max-width: 768px) {
@@ -1078,7 +1087,7 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 18px 30px;
             max-width: 1150px;
-            margin: 0 auto 25px;
+            margin: 0 auto 15px;
         }
 
         @media (max-width: 1024px) {
@@ -1210,7 +1219,7 @@
  .cta-container {
             background: linear-gradient(135deg, #001a33 0%, #002d5a 100%);
             border-radius: 40px;
-            padding: 60px 40px;
+            padding: 50px 40px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -1218,11 +1227,11 @@
             overflow: hidden;
             /* Enable overflow hidden to contain wave */
             min-height: 280px;
-            margin: 40px;
+            margin: 30px 40px;
         }
         
         .cta-pricing-section {
-            padding-bottom: 20px;
+            padding-bottom: 0;
         }
 
         .cta-container::before {

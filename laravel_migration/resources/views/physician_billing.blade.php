@@ -162,6 +162,7 @@
 
     .image-container-physician img {
         width: 100%;
+        height: 400px;
         max-width: 500px;
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -579,13 +580,11 @@
                         The physician billing landscape is complex, and small errors can lead to 
                         lost revenue or penalties. Our services remove this administrative 
                         burden, letting you focus on patient care. Our skilled team uses advanced technology to verify charges, ensure 
-                        accurate coding, prevent rejections, and follow up on unpaid claims. 
-                    </p>
-                    <p>
-                        Staying up to date with compliance, we help you receive full 
+                        accurate coding, prevent rejections, and follow up on unpaid claims.  Staying up to date with compliance, we help you receive full 
                         reimbursement without delays. With our support, you can increase revenue, reduce denials, and spend 
                         more time practicing medicine instead of managing paperwork.
                     </p>
+                    
                 </div>
                 <div class="image-container-physician">
                     <img src="{{ asset('assets/images/physician/physical-biling-img/yourtrusted.jpg') }}" alt="Medical Professional Team">

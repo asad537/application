@@ -114,7 +114,7 @@
     }
 
     .practice-mgmt-image {
-        width: 90%;
+        width: 100%;
         height: auto;
         border-radius: 20px;
         box-shadow: 0 10px 40px rgb(248, 248, 248);
@@ -314,11 +314,13 @@
 
     .practice-benefits-image-wrapper {
         position: relative;
+        
+        
     }
 
     .practice-benefits-image {
         width: 100%;
-        height: auto;
+        height: 400px;
         border-radius: 20px;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         object-fit: cover;
@@ -507,6 +509,22 @@
         .practice-mgmt-feature-item {
             font-size: 15px;
         }
+
+        .practice-benefits-container {
+            padding: 30px 20px;
+        }
+
+        .practice-benefits-image {
+            height: 300px;
+        }
+
+        .practice-benefits-main-title {
+            font-size: 28px;
+        }
+
+        .practice-benefits-subtitle {
+            font-size: 15px;
+        }
     }
     
     @media (max-width: 480px) {
@@ -514,6 +532,24 @@
         .key-features-section,
         .practice-benefits-section {
             padding: 0 20px;
+        }
+
+        .practice-benefits-image {
+            height: 250px;
+            border-radius: 15px;
+        }
+
+        .practice-benefits-main-title {
+            font-size: 24px;
+        }
+
+        .practice-benefits-subtitle {
+            font-size: 14px;
+        }
+
+        .practice-benefit-item {
+            font-size: 14px;
+            margin-bottom: 15px;
         }
     }
 </style>
