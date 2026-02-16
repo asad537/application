@@ -38,10 +38,29 @@
 
     @media (max-width: 768px) {
         .hero-section-pediatric {
-            min-height: 350px;
-            padding: 40px 20px;
+            min-height: auto;
+            padding: 0 0 30px 0;
             background-position: right center;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
         }
+
+        .hero-section-pediatric::before {
+            display: none;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    }
+
+    .mobile-hero-img {
+        display: none;
     }
 
     .hero-section-pediatric::before {
@@ -100,7 +119,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 40px 20px;
+        padding: 40px 20px 20px;
     }
 
     .healthcare-services-container {
@@ -167,13 +186,14 @@
     }
 
     .pediatric-benefits-section {
-        padding: 80px 20px;
+        padding: 60px 97px;
         background-color: #ffffff;
+        margin-bottom: 40px;
     }
 
     .pediatric-header-wrapper {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 50px;
     }
 
     .pediatric-main-heading-sec {
@@ -185,14 +205,14 @@
     }
 
     .pediatric-subtitle-text {
-        font-size: 1.125rem;
-        color: #5e6e7e;
+        font-size: 1.5rem;
+        color: #000000;
     }
 
     .pediatric-benefits-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 24px;
+        gap: 30px;
         max-width: 1200px;
         margin: 0 auto;
     }
@@ -224,15 +244,15 @@
     }
 
     .pediatric-benefit-title {
-        font-size: 1.25rem;
+        font-size: 2rem;
         font-weight: 600;
         color: #0a2540;
         margin-bottom: 12px;
     }
 
     .pediatric-benefit-description {
-        font-size: 0.9375rem;
-        color: #5e6e7e;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.6;
     }
 
@@ -245,22 +265,21 @@
     @media (max-width: 768px) {
         .pediatric-benefits-grid {
             grid-template-columns: 1fr;
-            justify-items: center;
         }
         .pediatric-benefit-card {
             width: 100%;
-            max-width: 350px;
+            max-width: 100%;
         }
     }
 
     .process-workflow-section {
         background: #002147;
-        padding: 80px 20px;
+        padding: 40px 20px;
     }
 
     .process-workflow-header {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
 
     .process-workflow-main-title {
@@ -330,15 +349,15 @@
     }
 
     .process-workflow-step-title {
-        font-size: 1.25rem;
+        font-size: 2rem;
         font-weight: 600;
         color: #002d5b;
         margin-bottom: 12px;
     }
 
     .process-workflow-step-description {
-        font-size: 0.9375rem;
-        color: #5e6e7e;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.6;
     }
 
@@ -356,7 +375,7 @@
     }
 
     .billing-solutions {
-        padding: 60px 20px;
+        padding: 40px 20px;
         text-align: center;
     }
 
@@ -423,7 +442,7 @@
     }
 
     .faq-section {
-        padding: 80px 20px;
+        padding: 40px 20px;
         background-color: #fbfbfb;
         text-align: center;
     }
@@ -437,7 +456,7 @@
 
     .faq-container {
         max-width: 900px;
-        margin: 40px auto 0;
+        margin: 30px auto 0;
         text-align: left;
     }
 
@@ -445,7 +464,7 @@
         background: #fff;
         border: 1px solid #e0e0e0;
         border-radius: 8px;
-        margin-bottom: 15px;
+        margin-bottom: 12px;
         overflow: hidden;
     }
 
@@ -454,12 +473,23 @@
     }
 
     .faq-question {
+        font-size: 1.5rem;
         padding: 20px 30px;
         cursor: pointer;
         display: flex;
         justify-content: space-between;
         align-items: center;
         font-weight: 500;
+        position: relative;
+    }
+    
+    .faq-question i {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .faq-item input[type="checkbox"]:checked + .faq-question i::before {
+        content: "\f068"; /* Font Awesome minus icon */
     }
 
     .faq-answer {
@@ -469,9 +499,15 @@
         padding: 0 30px;
         background: #fafafa;
     }
+    
+    .faq-answer p {
+        font-size: 1.5rem;
+        line-height: 1.6;
+        color: #000000;
+    }
 
     .faq-item input[type="checkbox"]:checked ~ .faq-answer {
-        max-height: 200px;
+        max-height: 300px;
         padding: 20px 30px;
     }
 
@@ -485,7 +521,7 @@
         position: relative;
         overflow: hidden;
         min-height: 280px;
-        margin: 40px auto;
+        margin: 20px auto 20px;
         max-width: 1200px;
     }
 
@@ -545,6 +581,7 @@
     <div class="pediatric-page-container">
         <!-- Hero Section -->
         <section class="hero-section-pediatric">
+            <img src="{{ asset('assets/images/pediatric/pediatricimg/pediatric.jpg') }}" alt="Hero Image" class="mobile-hero-img">
             <div class="hero-content-pediatric">
                 <h1>Streamline Pediatric Billing, Focus on Your Patients</h1>
                 <p>Our team handles claims and reimbursements so you can care.</p>
@@ -675,32 +712,49 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <input type="checkbox" id="faq1">
-                    <label for="faq1" class="faq-question"><span>What experience do you have with pediatric billing coding?</span><i class="fa-solid fa-plus"></i></label>
+                    <label for="faq1" class="faq-question"><span>What experience do you have with pediatric billing coding?</span><i class="fa fa-plus"></i></label>
                     <div class="faq-answer"><p>I have experience with pediatric billing and coding, including ICD-10 and CPT codes for well-child visits, immunizations, and age-specific services, ensuring accurate and compliant claims.</p></div>
                 </div>
                 <div class="faq-item">
                     <input type="checkbox" id="faq2">
-                    <label for="faq2" class="faq-question"><span>Can you bill for additional services provided during routine pediatric visits?</span><i class="fa-solid fa-plus"></i></label>
+                    <label for="faq2" class="faq-question"><span>Can you bill for additional services provided during routine pediatric visits?</span><i class="fa fa-plus"></i></label>
                     <div class="faq-answer"><p>Yes, additional medically necessary services provided during routine pediatric visits can be billed separately using appropriate CPT codes and modifiers, following payer guidelines.</p></div>
                 </div>
                 <div class="faq-item">
                     <input type="checkbox" id="faq3">
-                    <label for="faq3" class="faq-question"><span>How do we handle billing disputes from patients?</span><i class="fa-solid fa-plus"></i></label>
+                    <label for="faq3" class="faq-question"><span>How do we handle billing disputes from patients?</span><i class="fa fa-plus"></i></label>
                     <div class="faq-answer"><p>Billing disputes are handled by reviewing the claim details, verifying documentation and insurance information, explaining charges clearly to the patient, and correcting or resubmitting claims if needed.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section-pediatric">
-            <div class="cta-container-pediatric">
-                <div class="cta-content-pediatric">
-                    <h2>Ready to Simplify Pediatric Billing?</h2>
-                    <p>Helping pediatric practices get paid faster.</p>
-                    <a href="{{ url('request-demo') }}" class="cta-request-btn-pediatric">Schedule Demo</a>
-                </div>
-            </div>
-        </section>
+       @include('partials.cta-section', [
+    'title' => 'Find Your Specialty Solution',
+    'description' => 'Customized billing services for your medical specialty.',
+    'buttonText' => 'Explore Solutions',
+    'buttonLink' => url('contact-us.php')
+])
+
     </div>
 </div>
+
+<script>
+    // Auto-close other FAQs when one opens
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqCheckboxes = document.querySelectorAll('.faq-item input[type="checkbox"]');
+        
+        faqCheckboxes.forEach(function(checkbox) {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    faqCheckboxes.forEach(function(otherCheckbox) {
+                        if (otherCheckbox !== checkbox) {
+                            otherCheckbox.checked = false;
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
+
 @endsection

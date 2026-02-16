@@ -126,9 +126,11 @@
 }
 
 .book-now-btn:hover {
-  background: #001a38;
+  background: #ffffff;
+  color: #000000;
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0, 33, 71, 0.4);
+  border: 1px solid #000000;
 }
 
 .about-section {
@@ -163,7 +165,7 @@
 }
 
 .about-content p {
-  color: #666;
+  color: #000000;
   font-size: 16px;
   line-height: 1.7;
   margin-bottom: 30px;
@@ -172,7 +174,7 @@
 }
 
 .learn-more-btn {
-  background: #362D7D;
+  background: #002147;
   color: white;
   padding: 15px 30px;
   border: none;
@@ -184,8 +186,11 @@
 }
 
 .learn-more-btn:hover {
-  background: #002147;
+  background: #ffffff;
+  color: #000000;
   transform: translateY(-2px);
+  border: 1px solid #000000;
+  box-shadow: 0 8px 20px rgba(0, 33, 71, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -835,7 +840,7 @@
     <h3 class="section-subtitle">WHAT DO WE OFFER
 
 </h3>
-    <h2 class="section-title">BellMedEx's Top Rated Billing Consultancy Group Is Here for Medical Billing Help</h2>
+    <h2 class="section-title"> AMDSOL Top Rated Billing Consultancy Group Is Here for Medical Billing Help</h2>
     <p class="section-description">
      Our billing teams are more than just billers. We are every USA provider’s best-managed billing partner. Our medical billing advocates partner with physicians to improve their practice management and achieve sustainable growth. Here is how BellMedEx’s healthcare billing consultancy group is helping practices with patient billing:
     </p>

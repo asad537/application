@@ -50,16 +50,47 @@
 
     @media (max-width: 768px) {
         .hero-section {
-            min-height: 350px;
-            padding: 40px 20px;
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
+        }
+
+        .hero-section::before {
+            display: none;
+        }
+        
+        .hero-content {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-section h1 {
+            font-size: 28px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .hero-section p {
+            text-align: center;
+            max-width: 100%;
+            font-size: 16px;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
         }
     }
 
-    @media (max-width: 480px) {
-        .hero-section {
-            min-height: 300px;
-            padding: 30px 15px;
-        }
+    .mobile-hero-img {
+        display: none;
     }
 
     .hero-section::before {
@@ -156,9 +187,9 @@
      .content-section-wrapper {
         display: flex;
         align-items: center;
-        gap: 120px;
+        gap: 80px;
         max-width: 1200px;
-        margin: 32px auto;
+        margin: 20px auto;
         padding: 20px;
     }
 
@@ -183,7 +214,7 @@
     }
 
     .content-section-description {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         color: #000000;
         line-height: 1.8;
     }
@@ -210,12 +241,12 @@
      .ehr-billing-integration-section {
         width: 80%;
         /* max-width: 1200px; */
-        margin: 50px auto;
+        margin: 30px auto;
     }
 
     .ehr-billing-header-wrapper {
         text-align: center;
-        margin-bottom: 50px;
+        margin-bottom: 35px;
     }
 
     .ehr-billing-main-title {
@@ -227,8 +258,8 @@
     }
 
     .ehr-billing-subtitle-text {
-        font-size: 1.125rem;
-        color: #4b5563;
+        font-size: 1.5rem;
+        color: #000000;
         font-weight: 400;
     }
 
@@ -280,7 +311,7 @@
     }
 
     .ehr-billing-feature-description {
-        font-size: 1rem;
+        font-size: 1.5rem;
         color: #cbd5e1;
         line-height: 1.6;
     }
@@ -328,7 +359,7 @@
         }
     }
  .hc-services-section {
-        padding: 80px 20px;
+        padding: 40px 20px;
         background-color: #f5f7fa;
     }
 
@@ -347,7 +378,7 @@
 
     .hc-services-desc {
         max-width: 878px;
-        margin: 0 auto 50px;
+        margin: 0 auto 35px;
         font-size: 16px;
         color: #000000;
         line-height: 1.6;
@@ -417,7 +448,7 @@
     /* Responsive Design */
     @media (max-width: 900px) {
         .hc-services-section {
-            padding: 60px 20px;
+            padding: 35px 20px;
         }
 
         .hc-services-heading {
@@ -426,7 +457,7 @@
 
         .hc-services-desc {
             font-size: 15px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .hc-services-cards {
@@ -436,7 +467,7 @@
 
     @media (max-width: 640px) {
         .hc-services-section {
-            padding: 50px 15px;
+            padding: 30px 15px;
         }
 
         .hc-services-heading {
@@ -445,7 +476,7 @@
 
         .hc-services-desc {
             font-size: 14px;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
         }
 
         .hc-service-card {
@@ -545,7 +576,7 @@
     }
     
     .cta-request-btn {
-        background-color: white;
+         background-color: white;
         color: #002147;
         border: none;
         padding: 14px 45px;
@@ -555,14 +586,16 @@
         cursor: pointer;
         transition: all 0.3s ease;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        display: inline-block;
     }
 
     .cta-request-btn:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
         background-color: #f8f8f8;
+        color: #002147;
     }
-
     /* Responsive Design */
     @media (max-width: 768px) {
         .cta-pricing-section {
@@ -630,6 +663,7 @@
 <div class="ehr-wrapper">
     <div class="ehr-container">
         <section class="hero-section">
+            <img src="{{ asset("assets/images/ehr/ehr-soloution.png") }}" alt="EHR Solutions" class="mobile-hero-img">
             <div class="hero-content">
                 <h1>Electronic Health Record (EHR) Solutions</h1>
                 <p>Streamline documentation, workflows, and billing for your healthcare practice.</p>

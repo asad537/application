@@ -91,19 +91,47 @@
         }
 
         @media (max-width: 768px) {
+            /* Hero Mobile Updates */
             .hero-section {
-                min-height: 350px;
-                padding: 40px 0px;
-                background-position: right center;
-                background-size: cover;
-                margin-bottom: 60px;
+                min-height: auto;
+                padding: 0 0 30px 0;
+                background-image: none !important;
+                flex-direction: column;
+                background-color: #002147;
+                margin-bottom: 40px;
             }
-            
+
             .hero-section::before {
-                background: linear-gradient(to right, 
-                    rgba(10, 25, 45, 0.95) 0%, 
-                    rgba(10, 25, 45, 0.85) 60%,
-                    rgba(10, 25, 45, 0.3) 100%);
+                display: none;
+            }
+
+            .hero-content {
+                padding-left: 20px;
+                padding-right: 20px;
+                text-align: center;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .hero-section h1 {
+                font-size: 28px;
+                text-align: center;
+                max-width: 100%;
+                margin-bottom: 15px;
+            }
+
+            .hero-section p {
+                text-align: center;
+                max-width: 100%;
+                font-size: 16px;
+            }
+
+            .mobile-hero-img {
+                display: block !important;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                margin-bottom: 20px;
             }
         }
 
@@ -1008,7 +1036,7 @@
             left: 0;
             width: 100%;
             height: 4px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #002147 0%, #002147 100%);
             transform: scaleX(0);
             transition: transform 0.3s ease;
         }
@@ -1244,6 +1272,7 @@
         }
     </style>
         <section class="hero-section">
+            <img src="{{ asset('assets/images/outsource/hero.jpeg') }}" alt="Outsource Medical Billing" class="mobile-hero-img" style="display: none;">
             <div class="hero-content">
                 <h1>Medical Billing Outsourcing Made Simple</h1>
                 <p>Experience thorough compliance, robust technology, and faster reimbursements.</p>
@@ -1702,13 +1731,11 @@
             </div>
         </section>
 
-        <section class="cta-pricing-section">
-            <div class="cta-container">
-                <div class="cta-content">
-                    <h2>Outsource Your Medical Billing Today</h2>
-                    <p>Reduce errors and increase your practice revenue.</p>
-                    <button class="cta-request-btn">Schedule Demo</button>
-                </div>
-            </div>
-        </section>
+        <!-- CTA Section -->
+        @include('partials.cta-section', [
+            'title' => 'Ready to Outsource Your Medical Billing?',
+            'description' => 'Let our experts handle your revenue cycle management.',
+            'buttonText' => 'Get Free Consultation',
+            'buttonLink' => url('contact-us.php')
+        ])
 @endsection

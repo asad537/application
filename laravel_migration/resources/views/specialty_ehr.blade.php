@@ -36,7 +36,7 @@
         background-color: #1a3a5c;
         background-image: url('{{ asset("assets/images/specialty-ehr/ehr-hero.jpg") }}');
         background-size: cover;
-        background-position: center;
+        background-position: right center;
         background-repeat: no-repeat;
         position: relative;
         display: flex;
@@ -54,13 +54,12 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(to right, 
-            rgba(10, 25, 45, 1) 0%, 
-            rgba(10, 25, 45, 0.98) 20%,
-            rgba(10, 25, 45, 0.92) 35%,
-            rgba(10, 25, 45, 0.80) 50%,
-            rgba(10, 25, 45, 0.55) 65%,
-            rgba(10, 25, 45, 0.25) 80%,
-            transparent 90%);
+            rgba(10, 25, 45, 0.95) 0%, 
+            rgba(10, 25, 45, 0.85) 25%,
+            rgba(10, 25, 45, 0.6) 45%,
+            rgba(10, 25, 45, 0.3) 60%,
+            rgba(10, 25, 45, 0.1) 75%,
+            transparent 85%);
         z-index: 1;
     }
 
@@ -224,7 +223,7 @@
     }
     
     .quote-icon-top img, .quote-icon-bottom img {
-        width: 100%;
+        width: 60%;
         height: auto;
     }
 
@@ -378,9 +377,46 @@
     }
 
     @media (max-width: 768px) {
-        .hero-section { min-height: 350px; padding: 40px 20px; }
-        .hero-content { padding-left: 30px; padding-right: 20px; }
-        .hero-section h1 { font-size: 28px; }
+        /* Hero Mobile Updates */
+        .hero-section {
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
+        }
+
+        .hero-section::before {
+            display: none;
+        }
+
+        .hero-content {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-section h1 {
+            font-size: 28px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .hero-section p {
+            text-align: center;
+            max-width: 100%;
+            font-size: 16px;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
         .testimonials-grid { grid-template-columns: 1fr; gap: 20px; }
         .features-container { grid-template-columns: 1fr; gap: 30px; }
         .feature-item:not(:last-child) { border-right: none; border-bottom: 2px solid #d0d0d0; padding-right: 0; padding-bottom: 30px; }
@@ -396,9 +432,10 @@
     <div class="se-container">
         <!-- Hero Section -->
         <section class="hero-section">
+            <img src="{{ asset('assets/images/specialty-ehr/ehr-hero.jpg') }}" alt="Specialty EHR" class="mobile-hero-img" style="display: none;">
             <div class="hero-content">
-                <h1>Specialty-Specific EHR Solutions</h1>
-                <p>Tailored EHR workflows for every medical specialty.</p>
+                <h1>Electronic Health Record (EHR) Solutions</h1>
+                <p>Streamline documentation, workflows, and billing for your healthcare practice.</p>
             </div>
         </section>
 
@@ -462,13 +499,13 @@
                 <div class="testimonial-card">
                     <div class="quote-icon-top"><img src="{{ asset('assets/images/specialty-ehr/Simplification (1).png') }}" alt="quote"></div>
                     <p class="testimonial-text">
-                        As a practice manager, I was overwhelmed by the medical billing process. I tried other companies but they were all complicated and took too much of my time. Fortunately I found Anvyl by time. They have amazing solutions to fit my requirements.
+                        The specialty-specific EHR system transformed our workflow completely. The intuitive interface and customized templates saved us hours every day. Our staff adapted quickly, and patient satisfaction has noticeably improved.
                     </p>
                     <div class="quote-icon-bottom"><img src="{{ asset('assets/images/specialty-ehr/Simplification (2).png') }}" alt="quote"></div>
                     <div class="author-info">
-                        <div class="author-avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Steve Vaugh"></div>
+                        <div class="author-avatar"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Michael Anderson"></div>
                         <div class="author-details">
-                            <div class="author-name">Steve Vaugh</div>
+                            <div class="author-name">Michael Anderson</div>
                             <div class="author-title">Practice Manager<br>Wilson Creek Internal Medicine</div>
                         </div>
                     </div>
@@ -477,13 +514,13 @@
                 <div class="testimonial-card">
                     <div class="quote-icon-top"><img src="{{ asset('assets/images/specialty-ehr/Simplification (1).png') }}" alt="quote"></div>
                     <p class="testimonial-text">
-                        As a practice manager, I was overwhelmed by the medical billing process. I tried other companies but they were all complicated and took too much of my time. Fortunately I found Anvyl by time. They have amazing solutions to fit my requirements.
+                        Switching to this EHR was the best decision for our practice. The seamless integration with our billing system and real-time data access has streamlined operations. We've reduced errors and increased efficiency significantly.
                     </p>
                     <div class="quote-icon-bottom"><img src="{{ asset('assets/images/specialty-ehr/Simplification (2).png') }}" alt="quote"></div>
                     <div class="author-info">
-                        <div class="author-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Steve Vaugh"></div>
+                        <div class="author-avatar"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="David Martinez"></div>
                         <div class="author-details">
-                            <div class="author-name">Steve Vaugh</div>
+                            <div class="author-name">David Martinez</div>
                             <div class="author-title">Office Manager<br>Idaho Kidney & Hypertension Institute</div>
                         </div>
                     </div>
@@ -492,13 +529,13 @@
                 <div class="testimonial-card">
                      <div class="quote-icon-top"><img src="{{ asset('assets/images/specialty-ehr/Simplification (1).png') }}" alt="quote"></div>
                     <p class="testimonial-text">
-                        As a practice manager, I was overwhelmed by the medical billing process. I tried other companies but they were all complicated and took too much of my time. Fortunately I found Anvyl by time. They have amazing solutions to fit my requirements.
+                        Outstanding support and functionality! The specialty-focused features are exactly what we needed. Documentation is faster, compliance is easier, and our providers can focus more on patient care rather than paperwork.
                     </p>
                     <div class="quote-icon-bottom"><img src="{{ asset('assets/images/specialty-ehr/Simplification (2).png') }}" alt="quote"></div>
                     <div class="author-info">
-                        <div class="author-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Steve Vaugh"></div>
+                        <div class="author-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Robert Thompson"></div>
                         <div class="author-details">
-                            <div class="author-name">Steve Vaugh</div>
+                            <div class="author-name">Robert Thompson</div>
                             <div class="author-title">Practice Manager<br>Harding Memorial Healthcare</div>
                         </div>
                     </div>

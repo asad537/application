@@ -16,41 +16,23 @@
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 97px;
     }
 
     /* Contact Hero Section */
     .contact-hero-section {
         width: 100%;
         min-height: 448px;
-        background-color: #1a3a5c;
-        background: url('{{ asset('assets/images/contact/contact-img/contactus.png') }}');
+        background-color: #002147;
+        background-image: url('{{ asset('assets/images/contact/contact-img/contactus.png') }}');
         background-size: cover;
-        background-position: center;
+        background-position: right center;
         background-repeat: no-repeat;
         position: relative;
         display: flex;
         align-items: center;
         overflow: hidden;
         margin: 0;
-    }
-
-    .contact-hero-section:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to right,
-                rgba(10, 25, 45, 1) 0%,
-                rgba(10, 25, 45, 0.98) 20%,
-                rgba(10, 25, 45, 0.92) 35%,
-                rgba(10, 25, 45, 0.80) 50%,
-                rgba(10, 25, 45, 0.55) 65%,
-                rgba(10, 25, 45, 0.25) 80%,
-                transparent 90%);
-        z-index: 1;
     }
 
     .contact-hero-section::before {
@@ -60,7 +42,13 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: linear-gradient(to right, #002147 2%, rgba(0, 119, 131, 0) 60%);
+        background: linear-gradient(to right,
+                rgba(10, 25, 45, 0.95) 0%,
+                rgba(10, 25, 45, 0.85) 25%,
+                rgba(10, 25, 45, 0.6) 45%,
+                rgba(10, 25, 45, 0.3) 60%,
+                rgba(10, 25, 45, 0.1) 75%,
+                transparent 85%);
         z-index: 1;
     }
 
@@ -105,11 +93,52 @@
 
     @media (max-width: 768px) {
         .contact-hero-section {
-            min-height: 350px;
+            min-height: auto;
+            padding: 0 0 40px 0; /* Remove top padding, keep bottom */
+            background-image: none !important;
+            flex-direction: column;
         }
+        
+        /* Hide the gradient overlay on mobile since we are rearranging */
+        .contact-hero-section::before {
+            display: none;
+        }
+
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-hero-content {
+            text-align: center;
+            padding-top: 20px;
+            width: 100%;
+        }
+
         .contact-hero-section h1 {
             font-size: 28px;
+            text-align: center;
         }
+
+        .contact-hero-section p {
+            text-align: center;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            max-width: none;
+            height: auto;
+            border-radius: 0;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+    }
+
+    /* Helper class to hide image on desktop */
+    .mobile-hero-img {
+        display: none;
     }
 
     /* Contact Get in Touch Section */
@@ -117,7 +146,6 @@
         padding: 80px 0;
         background-color: #f8f9fa;
     }
-
     .contact-touch-container {
         display: flex;
         gap: 60px;
@@ -199,6 +227,10 @@
     }
 
     @media (max-width: 768px) {
+        .contact-container {
+            padding: 0 30px;
+        }
+        
         .contact-touch-container {
             flex-direction: column;
         }
@@ -207,6 +239,12 @@
         }
         .contact-touch-section {
             padding: 60px 0;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .contact-container {
+            padding: 0 20px;
         }
     }
 
@@ -391,6 +429,7 @@
 <div class="contact-main-wrapper">
     <!-- Contact Hero Section -->
     <section class="contact-hero-section">
+        <img src="{{ asset('assets/images/contact/contact-img/contactus.png') }}" alt="Contact Us" class="mobile-hero-img">
         <div class="contact-container">
             <div class="contact-hero-content">
                 <h1>Contact Us</h1>

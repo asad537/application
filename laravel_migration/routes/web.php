@@ -36,6 +36,11 @@ Route::get('physician-billing-services', [HomeController::class, 'physician_bill
 Route::get('request-demo', [HomeController::class, 'demo']);
 Route::post('request-demo', [HomeController::class, 'demo']);
 
+// Privacy Policy
+Route::get('privacy-policy', function () {
+    return view('privacy_policy');
+});
+
 
 // Auth routes
 Route::get('signin', [App\Http\Controllers\Admin\AuthController::class, 'showLoginForm'])->name('login');

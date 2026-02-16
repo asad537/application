@@ -79,8 +79,11 @@
 
     @media (max-width: 768px) {
         .hero-section {
-            min-height: 350px;
-            padding: 40px 20px;
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
         }
         .hero-content {
             padding-left: 30px;
@@ -88,12 +91,28 @@
         .hero-section h1 {
             font-size: 28px;
         }
+
+        .hero-section::before {
+            display: none;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    }
+
+    .mobile-hero-img {
+        display: none;
     }
 
     @media (max-width: 480px) {
         .hero-section {
             min-height: 300px;
-            padding: 30px 15px;
+            padding: 0 0 30px 0;
         }
         .hero-content {
             padding-left: 20px;
@@ -401,6 +420,7 @@ background: white;
 }
 </style>
 <section class="hero-section">
+    <img src="{{ asset('assets/images/ehr/ehr-soloution.png') }}" alt="Hero Image" class="mobile-hero-img">
     <div class="hero-content">
         <h1>Case Studies</h1>
         <p>Here’s how we turned billing challenges into success stories</p>

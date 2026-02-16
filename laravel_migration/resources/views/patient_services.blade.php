@@ -181,8 +181,8 @@
     }
 
     .patient-process-subtitle {
-        font-size: 1.1rem;
-        color: #4a5568;
+        font-size: 1.5rem;
+        color: #000000;
         max-width: 700px;
         margin: 0 auto;
     }
@@ -224,7 +224,7 @@
     }
 
     .patient-process-step-title {
-        font-size: 1rem;
+        font-size: 2rem;
         font-weight: 700;
         color: #1a202c;
         margin-bottom: 10px;
@@ -233,8 +233,8 @@
     }
 
     .patient-process-step-description {
-        font-size: 0.9rem;
-        color: #4a5568;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.6;
         text-align: center;
     }
@@ -297,7 +297,7 @@
     }
     
     .quote-icon-top img, .quote-icon-bottom img {
-        width: 100%;
+        width: 50%;
         height: auto;
     }
 
@@ -350,7 +350,7 @@
     .cta-pricing-section {
         width: 80%;
         margin: 36px auto;
-        padding-bottom: 80px;
+        padding-bottom: 0px;
     }
 
     .cta-container {
@@ -438,22 +438,174 @@
     }
 
     @media (max-width: 968px) {
+        .hero-section {
+            background-position: center center;
+        }
+        
         .healthcare-content-grid, .medical-content-grid { grid-template-columns: 1fr; }
         .healthcare-text-section, .medical-text-section { order: 1; padding: 40px 35px; }
         .healthcare-image-section, .medical-image-section { order: 2; min-height: 350px; }
+        
+        .healthcare-image-container, .medical-image-container {
+            padding: 20px;
+        }
+        
+        .healthcare-doctor-image, .medical-doctor-image {
+            width: 100%;
+            max-width: 100%;
+            min-height: 350px;
+            object-fit: cover;
+        }
     }
 
     @media (max-width: 768px) {
-        .hero-content { padding-left: 30px; padding-right: 20px; }
-        .hero-section h1 { font-size: 28px; }
+        /* Hero Mobile Updates */
+        .hero-section {
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
+        }
+
+        .hero-section::before {
+            display: none;
+        }
+
+        .hero-content {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-section h1 {
+            font-size: 28px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .hero-section p {
+            text-align: center;
+            max-width: 100%;
+            font-size: 16px;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
         .patient-process-steps-grid { gap: 20px; }
         .testimonials-grid { grid-template-columns: 1fr; }
-        .cta-container { padding: 40px 30px; border-radius: 30px; }
-        .cta-content h2 { font-size: 32px; }
+        
+        .cta-pricing-section {
+            width: 90%;
+            padding-bottom: 40px;
+        }
+        
+        .cta-container { 
+            padding: 40px 30px; 
+            border-radius: 30px;
+            margin: 20px;
+            min-height: 240px;
+        }
+        
+        .cta-content h2 { 
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .cta-content p {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-request-btn {
+            padding: 12px 35px;
+            font-size: 15px;
+        }
+        
+        .healthcare-image-section, .medical-image-section {
+            min-height: 300px;
+        }
+        
+        .healthcare-doctor-image, .medical-doctor-image {
+            min-height: 300px;
+        }
     }
 
     @media (max-width: 640px) {
+        .hero-section {
+            background-position: center center;
+        }
+        
         .patient-process-steps-grid { grid-template-columns: 1fr; }
+        
+        .cta-pricing-section {
+            width: 95%;
+        }
+        
+        .cta-container {
+            padding: 30px 20px;
+            margin: 20px 15px;
+            border-radius: 20px;
+            min-height: 220px;
+        }
+        
+        .cta-content h2 {
+            font-size: 24px;
+        }
+        
+        .cta-content p {
+            font-size: 14px;
+            line-height: 22px;
+        }
+        
+        .cta-request-btn {
+            padding: 12px 30px;
+            font-size: 14px;
+        }
+        
+        .healthcare-doctor-image, .medical-doctor-image {
+            min-height: 280px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .hero-section {
+            background-position: center center;
+        }
+        
+        .cta-pricing-section {
+            width: 100%;
+            padding-bottom: 20px;
+        }
+        
+        .cta-container {
+            padding: 25px 15px;
+            margin: 15px 10px;
+            min-height: 200px;
+        }
+        
+        .cta-content h2 {
+            font-size: 22px;
+        }
+        
+        .cta-content p {
+            font-size: 13px;
+            line-height: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .cta-request-btn {
+            padding: 10px 25px;
+            font-size: 13px;
+        }
     }
 </style>
 
@@ -461,6 +613,7 @@
     <div class="ps-container">
         <!-- Hero Section -->
         <section class="hero-section">
+            <img src="{{ asset('assets/images/patient-services/patient.jpg') }}" alt="Patient Services" class="mobile-hero-img" style="display: none;">
             <div class="hero-content">
                 <h1>Simplifying Your Medical Bills, One Statement at a Time</h1>
                 <p>Transparent, easy-to-understand billing solutions for every patient.</p>
@@ -610,7 +763,7 @@
                 <div class="testimonial-card">
                     <div class="quote-icon-top"><img src="{{ asset('assets/images/patient-services/Simplification (1).png') }}" alt="quote"></div>
                     <p class="testimonial-text">
-                        The billing process was simple and transparent. I could easily review my charges, track payments, and stay updated without any confusion, which made the entire experience stress-free.
+                        The billing process was simple and transparent. I could easily review my charges, track payments, and stay updated without any confusion, which made the entire experience stressfree.
                     </p>
                     <div class="quote-icon-bottom"><img src="{{ asset('assets/images/patient-services/Simplification (2).png') }}" alt="quote"></div>
                     <div class="author-info">
@@ -626,15 +779,12 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-pricing-section">
-            <div class="cta-container">
-                <div class="cta-content">
-                    <h2>Manage Your Billing with Confidence</h2>
-                    <p>View charges, make payments, and stay informed securely and easily.</p>
-                    <a href="{{ url('contact-us.php') }}" class="cta-request-btn">Get Started</a>
-                </div>
-            </div>
-        </section>
+        @include('partials.cta-section', [
+            'title' => 'Manage Your Billing with Confidence',
+            'description' => 'View charges, make payments, and stay informed securely and easily.',
+            'buttonText' => 'Get Started',
+            'buttonLink' => url('contact-us.php')
+        ])
     </div>
 </div>
 @endsection

@@ -33,7 +33,7 @@
         background-color: #1a3a5c;
         background-image: url('{{ asset("assets/images/practice-management/practice-management.jpeg") }}');
         background-size: cover;
-        background-position: center;
+        background-position: center center;
         background-repeat: no-repeat;
         position: relative;
         display: flex;
@@ -93,7 +93,7 @@
     .practice-mgmt-section {
         max-width: 1200px;
         margin: 50px auto;
-        padding: 0 20px;
+        padding: 0 97px;
     }
 
     .practice-mgmt-container {
@@ -114,7 +114,7 @@
     }
 
     .practice-mgmt-image {
-        width: 70%;
+        width: 90%;
         height: auto;
         border-radius: 20px;
         box-shadow: 0 10px 40px rgb(248, 248, 248);
@@ -162,7 +162,7 @@
     .key-features-section {
         max-width: 1200px;
         margin: 50px auto;
-        padding: 0 20px;
+        padding: 0 97px;
     }
 
     .key-features-header {
@@ -242,7 +242,7 @@
     .practice-benefits-section {
         max-width: 1200px;
         margin: 50px auto;
-        padding: 0 20px;
+        padding: 0 97px;
     }
 
     .practice-benefits-container {
@@ -414,6 +414,12 @@
     }
 
     @media (max-width: 968px) {
+        .practice-mgmt-section,
+        .key-features-section,
+        .practice-benefits-section {
+            padding: 0 50px;
+        }
+        
         .practice-mgmt-container {
             grid-template-columns: 1fr;
             gap: 40px;
@@ -431,9 +437,52 @@
     }
 
     @media (max-width: 768px) {
-        .hero-section { min-height: 350px; padding: 40px 20px; }
-        .hero-content { padding-left: 30px; padding-right: 20px; }
-        .hero-section h1 { font-size: 28px; }
+        .practice-mgmt-section,
+        .key-features-section,
+        .practice-benefits-section {
+            padding: 0 30px;
+        }
+        
+        /* Hero Mobile Updates */
+        .hero-section {
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
+        }
+
+        .hero-section::before {
+            display: none;
+        }
+
+        .hero-content {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-section h1 {
+            font-size: 28px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .hero-section p {
+            text-align: center;
+            max-width: 100%;
+            font-size: 16px;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
         .key-features-grid { grid-template-columns: 1fr; }
         .cta-pricing-section { width: 90%; }
         .cta-content h2 { font-size: 32px; }
@@ -459,12 +508,21 @@
             font-size: 15px;
         }
     }
+    
+    @media (max-width: 480px) {
+        .practice-mgmt-section,
+        .key-features-section,
+        .practice-benefits-section {
+            padding: 0 20px;
+        }
+    }
 </style>
 
 <div class="pm-wrapper">
     <div class="pm-container">
         <!-- Hero Section -->
         <section class="hero-section">
+            <img src="{{ asset('assets/images/practice-management/practice-management.jpeg') }}" alt="Practice Management" class="mobile-hero-img" style="display: none;">
             <div class="hero-content">
                 <h1>We’ll Manage Your Practice</h1>
                 <p>Appointments, staff, records, and billing handled seamlessly in one system.</p>
@@ -588,23 +646,23 @@
 
                     <ul class="practice-benefits-list">
                         <li class="practice-benefit-item">
-                            <span class="practice-benefit-icon"></span>
+                            <img src="{{ asset('assets/images/practice-management/check-circle 1.png') }}" alt="circle" style="margin-right: 15px; width: 24px; height: 24px; flex-shrink: 0;">
                             <span class="practice-benefit-text">Reduced Administrative Workload</span>
                         </li>
                         <li class="practice-benefit-item">
-                            <span class="practice-benefit-icon"></span>
+                            <img src="{{ asset('assets/images/practice-management/check-circle 1.png') }}" alt="circle" style="margin-right: 15px; width: 24px; height: 24px; flex-shrink: 0;">
                             <span class="practice-benefit-text">Faster Billing Cycles</span>
                         </li>
                         <li class="practice-benefit-item">
-                            <span class="practice-benefit-icon"></span>
+                            <img src="{{ asset('assets/images/practice-management/check-circle 1.png') }}" alt="circle" style="margin-right: 15px; width: 24px; height: 24px; flex-shrink: 0;">
                             <span class="practice-benefit-text">Improved Accuracy & Fewer Errors</span>
                         </li>
                         <li class="practice-benefit-item">
-                            <span class="practice-benefit-icon"></span>
+                            <img src="{{ asset('assets/images/practice-management/check-circle 1.png') }}" alt="circle" style="margin-right: 15px; width: 24px; height: 24px; flex-shrink: 0;">
                             <span class="practice-benefit-text">Better Patient Experience</span>
                         </li>
                         <li class="practice-benefit-item">
-                            <span class="practice-benefit-icon"></span>
+                            <img src="{{ asset('assets/images/practice-management/check-circle 1.png') }}" alt="circle" style="margin-right: 15px; width: 24px; height: 24px; flex-shrink: 0;">
                             <span class="practice-benefit-text">Real-Time Performance Insights</span>
                         </li>
                     </ul>

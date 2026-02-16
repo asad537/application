@@ -17,6 +17,7 @@
                     <li><a href="{{ url('about-us') }}">About Us</a></li>
                     <li><a href="{{ url('blog') }}">Latest Blog</a></li>
                     <li><a href="{{ url('contact-us.php') }}">Contact Us</a></li>
+                    <li><a href="{{ url('privacy-policy') }}">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -39,3 +40,4 @@
         </div>
     </div>
 </footer>
+   

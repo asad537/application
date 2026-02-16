@@ -64,18 +64,46 @@
     }
 
     @media (max-width: 768px) {
+        /* Hero Mobile Updates */
         .hero-section-large {
-            min-height: 350px;
-            padding: 40px 20px;
-            background-position: right center;
-            margin-bottom: 60px;
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
+            margin-bottom: 40px;
         }
-        
+
         .hero-section-large::before {
-            background: linear-gradient(to right, 
-                rgba(10, 25, 45, 0.95) 0%, 
-                rgba(10, 25, 45, 0.85) 60%,
-                rgba(10, 25, 45, 0.3) 100%);
+            display: none;
+        }
+
+        .hero-content-large {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        .hero-section-large h1 {
+            font-size: 28px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .hero-section-large p {
+            text-align: center;
+            max-width: 100%;
+            font-size: 16px;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
         }
     }
 
@@ -137,7 +165,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 60px 20px;
+        padding: 60px 97px;
         background-color: #ffffff;
     }
 
@@ -150,7 +178,7 @@
         display: grid;
         grid-template-columns: 45% 55%;
         gap: 50px;
-        align-items: center;
+        align-items: flex-start;
     }
 
     .healthcare-image-section-large {
@@ -159,7 +187,7 @@
 
     .healthcare-doctor-image-large {
         width: 100%;
-        max-width: 420px;
+        /* max-width: 420px; */
         height: auto;
         object-fit: cover;
         border-radius: 20px;
@@ -182,25 +210,54 @@
     }
 
     .healthcare-description-text-large {
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 400;
         line-height: 1.8;
         text-align: left;
-        color: #5a5a5a;
+        color: #000000;
     }
 
     @media (max-width: 968px) {
         .healthcare-content-grid-large {
             grid-template-columns: 1fr;
         }
+        
+        .healthcare-services-wrapper-large {
+            padding: 60px 50px;
+        }
+        
+        .healthcare-image-section-large {
+            width: 100%;
+        }
+        
+        .healthcare-doctor-image-large {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            min-height: 300px;
+            object-fit: cover;
+        }
+        
         .healthcare-text-section-large {
             padding: 20px 0;
         }
     }
 
+    @media (max-width: 768px) {
+        .healthcare-services-wrapper-large {
+            padding: 60px 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .healthcare-services-wrapper-large {
+            padding: 60px 20px;
+        }
+    }
+
     .billing-services-container-large {
         width: 100%;
-        padding: 60px 20px;
+        padding: 5px 97px;
         background-color: #ffffff;
     }
 
@@ -220,9 +277,9 @@
     }
 
     .billing-subtitle-text-large {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         font-weight: 400;
-        color: #6b7280;
+        color: #000000;
         line-height: 1.6;
     }
 
@@ -233,7 +290,7 @@
         gap: 30px;
         max-width: 1200px;
         margin: 0 auto;
-        padding: 0 20px;
+        padding: 0 97px;
     }
 
     .service-card-item-large {
@@ -271,7 +328,7 @@
 
     .service-title-text-large {
         color: white;
-        font-size: 1.3rem;
+        font-size: 2rem;
         font-weight: 600;
         line-height: 1.5;
         margin-bottom: 15px;
@@ -279,7 +336,7 @@
 
     .service-description-text-large {
         color: rgba(255, 255, 255, 0.85);
-        font-size: 0.95rem;
+        font-size: 1.5rem;
         font-weight: 400;
         line-height: 1.7;
     }
@@ -293,13 +350,28 @@
     @media (max-width: 768px) {
         .services-grid-wrapper-large {
             grid-template-columns: 1fr;
+            padding: 0 30px;
+        }
+        
+        .billing-services-container-large {
+            padding: 5px 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .services-grid-wrapper-large {
+            padding: 0 20px;
+        }
+        
+        .billing-services-container-large {
+            padding: 5px 20px;
         }
     }
 
     .streamlined-wrapper-large {
         max-width: 1200px;
         margin: 40px auto;
-        padding: 0 20px;
+        padding: 0 97px;
     }
 
     .streamlined-header-large {
@@ -316,16 +388,28 @@
     }
 
     .streamlined-header-large p {
-        font-size: 1.05rem;
-        color: #6b7280;
+        font-size: 1.5rem;
+        color: #000000;
         max-width: 680px;
         margin: 0 auto;
     }
 
     .streamlined-grid-large {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 28px;
+    }
+
+    @media (max-width: 968px) {
+        .streamlined-grid-large {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 640px) {
+        .streamlined-grid-large {
+            grid-template-columns: 1fr;
+        }
     }
 
     .streamlined-card-large {
@@ -355,23 +439,35 @@
     }
 
     .streamlined-card-large h3 {
-        font-size: 1.3rem;
+        font-size: 2rem;
         color: #002147;
         margin-bottom: 12px;
         font-weight: 700;
     }
 
     .streamlined-card-large p {
-        font-size: 0.95rem;
-        color: #5a5a5a;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+        .streamlined-wrapper-large {
+            padding: 0 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .streamlined-wrapper-large {
+            padding: 0 20px;
+        }
     }
 
     /* Process Section */
     .process-section-large {
         background: white;
         border-radius: 20px;
-        padding: 50px;
+        padding: 50px 97px;
         max-width: 1200px;
         margin: 40px auto;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
@@ -402,8 +498,8 @@
     .process-list-large li {
         padding: 16px 0 16px 50px;
         position: relative;
-        font-size: 1.05rem;
-        color: #333333;
+        font-size: 1.5rem;
+        color: #000000;
         font-weight: 500;
         line-height: 1.6;
     }
@@ -438,6 +534,18 @@
             grid-template-columns: 1fr;
         }
         .process-section-large {
+            padding: 30px 50px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .process-section-large {
+            padding: 30px 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .process-section-large {
             padding: 30px 20px;
         }
     }
@@ -445,7 +553,7 @@
     /* Impact Numbers */
     .impact-numbers-large {
         width: 100%;
-        padding: 60px 20px;
+        padding: 60px 97px;
         background-color: #002147;
     }
 
@@ -477,6 +585,16 @@
     @media (max-width: 768px) {
         .impact-grid-large {
             grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .impact-numbers-large {
+            padding: 60px 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .impact-numbers-large {
+            padding: 60px 20px;
         }
     }
 
@@ -564,12 +682,104 @@
             font-size: 16px;
         }
     }
+
+    /* Success Metrics Section */
+    .success-metrics-section {
+        width: 100%;
+        padding: 60px 97px;
+        background-color: #f8f9fa;
+    }
+
+    .success-metrics-section .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .success-metrics-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #002147;
+        margin-bottom: 50px;
+        text-align: center;
+    }
+
+    .text-primary-gradient {
+        background: linear-gradient(135deg, #002147, #003366);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .success-metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+
+    .success-metric {
+        background: white;
+        padding: 30px 20px;
+        border-radius: 16px;
+        text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease;
+    }
+
+    .success-metric:hover {
+        transform: translateY(-5px);
+    }
+
+    .success-metric-value {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #002147;
+        margin-bottom: 10px;
+    }
+
+    .success-metric-label {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #666;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 968px) {
+        .success-metrics-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .success-metrics-section {
+            padding: 60px 50px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .success-metrics-section {
+            padding: 60px 30px;
+        }
+        
+        .success-metrics-title {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .success-metrics-section {
+            padding: 60px 20px;
+        }
+        
+        .success-metrics-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
 </style>
 
 <div class="large-practices-wrapper">
     <div class="large-practices-container">
         <!-- Hero Section -->
         <section class="hero-section-large">
+            <img src="{{ asset('assets/images/large/large-practices-img/large.jpg') }}" alt="Large Practices" class="mobile-hero-img" style="display: none;">
             <div class="hero-content-large">
                 <h1>Streamline Billing for Large Medical Practices</h1>
                 <p>Handle high claim volumes, complex workflows, and compliance effortlessly with our expert billing solutions.</p>
@@ -762,16 +972,13 @@
     </div>
 </section>
 
-        <!-- CTA Section -->
-        <section class="cta-pricing-section-large">
-            <div class="cta-container-large">
-                <div class="cta-content-large">
-                    <h2>Ready to Streamline Your Billing?</h2>
-                    <p>We handle claims and coding so your team can focus on patients.</p>
-                    <a href="{{ url('request-demo') }}" class="cta-request-btn-large">Get Started</a>
-                </div>
-            </div>
-        </section>
+        @include('partials.cta-section', [
+    'title' => 'Ready to Streamline Your Billing?',
+    'description' => 'We handle claims and coding so your team can focus on patients.',
+    'buttonText' => 'Explore Solutions',
+    'buttonLink' => url('contact-us.php')
+])
+
     </div>
 </div>
 <script>

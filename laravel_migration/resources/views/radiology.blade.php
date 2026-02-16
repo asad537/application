@@ -38,10 +38,29 @@
 
     @media (max-width: 768px) {
         .hero-section-radiology {
-            min-height: 350px;
-            padding: 40px 20px;
+            min-height: auto;
+            padding: 0 0 30px 0;
             background-position: right center;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
         }
+
+        .hero-section-radiology::before {
+            display: none;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    }
+
+    .mobile-hero-img {
+        display: none;
     }
 
     .hero-section-radiology::before {
@@ -96,8 +115,9 @@
     }
 
     .radiology-benefits-section {
-        padding: 80px 20px;
+        padding: 60px 97px 40px;
         background-color: #ffffff;
+        margin-bottom: 0;
     }
 
     .radiology-benefits-container {
@@ -119,15 +139,18 @@
     }
 
     .radiology-subtitle-text {
-        font-size: 1.125rem;
-        color: #5e6e7e;
+        font-size: 1.5rem;
+        color: #000000;
     }
 
     .radiology-benefits-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 24px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
         margin-top: 40px;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .radiology-benefit-card {
@@ -157,22 +180,23 @@
     }
 
     .radiology-benefit-title {
-        font-size: 1.25rem;
+        font-size: 2rem;
         font-weight: 600;
         color: #0a2540;
         margin-bottom: 12px;
     }
 
     .radiology-benefit-description {
-        font-size: 0.9375rem;
-        color: #5e6e7e;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.6;
     }
 
     .simplify-billing-wrapper {
         width: 100%;
-        padding: 60px 20px;
+        padding: 40px 97px;
         background-color: #fff;
+        margin-bottom: 0;
     }
 
     .simplify-billing-grid {
@@ -236,8 +260,9 @@
 
     .healthcare-services-wrapper {
         width: 100%;
-        padding: 60px 20px;
+        padding: 40px 97px;
         background: #002147;
+        margin-bottom: 0;
     }
 
     .healthcare-services-container {
@@ -277,6 +302,7 @@
     .healthcare-description-text {
         font-size: 16px;
         line-height: 1.8;
+        color: #ffffff;
     }
 
     @media (max-width: 968px) {
@@ -287,9 +313,10 @@
 
     .impact-numbers-wrapper {
         width: 100%;
-        padding: 60px 20px;
+        padding: 40px 20px;
         background-color: #002147;
-        margin-top: 40px;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .impact-numbers-title {
@@ -332,9 +359,10 @@
     }
 
     .faq-section {
-        padding: 80px 20px;
+        padding: 40px 97px;
         background-color: #fff;
         text-align: center;
+        margin-bottom: 0;
     }
 
     .faq-section h2 {
@@ -369,6 +397,24 @@
         justify-content: space-between;
         align-items: center;
         font-weight: 500;
+        font-size: 1.5rem;
+    }
+
+    .faq-icon {
+        font-style: normal;
+        font-size: 1.8rem;
+        font-weight: 300;
+        line-height: 1;
+        min-width: 20px;
+        text-align: center;
+    }
+
+    .faq-icon::before {
+        content: "+";
+    }
+
+    .faq-item input[type="checkbox"]:checked + .faq-question .faq-icon::before {
+        content: "−";
     }
 
     .faq-answer {
@@ -395,7 +441,7 @@
         position: relative;
         overflow: hidden;
         min-height: 280px;
-        margin: 40px auto;
+        margin: 20px auto 40px;
         max-width: 1200px;
     }
 
@@ -449,12 +495,150 @@
         text-decoration: none;
         display: inline-block;
     }
+
+    /* Responsive Media Queries */
+    @media (max-width: 968px) {
+        .radiology-benefits-section {
+            padding: 40px 50px 30px;
+        }
+
+        .simplify-billing-wrapper {
+            padding: 30px 50px;
+        }
+
+        .healthcare-services-wrapper {
+            padding: 30px 50px;
+        }
+
+        .faq-section {
+            padding: 30px 50px;
+        }
+
+        .radiology-benefits-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .radiology-benefits-section {
+            padding: 30px 30px 20px;
+        }
+
+        .simplify-billing-wrapper {
+            padding: 20px 30px;
+        }
+
+        .healthcare-services-wrapper {
+            padding: 20px 30px;
+        }
+
+        .faq-section {
+            padding: 20px 30px;
+        }
+
+        .radiology-main-heading {
+            font-size: 2rem;
+        }
+
+        .radiology-subtitle-text {
+            font-size: 1.2rem;
+        }
+
+        .radiology-benefit-title {
+            font-size: 1.5rem;
+        }
+
+        .radiology-benefit-description {
+            font-size: 1.2rem;
+        }
+
+        .simplify-main-heading {
+            font-size: 26px;
+        }
+
+        .healthcare-main-heading {
+            font-size: 28px;
+        }
+
+        .faq-section h2 {
+            font-size: 2rem;
+        }
+
+        .faq-question {
+            font-size: 1.2rem;
+            padding: 15px 20px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .radiology-benefits-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .radiology-benefits-section {
+            padding: 20px 20px 15px;
+        }
+
+        .simplify-billing-wrapper {
+            padding: 15px 20px;
+        }
+
+        .healthcare-services-wrapper {
+            padding: 15px 20px;
+        }
+
+        .faq-section {
+            padding: 15px 20px;
+        }
+
+        .radiology-main-heading {
+            font-size: 1.8rem;
+        }
+
+        .radiology-subtitle-text {
+            font-size: 1rem;
+        }
+
+        .radiology-benefit-title {
+            font-size: 1.3rem;
+        }
+
+        .radiology-benefit-description {
+            font-size: 1rem;
+        }
+
+        .simplify-main-heading {
+            font-size: 22px;
+        }
+
+        .healthcare-main-heading {
+            font-size: 24px;
+        }
+
+        .faq-section h2 {
+            font-size: 1.8rem;
+        }
+
+        .faq-question {
+            font-size: 1rem;
+            padding: 12px 15px;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+        }
+    }
 </style>
 
 <div class="radiology-page-wrapper">
     <div class="radiology-page-container">
         <!-- Hero Section -->
         <section class="hero-section-radiology">
+            <img src="{{ asset('assets/images/radiology/radiology-img/radiology.jpg') }}" alt="Hero Image" class="mobile-hero-img">
             <div class="hero-content-radiology">
                 <h1>Optimizing Radiology Billing for Maximum Efficiency</h1>
                 <p>Streamlined claims, accurate coding, and faster reimbursements tailored for radiology practices.</p>
@@ -599,37 +783,34 @@
             <div class="faq-container">
                 <div class="faq-item">
                     <input type="checkbox" id="faq1">
-                    <label for="faq1" class="faq-question"><span>What are the most common reasons for radiology claim denials?</span><i class="fa-solid fa-plus"></i></label>
+                    <label for="faq1" class="faq-question"><span>What are the most common reasons for radiology claim denials?</span><span class="faq-icon"></span></label>
                     <div class="faq-answer"><p>Common reasons for radiology claim denials include missing or incorrect patient information, outdated or invalid insurance details, lack of prior authorization, incorrect CPT or ICD-10 codes, and failure to meet medical necessity requirements.</p></div>
                 </div>
                 <div class="faq-item">
                     <input type="checkbox" id="faq2">
-                    <label for="faq2" class="faq-question"><span>What radiology-specific modifiers should I understand and use?</span><i class="fa-solid fa-plus"></i></label>
+                    <label for="faq2" class="faq-question"><span>What radiology-specific modifiers should I understand and use?</span><span class="faq-icon"></span></label>
                     <div class="faq-answer"><p>Key radiology-specific modifiers include -26 (professional component), -TC (technical component), -RT (right side), -LT (left side), and -59 (distinct procedural service). Understanding these helps ensure accurate billing and claim processing.</p></div>
                 </div>
                 <div class="faq-item">
                     <input type="checkbox" id="faq3">
-                    <label for="faq3" class="faq-question"><span>What are typical billing challenges with interventional radiology</span><i class="fa-solid fa-plus"></i></label>
+                    <label for="faq3" class="faq-question"><span>What are typical billing challenges with interventional radiology</span><span class="faq-icon"></span></label>
                     <div class="faq-answer"><p>Billing challenges in interventional radiology often include complex coding requirements, ensuring proper documentation of procedures, managing multiple billing components (technical and professional), and navigating payer-specific guidelines for these specialized services.</p></div>
                 </div>
                 <div class="faq-item">
                     <input type="checkbox" id="faq4">
-                    <label for="faq4" class="faq-question"><span>Which CPT codes are most commonly used for radiology?</span><i class="fa-solid fa-plus"></i></label>
+                    <label for="faq4" class="faq-question"><span>Which CPT codes are most commonly used for radiology?</span><span class="faq-icon"></span></label>
                     <div class="faq-answer"><p>Commonly used CPT codes in radiology include 70450 (CT scan of head without contrast), 72130 (X-ray of spine), 71250 (chest X-ray), and 77012 (fluoroscopy). These codes are frequently used for routine diagnostic imaging procedures.</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section-radiology">
-            <div class="cta-container-radiology">
-                <div class="cta-content-radiology">
-                    <h2>Ready to Simplify Your Radiology Billing?</h2>
-                    <p>We handle billing so you can focus on patients.</p>
-                    <a href="{{ url('request-demo') }}" class="cta-request-btn-radiology">Schedule Demo</a>
-                </div>
-            </div>
-        </section>
+     @include('partials.cta-section', [
+    'title' => 'Find Your Specialty Solution',
+    'description' => 'Customized billing services for your medical specialty.',
+    'buttonText' => 'Explore Solutions',
+    'buttonLink' => url('contact-us.php')
+])
+
     </div>
 </div>
 <script>
@@ -669,6 +850,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOption);
 
     counters.forEach(counter => observer.observe(counter));
+
+    // FAQ auto-close functionality
+    const faqCheckboxes = document.querySelectorAll('.faq-item input[type="checkbox"]');
+    
+    faqCheckboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                // Close all other FAQs
+                faqCheckboxes.forEach(function(otherCheckbox) {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            }
+        });
+    });
 });
 </script>
 @endsection

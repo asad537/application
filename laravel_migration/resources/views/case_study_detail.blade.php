@@ -61,8 +61,11 @@
 
     @media (max-width: 768px) {
         .case-study-hero {
-            min-height: 300px;
-            padding: 40px 20px;
+            min-height: auto;
+            padding: 0 0 40px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
         }
         .hero-container {
             padding-left: 30px;
@@ -70,6 +73,22 @@
         .case-study-hero h1 {
             font-size: 28px;
         }
+
+        .case-study-hero::before {
+            display: none;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    }
+
+    .mobile-hero-img {
+        display: none;
     }
     .case-study-content {
         padding: 60px 0;
@@ -147,12 +166,13 @@
     }
 </style>
 
-<!-- <div class="case-study-hero">
+<div class="case-study-hero">
+    <img src="{{ $data->image ? asset("assets/images/case-studies/".$data->image) : asset("assets/images/ehr/ehr-soloution.png") }}" alt="Hero Image" class="mobile-hero-img">
     <div class="hero-container">
         <h1>{{ $data->title }}</h1>
         <p>By {{ $data->author }} | {{ \Carbon\Carbon::parse($data->date)->format('M d, Y') }}</p>
     </div>
-</div> -->
+</div>
 
 <div class="case-study-content">
     <div class="container">
