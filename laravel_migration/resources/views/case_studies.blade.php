@@ -7,9 +7,9 @@
         max-width: 100%;
         min-height: 448px;
         background-color: #1a3a5c;
-        background-image: url('{{ asset("assets/images/ehr/ehr-soloution.png") }}');
+        background-image: url('{{ asset("assets/images/case-studies/case_study.jpeg") }}');
         background-size: cover;
-        background-position: center;
+        background-position: center center;
         background-repeat: no-repeat;
         position: relative;
         display: flex;
@@ -17,6 +17,20 @@
         overflow: hidden;
         padding: 10px 20px;
         margin: 0 !important;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section {
+            min-height: 350px;
+            background-position: center center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-section {
+            min-height: 300px;
+            background-position: center center;
+        }
     }
 
     .hero-section::before {
@@ -27,14 +41,20 @@
         width: 100%;
         height: 100%;
         background: linear-gradient(to right, 
-            rgba(10, 25, 45, 1) 0%, 
-            rgba(10, 25, 45, 0.98) 20%,
-            rgba(10, 25, 45, 0.92) 35%,
-            rgba(10, 25, 45, 0.80) 50%,
-            rgba(10, 25, 45, 0.55) 65%,
-            rgba(10, 25, 45, 0.25) 80%,
-            transparent 90%);
+            rgba(10, 25, 45, 0.85) 0%, 
+            rgba(10, 25, 45, 0.65) 25%,
+            rgba(10, 25, 45, 0.40) 45%,
+            transparent 70%);
         z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+        .hero-section::before {
+            background: linear-gradient(to right, 
+                rgba(10, 25, 45, 0.90) 0%, 
+                rgba(10, 25, 45, 0.75) 50%,
+                rgba(10, 25, 45, 0.50) 100%);
+        }
     }
 
     .hero-content {
@@ -420,7 +440,7 @@ background: white;
 }
 </style>
 <section class="hero-section">
-    <img src="{{ asset('assets/images/ehr/ehr-soloution.png') }}" alt="Hero Image" class="mobile-hero-img">
+    <img src="{{ asset('assets/images/case-studies/case_study.jpeg') }}" alt="Hero Image" class="mobile-hero-img">
     <div class="hero-content">
         <h1>Case Studies</h1>
         <p>Here’s how we turned billing challenges into success stories</p>
