@@ -21,20 +21,20 @@
 
     /* Add proper spacing between sections */
     .hospital-billing-wrapper section {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
 
     .hospital-billing-wrapper section:last-child {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     @media (max-width: 768px) {
         .hospital-billing-wrapper section {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         .hospital-billing-wrapper section:last-child {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
     }
 
@@ -65,18 +65,28 @@
 
     @media (max-width: 768px) {
         .hero-section-hospital {
-            min-height: 350px;
-            padding: 40px 20px;
-            background-position: right center;
-            margin-bottom: 60px;
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
         }
         
         .hero-section-hospital::before {
-            background: linear-gradient(to right, 
-                rgba(10, 25, 45, 0.95) 0%, 
-                rgba(10, 25, 45, 0.85) 60%,
-                rgba(10, 25, 45, 0.3) 100%);
+            display: none;
         }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    }
+
+    .mobile-hero-img {
+        display: none;
     }
 
     .hero-section-hospital::before {
@@ -177,8 +187,8 @@
     }
 
     .hospital-text-content .hospital-subtitle {
-        font-size: 0.95rem;
-        color: #4a4a4a;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.7;
         margin-bottom: 30px;
     }
@@ -207,7 +217,7 @@
     }
 
     .hospital-service-item span {
-        font-size: 0.95rem;
+        font-size: 1.2rem;
         color: #1a1a2e;
         font-weight: 500;
     }
@@ -222,7 +232,7 @@
 
     .affordable-billing-section {
         max-width: 1440px;
-        margin: 80px auto;
+        margin: 40px auto;
         padding: 40px 20px;
     }
 
@@ -242,8 +252,8 @@
     }
 
     .affordable-section-header p {
-        font-size: 1rem;
-        color: #4a4a4a;
+        font-size: 1.5rem;
+        color: #000000;
     }
 
     .affordable-content-wrapper {
@@ -263,8 +273,8 @@
     }
 
     .affordable-intro-text {
-        font-size: 1rem;
-        color: #4a4a4a;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.8;
         margin-bottom: 30px;
         text-align: left;
@@ -292,7 +302,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 1rem;
+        font-size: 1.5rem;
         font-weight: 500;
         background-color: #0f2e4d;
         cursor: pointer;
@@ -327,9 +337,9 @@
     }
 
     .affordable-accordion-content p {
-        color: #4a4a4a;
+        color: #000000;
         line-height: 1.7;
-        font-size: 0.95rem;
+        font-size: 1.5rem;
     }
 
     .affordable-image-container {
@@ -396,7 +406,7 @@
 
     .rcm-solutions-section {
         max-width: 1440px;
-        margin: 80px auto;
+        margin: 40px auto;
         padding: 40px 20px;
     }
 
@@ -424,8 +434,8 @@
     }
 
     .rcm-left-content p {
-        font-size: 1rem;
-        color: #4a4a4a;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.8;
         text-align: justify;
     }
@@ -464,7 +474,7 @@
     }
 
     .rcm-card-content h3 {
-        font-size: 1.1rem;
+        font-size: 2rem;
         font-weight: 600;
         margin-bottom: 10px;
         line-height: 1.3;
@@ -472,7 +482,7 @@
     }
 
     .rcm-card-content p {
-        font-size: 0.9rem;
+        font-size: 1.5rem;
         color: #d4e3f0;
         line-height: 1.6;
     }
@@ -487,8 +497,8 @@
 
     .transform-billing-section {
         background-color: #0a2540;
-        padding: 80px 20px;
-        margin: 80px 0;
+        padding: 60px 20px;
+        margin: 40px 0;
     }
 
     .transform-container {
@@ -530,7 +540,7 @@
     }
 
     .transform-card h3 {
-        font-size: 1.15rem;
+        font-size: 2rem;
         color: #1a1a2e;
         font-weight: 600;
         margin-bottom: 20px;
@@ -538,8 +548,8 @@
     }
 
     .transform-card p {
-        font-size: 0.95rem;
-        color: #4a4a4a;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.7;
         text-align: center;
     }
@@ -558,7 +568,7 @@
 
     .testimonials-section-hospital {
         max-width: 1440px;
-        margin: 80px auto;
+        margin: 40px auto;
         padding: 40px 20px;
     }
 
@@ -732,6 +742,7 @@
     <div class="hospital-billing-container">
         <!-- Hero Section -->
         <section class="hero-section-hospital">
+        <img src="{{ asset('assets/images/hospital/hospital-img/hospital-hero.jpg') }}" alt="Hero Image" class="mobile-hero-img">
             <div class="hero-content-hospital">
                 <h1>Streamline Your Hospital Billing, Maximize Revenue</h1>
                 <p>Expert hospital billing for faster reimbursements, fewer denials, and full compliance.</p>
@@ -905,53 +916,50 @@
             <div class="testimonials-grid-hospital">
                 <div class="testimonial-card-hospital">
                     <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (1).png') }}" alt="Quote" class="quote-icon-hospital">
-                    <p class="testimonial-text-hospital">Practice Fusion aur ProgonCIS jaise systems ke sath kaam karna hamaray liye game-changer raha. Workflow smooth hua, documentation fast hui aur patient management pehle se kaafi behtar ho gaya. Highly recommended for growing healthcare practices.</p>
+                    <p class="testimonial-text-hospital">Our hospital billing has never been more efficient. The team's expertise in complex claim management and denial resolution has significantly improved our revenue cycle. Their attention to detail and proactive approach makes them an invaluable partner.</p>
                     <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (2).png') }}" alt="Quote" class="quote-icon-hospital" style="align-self: flex-end;">
                     <div class="author-info-hospital">
-                        <div class="author-avatar-hospital"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Steve Vaugh"></div>
+                        <div class="author-avatar-hospital"><img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100&h=100&fit=crop" alt="Michael Anderson"></div>
                         <div class="author-details-hospital">
-                            <div class="author-name-hospital">Steve Vaugh</div>
-                            <div class="author-title-hospital">Practice Manager<br>Wilson Creek Internal Medicine</div>
+                            <div class="author-name-hospital">Michael Anderson</div>
+                            <div class="author-title-hospital">CFO<br>Regional Medical Center</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card-hospital">
                     <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (1).png') }}" alt="Quote" class="quote-icon-hospital">
-                    <p class="testimonial-text-hospital">Harris CareTracker ne hamari healthcare operations ko next level pe le gaya. Accurate reporting, reliable performance aur user-friendly interface ne hamaray providers ka kaam asaan bana diya. Truly trusted healthcare solution.</p>
+                    <p class="testimonial-text-hospital">Switching to this billing service was the best decision for our hospital. They handle everything from credentialing to payment posting with remarkable accuracy. Our days in AR have decreased by 40% and cash flow has never been better.</p>
                     <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (2).png') }}" alt="Quote" class="quote-icon-hospital" style="align-self: flex-end;">
                     <div class="author-info-hospital">
-                        <div class="author-avatar-hospital"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Steve Vaugh"></div>
+                        <div class="author-avatar-hospital"><img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=100&h=100&fit=crop" alt="David Martinez"></div>
                         <div class="author-details-hospital">
-                            <div class="author-name-hospital">Steve Vaugh</div>
-                            <div class="author-title-hospital">Office Manager<br>Idaho Kidney & Hypertension Institute</div>
+                            <div class="author-name-hospital">David Martinez</div>
+                            <div class="author-title-hospital">Revenue Cycle Director<br>Community Healthcare System</div>
                         </div>
                     </div>
                 </div>
                 <div class="testimonial-card-hospital">
                     <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (1).png') }}" alt="Quote" class="quote-icon-hospital">
-                    <p class="testimonial-text-hospital">Driving growth for healthcare organizations sirf claim nahi balkay reality hai. In platforms ne efficiency, patient satisfaction aur overall productivity improve ki. Nationwide providers ka trust bilkul justified hai</p>
+                    <p class="testimonial-text-hospital">The transparency and reporting capabilities are outstanding. We receive detailed analytics that help us make informed decisions. Their team is responsive, knowledgeable, and truly invested in our success. Highly recommend for any hospital system.</p>
                     <img src="{{ asset('assets/images/hospital/hospital-img/Simplification (2).png') }}" alt="Quote" class="quote-icon-hospital" style="align-self: flex-end;">
                     <div class="author-info-hospital">
-                        <div class="author-avatar-hospital"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Steve Vaugh"></div>
+                        <div class="author-avatar-hospital"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=100&h=100&fit=crop" alt="Robert Thompson"></div>
                         <div class="author-details-hospital">
-                            <div class="author-name-hospital">Steve Vaugh</div>
-                            <div class="author-title-hospital">Practice Manager<br>Harding Memorial Healthcare</div>
+                            <div class="author-name-hospital">Robert Thompson</div>
+                            <div class="author-title-hospital">Administrator<br>Metropolitan Hospital Network</div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="hospital-cta-section">
-            <div class="cta-container-hospital">
-                <div class="cta-content-hospital">
-                    <h2>Ready to Streamline Your Billing?</h2>
-                    <p>We handle claims and coding so your team can focus on patients.</p>
-                    <a href="{{ url('request-demo') }}" class="cta-request-btn-hospital">Schedule Demo</a>
-                </div>
-            </div>
-        </section>
+       @include('partials.cta-section', [
+    'title' => 'Ready to Streamline Your Billing?',
+    'description' => 'We handle claims and coding so your team can focus on patients.',
+    'buttonText' => 'Explore Solutions',
+    'buttonLink' => url('contact-us.php')
+])
+
     </div>
 </div>
 @endsection

@@ -38,10 +38,29 @@
 
     @media (max-width: 768px) {
         .hero-section-neurology {
-            min-height: 350px;
-            padding: 40px 20px;
+            min-height: auto;
+            padding: 0 0 30px 0;
             background-position: right center;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
         }
+
+        .hero-section-neurology::before {
+            display: none;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    }
+
+    .mobile-hero-img {
+        display: none;
     }
 
     .hero-section-neurology::before {
@@ -100,7 +119,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 25px 20px;
+        padding: 25px 97px;
     }
 
     .healthcare-services-container {
@@ -168,7 +187,7 @@
 
     .billing-services-wrapper {
         width: 100%;
-        padding: 60px 20px;
+        padding: 60px 97px;
         background-color: #f8f9fa;
     }
 
@@ -247,7 +266,7 @@
 
     .simplify-billing-wrapper {
         width: 100%;
-        padding: 80px 20px;
+        padding: 80px 97px;
         background-color: #fff;
     }
 
@@ -316,7 +335,7 @@
 
     .impact-numbers-wrapper {
         width: 100%;
-        padding: 80px 20px;
+        padding: 80px 97px;
         background-color: #002147;
     }
 
@@ -361,7 +380,7 @@
     }
 
     .ehr-section {
-        padding: 80px 20px;
+        padding: 80px 97px;
         background-color: #ffffff;
     }
 
@@ -490,12 +509,110 @@
         text-decoration: none;
         display: inline-block;
     }
+
+    /* Responsive Media Queries */
+    @media (max-width: 968px) {
+        .healthcare-services-wrapper {
+            padding: 25px 50px;
+        }
+
+        .billing-services-wrapper {
+            padding: 60px 50px;
+        }
+
+        .simplify-billing-wrapper {
+            padding: 80px 50px;
+        }
+
+        .impact-numbers-wrapper {
+            padding: 80px 50px;
+        }
+
+        .ehr-section {
+            padding: 80px 50px;
+        }
+
+        .testimonial-section {
+            padding: 60px 50px !important;
+        }
+
+        .testimonial-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .healthcare-services-wrapper {
+            padding: 25px 30px;
+        }
+
+        .billing-services-wrapper {
+            padding: 60px 30px;
+        }
+
+        .simplify-billing-wrapper {
+            padding: 80px 30px;
+        }
+
+        .impact-numbers-wrapper {
+            padding: 80px 30px;
+        }
+
+        .ehr-section {
+            padding: 80px 30px;
+        }
+
+        .testimonial-section {
+            padding: 40px 30px !important;
+        }
+
+        .testimonial-section h2 {
+            font-size: 28px !important;
+        }
+
+        .testimonial-grid {
+            grid-template-columns: 1fr !important;
+            gap: 20px !important;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .healthcare-services-wrapper {
+            padding: 25px 20px;
+        }
+
+        .billing-services-wrapper {
+            padding: 60px 20px;
+        }
+
+        .simplify-billing-wrapper {
+            padding: 80px 20px;
+        }
+
+        .impact-numbers-wrapper {
+            padding: 80px 20px;
+        }
+
+        .ehr-section {
+            padding: 80px 20px;
+        }
+
+        .testimonial-section {
+            padding: 30px 20px !important;
+        }
+
+        .testimonial-section h2 {
+            font-size: 24px !important;
+            margin-bottom: 30px !important;
+        }
+    }
 </style>
 
 <div class="neurology-page-wrapper">
     <div class="neurology-page-container">
         <!-- Hero Section -->
         <section class="hero-section-neurology">
+            <img src="{{ asset('assets/images/neurology/neulogy-img/heroneurolgy.png') }}" alt="Hero Image" class="mobile-hero-img">
             <div class="hero-content-neurology">
                 <h1>Neurology Billing That Maximizes Revenue</h1>
                 <p>Accurate coding, faster claims, and full compliance for neurology practices.</p>
@@ -643,46 +760,43 @@
         </section>
 
         <!-- Testimonial section placeholders (integrated as standard layout) -->
-        <section class="faq-section" style="padding: 80px 20px; background-color: #fbfbfb; text-align: center;">
+        <section class="faq-section testimonial-section" style="padding: 80px 97px; background-color: #fbfbfb; text-align: center;">
             <h2 style="font-size: 36px; font-weight: 700; color: #1a1a2e; margin-bottom: 50px; border: none;">Driving Growth for Healthcare Organizations</h2>
-            <div class="ehr-grid" style="grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
+            <div class="ehr-grid testimonial-grid" style="grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; margin: 0 auto;">
                 <div style="background: #fff; border: 2px solid #e0e0e0; border-radius: 15px; padding: 30px; text-align: left;">
                     <img src="{{ asset('assets/images/neurology/neulogy-img/Simplification (1).png') }}" alt="Quote" style="width: 32px; margin-bottom: 15px;">
-                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 20px;">Practice Fusion aur ProgonCIS jaise systems ke sath kaam karna hamaray liye game-changer raha. Workflow smooth hua, documentation fast hui aur patient management pehle se kaafi behtar ho gaya. Highly recommended for growing healthcare practices.</p>
+                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 20px;">Working with Practice Fusion and ProgonCIS has been a game-changer for our practice. The workflow became smoother, documentation faster, and patient management significantly improved. Highly recommended for growing healthcare practices.</p>
                     <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #e0e0e0; padding-top: 20px;">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Steve" style="width: 50px; height: 50px; border-radius: 50%;">
-                        <div><div style="font-weight: 600; color: #1a1a2e;">Steve Vaugh</div><div style="font-size: 13px; color: #666;">Practice Manager</div></div>
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop" alt="Michael" style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div><div style="font-weight: 600; color: #1a1a2e;">Michael Anderson</div><div style="font-size: 13px; color: #666;">Practice Manager</div></div>
                     </div>
                 </div>
                 <div style="background: #fff; border: 2px solid #e0e0e0; border-radius: 15px; padding: 30px; text-align: left;">
                     <img src="{{ asset('assets/images/neurology/neulogy-img/Simplification (1).png') }}" alt="Quote" style="width: 32px; margin-bottom: 15px;">
-                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 20px;">Harris CareTracker ne hamari healthcare operations ko next level pe le gaya. Accurate reporting, reliable performance aur user-friendly interface ne hamaray providers ka kaam asaan bana diya. Truly trusted healthcare solution.</p>
+                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 20px;">Harris CareTracker took our healthcare operations to the next level. The accurate reporting, reliable performance, and user-friendly interface made our providers' work much easier. A truly trusted healthcare solution.</p>
                     <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #e0e0e0; padding-top: 20px;">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Steve" style="width: 50px; height: 50px; border-radius: 50%;">
-                        <div><div style="font-weight: 600; color: #1a1a2e;">Steve Vaugh</div><div style="font-size: 13px; color: #666;">Office Manager</div></div>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="David" style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div><div style="font-weight: 600; color: #1a1a2e;">David Martinez</div><div style="font-size: 13px; color: #666;">Office Manager</div></div>
                     </div>
                 </div>
                 <div style="background: #fff; border: 2px solid #e0e0e0; border-radius: 15px; padding: 30px; text-align: left;">
                     <img src="{{ asset('assets/images/neurology/neulogy-img/Simplification (1).png') }}" alt="Quote" style="width: 32px; margin-bottom: 15px;">
-                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 20px;">Driving growth for healthcare organizations sirf claim nahi balkay reality hai. In platforms ne efficiency, patient satisfaction aur overall productivity improve ki. Nationwide providers ka trust bilkul justified hai</p>
+                    <p style="font-size: 14px; line-height: 1.7; color: #555; margin-bottom: 20px;">Driving growth for healthcare organizations is not just a claim but a reality. These platforms improved efficiency, patient satisfaction, and overall productivity. The trust from nationwide providers is completely justified.</p>
                     <div style="display: flex; align-items: center; gap: 15px; border-top: 1px solid #e0e0e0; padding-top: 20px;">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Steve" style="width: 50px; height: 50px; border-radius: 50%;">
-                        <div><div style="font-weight: 600; color: #1a1a2e;">Steve Vaugh</div><div style="font-size: 13px; color: #666;">Practice Manager</div></div>
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Robert" style="width: 50px; height: 50px; border-radius: 50%;">
+                        <div><div style="font-weight: 600; color: #1a1a2e;">Robert Thompson</div><div style="font-size: 13px; color: #666;">Practice Manager</div></div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section-neurology">
-            <div class="cta-container-neurology">
-                <div class="cta-content-neurology">
-                    <h2>Elevate Your Neurology Billing</h2>
-                    <p>Optimize claims, cut denials, and boost neurology revenue.</p>
-                    <a href="{{ url('request-demo') }}" class="cta-request-btn-neurology">Schedule Demo</a>
-                </div>
-            </div>
-        </section>
+       @include('partials.cta-section', [
+    'title' => 'Find Your Specialty Solution',
+    'description' => 'Customized billing services for your medical specialty.',
+    'buttonText' => 'Explore Solutions',
+    'buttonLink' => url('contact-us.php')
+])
+
     </div>
 </div>
 <script>

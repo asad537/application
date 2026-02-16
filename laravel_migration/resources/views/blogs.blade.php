@@ -5,7 +5,7 @@
         width: 100%;
         max-width: 100%;
         min-height: 448px;
-        background-color: #1a3a5c;
+        background-color: #002147;
         background-image: url('{{ asset("assets/images/ehr/ehr-soloution.png") }}');
         background-size: cover;
         background-position: center;
@@ -225,6 +225,55 @@
   }
 }
 
+@media (max-width: 768px) {
+    /* Mobile Hero Styles */
+    .hero-section {
+        min-height: auto;
+        padding: 0 0 30px 0;
+        background-image: none !important;
+        flex-direction: column;
+    }
+
+    .hero-section::before {
+        display: none;
+    }
+
+    .hero-content {
+        padding-left: 20px;
+        padding-right: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .hero-section h1 {
+        font-size: 28px;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .hero-section p {
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .mobile-hero-img {
+        display: block !important;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
+    /* Mobile Cards Responsive */
+    .articles-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.mobile-hero-img {
+    display: none;
+}
+
     .load-more-container {
         display: flex;
         justify-content: center;
@@ -273,6 +322,7 @@
 </style>
 
 <section class="hero-section">
+    <img src="{{ asset("assets/images/ehr/ehr-soloution.png") }}" alt="Blogs" class="mobile-hero-img">
     <div class="hero-content">
         <h1>Blogs</h1>
         <p>

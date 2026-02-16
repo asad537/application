@@ -79,18 +79,30 @@
 
         @media (max-width: 768px) {
             .hero-section {
-                min-height: 350px;
-                padding: 40px 20px;
+                min-height: auto;
+                padding: 0 0 30px 0;
                 background-position: right center;
                 background-size: cover;
+                background-image: none !important;
+                flex-direction: column;
+                background-color: #002147;
             }
             
             .hero-section::before {
-                background: linear-gradient(to right, 
-                    rgba(10, 25, 45, 0.95) 0%, 
-                    rgba(10, 25, 45, 0.85) 60%,
-                    rgba(10, 25, 45, 0.3) 100%);
+                display: none;
             }
+
+            .mobile-hero-img {
+                display: block !important;
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                margin-bottom: 20px;
+            }
+        }
+        
+        .mobile-hero-img {
+            display: none;
         }
 
         @media (max-width: 480px) {
@@ -205,158 +217,76 @@
                 font-size: 14px;
             }
              .healthcare-services-wrapper {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 60px 20px;
-            background-color: #ffffff;
-        }
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 60px 97px;
+        background-color: #ffffff;
+        margin-bottom: 60px;
+    }
 
-        .healthcare-services-container {
-            max-width: 1200px;
-            width: 90%;
-        }
+    .healthcare-services-container {
+        max-width: 1200px;
+        width: 100%;
+    }
 
+    .healthcare-content-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        align-items: center;
+    }
+
+    .healthcare-image-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px;
+    }
+
+    .healthcare-doctor-image {
+        width: 100%;
+        max-width: 578px;
+        height: auto;
+        object-fit: cover;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .healthcare-text-section {
+        padding: 60px 50px;
+    }
+
+    .healthcare-main-heading {
+        font-size: 34px;
+        font-weight: 700;
+        color: #002147;
+        line-height: 1.2;
+        margin-bottom: 25px;
+        border: none;
+        text-align: left;
+    }
+
+    .healthcare-description-text {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.8;
+        text-align: left;
+        color: #000000;
+    }
+
+    @media (max-width: 968px) {
         .healthcare-content-grid {
-            display: grid;
-            grid-template-columns: 45% 55%;
-            gap: 50px;
-            align-items: center;
+            grid-template-columns: 1fr;
         }
-
-        .healthcare-image-section {
-            position: relative;
-        }
-
-        .healthcare-image-container {
-            width: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .healthcare-doctor-image {
-            width: 100%;
-            max-width: 420px;
-            height: auto;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Placeholder image using CSS */
-        .healthcare-image-placeholder {
-            display: none;
-        }
-
-
         .healthcare-text-section {
-            padding: 20px 40px 20px 0;
+            padding: 40px 20px;
         }
+    }
 
-        .healthcare-main-heading {
-            
-               width: 100%;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #002147;
-            line-height: 1.3;
-            margin-bottom: 25px;
-        }
-
-        .healthcare-description-text {
-            font-size: 1rem;
-            font-weight: 400;
-            line-height: 1.8;
-            text-align: left;
-            color: #5a5a5a;
-
-        }
-
-        /* Responsive Design */
-        @media screen and (max-width: 968px) {
-            .healthcare-content-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .healthcare-text-section {
-                order: 1;
-                padding: 40px 35px;
-            }
-
-            .healthcare-image-section {
-                order: 2;
-                min-height: 350px;
-            }
-
-            .healthcare-main-heading {
-                font-size: 2rem;
-            }
-        }
-
-        @media screen and (max-width: 640px) {
-            .healthcare-services-wrapper {
-                padding: 15px;
-            }
-
-            .healthcare-image-section {
-                min-height: 300px;
-            }
-
-            .healthcare-image-container {
-                padding: 25px;
-            }
-
-            .healthcare-text-section {
-                padding: 35px 25px;
-            }
-
-            .healthcare-main-heading {
-                font-size: 1.75rem;
-                margin-bottom: 20px;
-            }
-
-            .healthcare-description-text {
-                font-size: 0.95rem;
-                line-height: 1.7;
-            }
-
-            .placeholder-icon {
-                width: 100px;
-                height: 100px;
-            }
-
-            .placeholder-icon::before {
-                font-size: 50px;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .healthcare-services-wrapper {
-                padding: 10px;
-            }
-
-            .healthcare-services-container {
-                border-radius: 15px;
-            }
-
-            .healthcare-image-section {
-                min-height: 250px;
-            }
-
-            .healthcare-text-section {
-                padding: 30px 20px;
-            }
-
-            .healthcare-main-heading {
-                font-size: 1.5rem;
-            }
-
-            .healthcare-description-text {
-                font-size: 0.9rem;
-            }
-        }
          .billing-services-container {
            width: 100%;
             margin: 0 auto;
@@ -571,13 +501,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 60px 20px;
+            padding: 60px 97px;
             background-color: #f8f9fa;
+            margin-top: 60px;
+            margin-bottom: 60px;
         }
 
         .outsource-content-container {
             max-width: 1200px;
-            width: 90%;
+            width: 100%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
@@ -593,6 +525,28 @@
             height: auto;
             border-radius: 20px;
             object-fit: cover;
+        }
+        
+        @media screen and (max-width: 968px) {
+            .outsource-image {
+                max-width: 100%;
+                min-height: 350px;
+            }
+        }
+        
+        @media screen and (max-width: 640px) {
+            .outsource-image {
+                max-width: 100%;
+                min-height: 300px;
+                border-radius: 15px;
+            }
+        }
+        
+        @media screen and (max-width: 480px) {
+            .outsource-image {
+                max-width: 100%;
+                min-height: 280px;
+            }
         }
 
         .outsource-text-section {
@@ -659,10 +613,6 @@
                 font-size: 0.95rem;
                 line-height: 1.7;
             }
-
-            .outsource-image {
-                border-radius: 15px;
-            }
         }
 
         /* Comparison Section */
@@ -675,7 +625,7 @@
         .comparison-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 80px;
         }
 
         .comparison-main-heading {
@@ -858,9 +808,19 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .comparison-container {
+                padding: 0 40px;
+            }
+        }
+
         @media (max-width: 640px) {
             .comparison-section-wrapper {
                 padding: 40px 15px;
+            }
+            
+            .comparison-container {
+                padding: 0 20px;
             }
 
             .comparison-main-heading {
@@ -1188,7 +1148,7 @@
         }
         
         .cta-pricing-section {
-            padding-bottom: 80px;
+            padding-bottom: 20px;
         }
 
         .cta-container::before {
@@ -1254,7 +1214,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             .cta-pricing-section {
-                padding-bottom: 60px;
+                padding-bottom: 20px;
             }
 
             .cta-container {
@@ -1285,7 +1245,7 @@
 
         @media (max-width: 480px) {
             .cta-pricing-section {
-                padding-bottom: 50px;
+                padding-bottom: 20px;
             }
 
             .cta-container {
@@ -1322,34 +1282,23 @@
 <body>
      <div class="container">
         <section class="hero-section">
+            <img src="{{ asset('assets/images/cardiology/cardiology.jpg') }}" alt="Hero Image" class="mobile-hero-img">
             <div class="hero-content">
                 <h1>Streamline Cardiology Billing, Focus on Your Patients</h1>
                 <p>Our team handles claims and reimbursements so you can care.</p>
             </div>
         </section>
-          <div class="healthcare-services-wrapper">
+       <!-- Overview Section -->
+        <div class="healthcare-services-wrapper">
             <div class="healthcare-services-container">
                 <div class="healthcare-content-grid">
-                    <!-- Image Section -->
-                    <div class="healthcare-image-section">
-                        <div class="healthcare-image-container">
-                            <!-- Replace the placeholder with your actual image -->
-                            <img src="{{ asset('assets/images/cardiology/hero-cardiology.jpg') }}" alt="Doctor consulting patient" class="healthcare-doctor-image">
-
-                            <!-- CSS Placeholder (remove this when you add your image) -->
-                            <div class="healthcare-image-placeholder">
-                                <div class="placeholder-icon"></div>
-                            </div>
-                        </div>
+                    <div class="healthcare-image-container">
+                        <img src="{{ asset('assets/images/cardiology/hero-cardiology.jpg') }}" alt="Doctor consulting patient" class="healthcare-doctor-image">
                     </div>
-
-                    <!-- Text Section -->
                     <div class="healthcare-text-section">
-                        <h1 class="healthcare-main-heading">
-                           What are Cardiology Billing Services?
-                        </h1>
+                        <h2 class="healthcare-main-heading">What are Cardiology Billing Services?</h2>
                         <p class="healthcare-description-text">
-                         Cardiology billing services provide expert financial support for cardiology
+                           Cardiology billing services provide expert financial support for cardiology
 practices and clinics, handling the complex billing processes so healthcare
 providers can focus on patient care.
 From stress tests and echocardiograms to pacemaker implants, these specialists
@@ -1358,10 +1307,12 @@ insurance providers like Medicare, UnitedHealthcare, and BCBS process claims.
 They are well-versed in the unique challenges of cardiology billing managing
 everything from verifying insurance coverage before appointments to following
 up on unpaid claims months later, ensuring timely and accurate reimbursements.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
+
          <div class="billing-services-container">
         <div class="billing-header-section">
             <h1 class="billing-main-title">Why Pick Amdsol for Cardiology Billing Services?</h1>
@@ -1736,15 +1687,12 @@ up on unpaid claims months later, ensuring timely and accurate reimbursements.
                 </div>
               
      </div>
-       <section class="cta-pricing-section">
-            <div class="cta-container">
-                <div class="cta-content">
-                    <h2>Ready to Simplify Cardiology Billing?</h2>
-                    <p>Helping cardiology practices get paid faster..</p>
-                    <button class="cta-request-btn">Schedule Demo</button>
-                </div>
-            </div>
-        </section>
+        @include('partials.cta-section', [
+    'title' => 'Find Your Specialty Solution',
+    'description' => 'Customized billing services for your medical specialty.',
+    'buttonText' => 'Explore Solutions',
+    'buttonLink' => url('contact-us.php')
+])
 
 </body>
 </html>

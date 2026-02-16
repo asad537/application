@@ -127,7 +127,7 @@
     }
 
     .support-card h3 {
-        font-size: 1.1rem;
+        font-size: 1.5rem;
         color: #002b5c;
         margin: 0;
         font-weight: 700;
@@ -150,7 +150,7 @@
 
     /* Compliance Section */
     .compliance-section {
-        padding: 80px 97px;
+        padding: 40px 97px;
         margin-top: -42px; /* Adjusted to overlap nicely */
         background-color: #f8f9fa;
         text-align: center;
@@ -164,8 +164,8 @@
     }
 
     .compliance-section .subtitle {
-        font-size: 1rem;
-        color: #6c757d;
+        font-size: 1.5rem;
+        color: #000;
         margin-bottom: 60px;
         max-width: 900px;
         margin-left: auto;
@@ -237,7 +237,7 @@
     }
 
     .compliance-card h3 {
-        font-size: 1.2rem;
+        font-size: 2rem;
         color: #002b5c;
         font-weight: 700;
         margin-bottom: 15px;
@@ -245,15 +245,15 @@
     }
 
     .compliance-card p {
-        font-size: 0.95rem;
-        color: #6c757d;
+        font-size: 1.5rem;
+        color: #000;
         line-height: 1.6;
         text-align: left;
     }
 
     /* FAQs Section */
     .faq-section {
-        padding: 80px 97px;
+        padding: 40px 97px;
         background-color: #fff;
         text-align: center;
     }
@@ -266,8 +266,8 @@
     }
 
     .faq-section .subtitle {
-        font-size: 1rem;
-        color: #6c757d;
+        font-size: 1.5rem;
+        color: #000;
         margin-bottom: 50px;
     }
 
@@ -292,14 +292,16 @@
 
     .faq-question {
         padding: 25px 30px;
+        padding-right: 60px; /* Make space for the icon in the corner */
         cursor: pointer;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        font-size: 1.05rem;
-        color: #4a4a4a;
+        align-items: flex-start; /* Align text to top */
+        font-size: 1.5rem;
+        color: #000;
         font-weight: 500;
         user-select: none;
+        position: relative;
+        text-align: left;
     }
 
     .faq-question:hover {
@@ -316,12 +318,22 @@
         transform: rotate(180deg);
     }
     
-    /* Using Font Awesome for icons, ensure it's loaded in layout or add here */
+    /* Using Font Awesome for icons - plus changes to minus */
     .faq-question i {
-        transition: transform 0.3s ease;
+        transition: all 0.3s ease;
+        font-style: normal;
+        position: absolute;
+        right: 30px;
+        top: 25px; /* Matches padding-top */
     }
-    .faq-item input[type="checkbox"]:checked ~ .faq-question i {
-        transform: rotate(45deg); /* Rotate plus to cross roughly, or customized */
+    
+    .faq-question i::before {
+        content: "\f067"; /* fa-plus */
+        font-family: FontAwesome;
+    }
+    
+    .faq-item input[type="checkbox"]:checked ~ .faq-question i::before {
+        content: "\f068"; /* fa-minus */
     }
 
     .faq-answer {
@@ -329,8 +341,8 @@
         overflow: hidden;
         transition: max-height 0.3s ease, padding 0.3s ease;
         padding: 0 30px;
-        color: #4a4a4a;
-        font-size: 0.95rem;
+        color: #000;
+        font-size: 1.5rem;
         line-height: 1.6;
         background: #fff;
         border-top: 1px solid #e0e0e0;
@@ -343,7 +355,7 @@
 
     /* CTA Section */
     .cta-section {
-        padding: 60px 97px;
+        padding: 0px 97px 40px;
         background-color: #fff;
         display: flex;
         justify-content: center;
@@ -432,8 +444,51 @@
     }
 
     @media (max-width: 768px) {
-        .hero-content { padding-left: 30px; padding-right: 20px; }
-        .hero-section h1 { font-size: 28px; }
+        /* Hero Mobile Updates */
+        .hero-section {
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
+        }
+
+        .hero-section::before {
+            display: none;
+        }
+
+        .hero-content {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .hero-section h1 {
+            font-size: 28px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        .hero-section p {
+            text-align: center;
+            max-width: 100%;
+            font-size: 16px;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .support-section {
+            top: 0;
+            margin-top: 20px;
+        }
+
         .support-grid { grid-template-columns: 1fr; }
         .support-card:nth-child(odd) { border-right: none; }
         .support-card:not(:last-child) { border-bottom: 1px solid #e1e8ed; }
@@ -441,6 +496,19 @@
         .cta-container { padding: 40px 30px; border-radius: 30px; }
         .cta-container h2 { font-size: 1.8rem; }
         .compliance-section, .faq-section, .cta-section { padding-left: 30px; padding-right: 30px; }
+        
+        /* Reset negative margins for mobile to prevent overlap */
+        .compliance-section {
+            margin-top: 0;
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .faq-section {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            margin-top: 20px;
+        }
     }
     
     @media (max-width: 600px) {
@@ -453,6 +521,7 @@
     <div class="ls-container">
         <!-- Hero Section -->
         <section class="hero-section">
+            <img src="{{ asset('assets/images/live-support/24hero.jpg') }}" alt="24/7 Support" class="mobile-hero-img" style="display: none;">
             <div class="hero-content">
                 <h1>24/7 Medical Billing Support</h1>
                 <p>Dedicated billing experts available around the clock to handle claims, denials, and revenue issues.</p>
@@ -596,15 +665,33 @@
         </section>
 
         <!-- CTA Section -->
-        <section class="cta-section">
-            <div class="cta-container">
-                <div class="cta-content">
-                    <h2>Need Immediate Billing Support?</h2>
-                    <p>Fast, secure, HIPAA-compliant support—when you need it.</p>
-                    <a href="{{ url('contact-us.php') }}" class="cta-button">Get started</a>
-                </div>
-            </div>
-        </section>
+        @include('partials.cta-section', [
+            'title' => 'Need Immediate Billing Support?',
+            'description' => 'Fast, secure, HIPAA-compliant support—when you need it.',
+            'buttonText' => 'Get Started',
+            'buttonLink' => url('contact-us.php')
+        ])
     </div>
 </div>
+
+<script>
+    // FAQ Auto-close functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqCheckboxes = document.querySelectorAll('.faq-item input[type="checkbox"]');
+        
+        faqCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                if (this.checked) {
+                    // Close all other FAQs when one is opened
+                    faqCheckboxes.forEach(otherCheckbox => {
+                        if (otherCheckbox !== this) {
+                            otherCheckbox.checked = false;
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
+
 @endsection

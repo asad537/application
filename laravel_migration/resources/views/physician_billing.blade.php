@@ -81,7 +81,7 @@
         position: relative;
         max-width: 1200px;
         margin: 60px auto;
-        padding: 40px 20px;
+        padding: 40px 97px;
         display: flex;
         align-items: center;
         gap: 60px;
@@ -116,8 +116,8 @@
     }
 
     .content-container-physician p {
-        font-size: 1rem;
-        color: #4a4a4a;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.8;
         text-align: justify;
     }
@@ -125,7 +125,7 @@
     .trusted-partner-section-physician {
         max-width: 1200px;
         margin: 80px auto;
-        padding: 40px 20px;
+        padding: 40px 97px;
     }
 
     .content-wrapper-physician {
@@ -170,7 +170,7 @@
     .features-wrapper-physician {
         max-width: 1200px;
         margin: 0 auto;
-        padding: 60px 20px;
+        padding: 0px 97px;
     }
 
     .features-header-physician {
@@ -187,8 +187,8 @@
     }
 
     .features-header-physician p {
-        font-size: 1.125rem;
-        color: #666;
+        font-size: 1.5rem;
+        color: #000000;
         max-width: 700px;
         margin: 0 auto;
     }
@@ -228,7 +228,7 @@
     }
 
     .service-card-physician h3 {
-        font-size: 1.25rem;
+        font-size: 2rem;
         color: #1a1a2e;
         margin-bottom: 15px;
         font-weight: 700;
@@ -236,16 +236,16 @@
     }
 
     .service-card-physician p {
-        font-size: 0.95rem;
-        color: #4a4a4a;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.7;
     }
 
     .healthcare-services-wrapper-physician {
         width: 100%;
         background: #002147;
-        padding: 80px 20px;
-        margin: 60px 0;
+        padding: 80px 97px;
+        margin: 60px 0 20px 0;
     }
 
     .healthcare-content-grid-physician {
@@ -285,15 +285,18 @@
     .healthcare-description-text-physician {
         font-size: 16px;
         line-height: 1.8;
+        color:#FFFFFF;
     }
 
     .faq-section-physician {
-        padding: 80px 20px;
+        padding: 40px 97px;
         background-color: #fff;
         text-align: center;
     }
 
     .faq-section-physician h2 {
+        
+       
         font-size: 2.5rem;
         font-weight: 700;
         margin-bottom: 10px;
@@ -325,6 +328,15 @@
         justify-content: space-between;
         align-items: center;
         font-weight: 500;
+        font-size:1.5rem;
+    }
+    
+    .faq-question-physician i {
+        transition: all 0.3s ease;
+    }
+    
+    .faq-item-physician input[type="checkbox"]:checked + .faq-question-physician i::before {
+        content: "\f068";
     }
 
     .faq-answer-physician {
@@ -340,6 +352,11 @@
         max-height: 500px;
         padding: 25px 30px;
     }
+    
+    .cta-section-physician {
+        padding: 20px 97px;
+        margin: 0;
+    }
 
     .cta-container-physician {
         background: linear-gradient(135deg, #001a33 0%, #002d5a 100%);
@@ -348,7 +365,7 @@
         text-align: center;
         position: relative;
         overflow: hidden;
-        margin: 40px auto;
+        margin: 0 auto;
         max-width: 1200px;
     }
 
@@ -403,6 +420,34 @@
             grid-template-columns: 1fr;
             text-align: center;
         }
+        
+        .denial-management-section-physician {
+            margin: 20px auto;
+            padding: 20px 50px;
+            gap: 20px;
+        }
+        
+        .trusted-partner-section-physician {
+            margin: 20px auto;
+            padding: 20px 50px;
+        }
+        
+        .features-wrapper-physician {
+            padding: 0px 50px;
+        }
+        
+        .healthcare-services-wrapper-physician {
+            padding: 80px 50px;
+        }
+        
+        .faq-section-physician {
+            padding: 40px 50px;
+        }
+        
+        .cta-section-physician {
+            padding: 20px 50px;
+        }
+        
         .services-grid-physician {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -414,6 +459,56 @@
         }
     }
 
+    @media (max-width: 768px) {
+        .hero-section-physician {
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
+        }
+
+        .hero-section-physician::before {
+            display: none;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .denial-management-section-physician {
+            padding: 20px 30px;
+        }
+        
+        .trusted-partner-section-physician {
+            padding: 20px 30px;
+        }
+        
+        .features-wrapper-physician {
+            padding: 0px 30px;
+        }
+        
+        .healthcare-services-wrapper-physician {
+            padding: 80px 30px;
+        }
+        
+        .faq-section-physician {
+            padding: 40px 30px;
+        }
+        
+        .cta-section-physician {
+            padding: 20px 30px;
+        }
+    }
+
+    .mobile-hero-img {
+        display: none;
+    }
+
     @media (max-width: 640px) {
         .services-grid-physician {
             grid-template-columns: 1fr;
@@ -423,12 +518,39 @@
             font-size: 28px;
         }
     }
+
+    @media (max-width: 480px) {
+        .denial-management-section-physician {
+            padding: 20px;
+        }
+        
+        .trusted-partner-section-physician {
+            padding: 20px;
+        }
+        
+        .features-wrapper-physician {
+            padding: 0px 20px;
+        }
+        
+        .healthcare-services-wrapper-physician {
+            padding: 80px 20px;
+        }
+        
+        .faq-section-physician {
+            padding: 40px 20px;
+        }
+        
+        .cta-section-physician {
+            padding: 20px;
+        }
+    }
 </style>
 
 <div class="physician-page-wrapper">
     <div class="physician-page-container">
         <!-- Hero Section -->
         <section class="hero-section-physician">
+            <img src="{{ asset('assets/images/physician/physical-biling-img/herophysical.jpg') }}" alt="Hero Image" class="mobile-hero-img">
             <div class="hero-content-physician">
                 <h1>Comprehensive Physician Billing Services</h1>
                 <p>Accurate claims, faster reimbursements, and optimized revenue cycle management for physician practices.</p>
@@ -571,16 +693,33 @@
             </div>
         </section>
 
-        <!-- CTA Section -->
-        <section class="cta-section-physician">
-            <div class="cta-container-physician">
-                <div class="cta-content-physician">
-                    <h2>Ready to Streamline Your Billing?</h2>
-                    <p>We handle claims and coding so your team can focus on patients.</p>
-                    <a href="{{ url('request-demo') }}" class="cta-request-btn-physician">Get Started</a>
-                </div>
-            </div>
-        </section>
+         <!-- CTA Section -->
+       @include('partials.cta-section', [
+    'title' => 'Ready to Streamline Your Billing?',
+    'description' => 'We handle claims and coding so your team can focus on patients.',
+    'buttonText' => 'Explore Solutions',
+    'buttonLink' => url('contact-us.php')
+])
+
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const faqCheckboxes = document.querySelectorAll('.faq-item-physician input[type="checkbox"]');
+    
+    faqCheckboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                // Close all other FAQs
+                faqCheckboxes.forEach(function(otherCheckbox) {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            }
+        });
+    });
+});
+</script>
 @endsection

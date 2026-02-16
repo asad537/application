@@ -44,17 +44,29 @@
 
     @media (max-width: 768px) {
         .hero-section-demo {
-            min-height: 350px;
-            padding: 40px 20px;
+            min-height: auto;
+            padding: 0 0 40px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
             background-position: right center;
         }
         
         .hero-section-demo::before {
-            background: linear-gradient(to right, 
-                rgba(10, 25, 45, 0.95) 0%, 
-                rgba(10, 25, 45, 0.85) 60%,
-                rgba(10, 25, 45, 0.3) 100%);
+            display: none;
         }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    }
+
+    .mobile-hero-img {
+        display: none;
     }
 
     @media (max-width: 480px) {
@@ -123,7 +135,7 @@
         margin: 40px auto;
         background: white;
         border-radius: 20px;
-        padding: 30px 40px;
+        padding: 50px 97px;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
         position: relative;
         overflow: hidden;
@@ -141,7 +153,7 @@
     }
 
     .demo-page-wrapper h1 {
-        text-align: center;
+        text-align: left;
         color: #1a2b4a;
         font-size: 2em;
         margin-bottom: 30px;
@@ -157,7 +169,7 @@
 
     .left-section-demo h2 {
         color: #1a2b4a;
-        font-size: 1.3em;
+        font-size: 2em;
         margin-bottom: 20px;
     }
 
@@ -171,7 +183,7 @@
         align-items: flex-start;
         margin-bottom: 15px;
         color: #2c3e50;
-        font-size: 0.9em;
+        font-size: 1.5 rem;
         line-height: 1.5;
     }
 
@@ -209,7 +221,7 @@
         color: #1a2b4a;
         font-weight: 600;
         margin-bottom: 5px;
-        font-size: 0.85em;
+        font-size: 1.5 rem;
     }
 
     .form-group-demo input,
@@ -218,7 +230,7 @@
         padding: 8px 10px;
         border: 1px solid #d1d9e6;
         border-radius: 6px;
-        font-size: 0.85em;
+        font-size: 1.5 rem;
         font-family: inherit;
         transition: border-color 0.3s ease;
         background-color: #fafbfc;
@@ -248,6 +260,67 @@
         .content-wrapper-demo {
             grid-template-columns: 1fr;
         }
+
+        .contact-wrapper-demo {
+            padding: 40px 50px;
+            margin: 30px 50px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .contact-wrapper-demo {
+            padding: 30px 30px;
+            margin: 20px 30px;
+        }
+
+        .demo-page-wrapper h1 {
+            font-size: 1.8em;
+        }
+
+        .left-section-demo h2 {
+            font-size: 1.2em;
+        }
+
+        .benefits-list-demo li {
+            font-size: 0.85em;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .contact-wrapper-demo {
+            padding: 20px 20px;
+            margin: 20px 20px;
+            border-radius: 15px;
+        }
+
+        .demo-page-wrapper h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .left-section-demo h2 {
+            font-size: 1.1em;
+        }
+
+        .benefits-list-demo li {
+            font-size: 0.8em;
+            margin-bottom: 12px;
+        }
+
+        .benefits-list-demo li::before {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+
+        .form-group-demo {
+            margin-bottom: 10px;
+        }
+
+        .submit-btn-demo {
+            width: 100%;
+            float: none;
+        }
     }
 </style>
 
@@ -255,6 +328,7 @@
     <div class="demo-container">
         <!-- Hero Section -->
         <section class="hero-section-demo">
+            <img src="{{ asset('assets/images/demo/images/hero.jpeg') }}" alt="Hero Image" class="mobile-hero-img">
             <div class="hero-content-demo">
                 <h1>Request a Demo to Simplify Billing</h1>
                 <p>Experience streamlined billing and optimized workflows for your practice.</p>

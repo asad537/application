@@ -21,20 +21,20 @@
 
     /* Add proper spacing between sections */
     .denial-page-wrapper section {
-        margin-bottom: 40px;
+        margin-bottom: 30px;
     }
 
     .denial-page-wrapper section:last-child {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
     @media (max-width: 768px) {
         .denial-page-wrapper section {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
         
         .denial-page-wrapper section:last-child {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
     }
 
@@ -65,25 +65,33 @@
 
     @media (max-width: 768px) {
         .hero-section-denial {
-            min-height: 350px;
-            padding: 40px 20px;
-            background-position: right center;
-            margin-bottom: 60px;
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
         }
         
         .hero-section-denial::before {
-            background: linear-gradient(to right, 
-                rgba(10, 25, 45, 0.95) 0%, 
-                rgba(10, 25, 45, 0.85) 60%,
-                rgba(10, 25, 45, 0.3) 100%);
+            display: none;
         }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+    }
+
+    .mobile-hero-img {
+        display: none;
     }
 
     @media (max-width: 480px) {
         .hero-section-denial {
-            min-height: 320px;
-            padding: 30px 15px;
-            background-position: 70% center;
+            padding: 0 0 30px 0;
         }
         
         .hero-section-denial::before {
@@ -160,7 +168,7 @@
     .denial-management-section {
         position: relative;
         max-width: 1200px;
-        margin: -82px auto;
+        margin: -82px auto 20px;
         padding: 40px 20px;
         display: flex;
         align-items: center;
@@ -207,8 +215,8 @@
     }
 
     .content-container-denial p {
-        font-size: 1rem;
-        color: #4a4a4a;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.8;
         text-align: justify;
     }
@@ -218,19 +226,49 @@
             flex-direction: column;
             gap: 40px;
             margin: 0 auto;
+            padding: 40px 20px;
         }
+        
+        .circle-bg-denial {
+            display: block;
+            width: 200px;
+            height: 200px;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.8;
+        }
+        
+        .laptop-container-denial {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .laptop-container-denial img {
+            max-width: 90%;
+        }
+    }
+    
+    @media (max-width: 768px) {
         .circle-bg-denial {
             width: 150px;
             height: 150px;
-            top: -30px;
-            left: 120px;
+            top: 80px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .circle-bg-denial {
+            width: 120px;
+            height: 120px;
+            top: 60px;
         }
     }
 
     .denial-solutions-section {
         max-width: 1200px;
-        margin: 30px auto;
-        padding: 40px 20px;
+        margin: 20px auto;
+        padding: 30px 20px;
         display: flex;
         gap: 60px;
         align-items: flex-start;
@@ -281,7 +319,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        font-size: 0.95rem;
+        font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.5;
         background-color: #0f2e4d;
@@ -292,13 +330,17 @@
     .accordion-icon-denial {
         font-size: 1.5rem;
         font-weight: 300;
-        transition: transform 0.3s ease;
+        transition: all 0.3s ease;
         flex-shrink: 0;
         margin-left: 15px;
     }
+    
+    .accordion-icon-denial::before {
+        content: '+';
+    }
 
-    .accordion-checkbox-denial:checked + .accordion-header-denial .accordion-icon-denial {
-        transform: rotate(45deg);
+    .accordion-checkbox-denial:checked + .accordion-header-denial .accordion-icon-denial::before {
+        content: '−';
     }
 
     .accordion-content-denial {
@@ -318,9 +360,9 @@
     }
 
     .accordion-content-denial p {
-        color: #4a4a4a;
+        color: #000000;
         line-height: 1.7;
-        font-size: 0.9rem;
+        font-size: 1.5rem;
     }
 
     @media (max-width: 968px) {
@@ -332,8 +374,8 @@
 
     .benefits-section-denial {
         width: 80%;
-        margin: 2px auto;
-        padding: 40px 20px;
+        margin: 20px auto;
+        padding: 30px 20px;
         text-align: center;
     }
 
@@ -345,9 +387,9 @@
     }
 
     .benefits-header-denial p {
-        font-size: 1rem;
-        color: #666;
-        margin-bottom: 50px;
+        font-size: 1.5rem;
+        color: #000000;
+        margin-bottom: 40px;
     }
 
     .benefits-grid-denial {
@@ -392,7 +434,7 @@
     }
 
     .benefit-card-denial h3 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         color: #1a1a2e;
         font-weight: 600;
         line-height: 1.4;
@@ -413,13 +455,13 @@
 
     .stats-section-denial {
         max-width: 1200px;
-        margin: 25px auto;
-        padding: 40px 20px;
+        margin: 20px auto;
+        padding: 30px 20px;
     }
 
     .stats-header-denial {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
 
     .stats-header-denial h2 {
@@ -440,8 +482,8 @@
     }
 
     .stats-text-denial p {
-        font-size: 1rem;
-        color: #4a4a4a;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.8;
         text-align: justify;
     }
@@ -496,7 +538,7 @@
     }
 
     .stat-label-denial {
-        font-size: 0.8rem;
+        font-size: 1.5rem;
         color: #b8d4e8;
         margin-bottom: 10px;
         line-height: 1.3;
@@ -513,12 +555,37 @@
         .stats-content-denial {
             flex-direction: column;
         }
+        
+        .stats-cards-denial {
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 20px;
+        }
+        
+        .stat-card-denial {
+            width: 100%;
+            max-width: 300px;
+            height: auto;
+            min-height: 180px;
+        }
+        
+        .stat-card-small-denial {
+            height: auto;
+            min-height: 180px;
+        }
+        
+        .stat-card-middle-denial {
+            margin-bottom: 0;
+            height: auto;
+            min-height: 200px;
+        }
     }
 
     .why-choose-section-denial {
         width: 85%;
-        margin: 30px auto;
-        padding: 40px 20px;
+        margin: 20px auto;
+        padding: 30px 20px;
     }
 
     .section-header-denial h2 {
@@ -527,7 +594,7 @@
         color: #1a1a2e;
         font-weight: 700;
         line-height: 1.3;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
 
     .content-wrapper-denial {
@@ -553,8 +620,8 @@
     }
 
     .text-content-denial p {
-        font-size: 1rem;
-        color: #4a4a4a;
+        font-size: 1.5rem;
+        color: #000000;
         line-height: 1.8;
         margin-bottom: 20px;
         text-align: justify;
@@ -576,7 +643,7 @@
         position: relative;
         overflow: hidden;
         min-height: 280px;
-        margin: 40px;
+        margin: 30px 40px;
     }
 
     .cta-container-denial::before {
@@ -658,6 +725,7 @@
     <div class="denial-container">
         <!-- Hero Section -->
         <section class="hero-section-denial">
+        <img src="{{ asset('assets/images/denial/Denial Management Page-imgs/herodenial.jpg') }}" alt="Hero Image" class="mobile-hero-img">
             <div class="hero-content-denial">
                 <h1>Denial Management That Protects Your Revenue</h1>
                 <p>We identify, resolve, and prevent denials to ensure faster reimbursements and steady cash flow.</p>
@@ -706,7 +774,7 @@
                     <input type="checkbox" id="acc1" class="accordion-checkbox-denial">
                     <label for="acc1" class="accordion-header-denial">
                         <span>Are errors in patient information causing claim denials?</span>
-                        <span class="accordion-icon-denial">+</span>
+                        <span class="accordion-icon-denial"></span>
                     </label>
                     <div class="accordion-content-denial">
                         <p>
@@ -721,7 +789,7 @@
                     <input type="checkbox" id="acc2" class="accordion-checkbox-denial">
                     <label for="acc2" class="accordion-header-denial">
                         <span>Are coding mistakes leading to medical necessity denials?</span>
-                        <span class="accordion-icon-denial">+</span>
+                        <span class="accordion-icon-denial"></span>
                     </label>
                     <div class="accordion-content-denial">
                         <p>
@@ -736,7 +804,7 @@
                     <input type="checkbox" id="acc3" class="accordion-checkbox-denial">
                     <label for="acc3" class="accordion-header-denial">
                         <span>Are claims being submitted within payer timely filing limits?</span>
-                        <span class="accordion-icon-denial">+</span>
+                        <span class="accordion-icon-denial"></span>
                     </label>
                     <div class="accordion-content-denial">
                         <p>
@@ -751,7 +819,7 @@
                     <input type="checkbox" id="acc4" class="accordion-checkbox-denial">
                     <label for="acc4" class="accordion-header-denial">
                         <span>How often do duplicate claims or prior authorization denials occur?</span>
-                        <span class="accordion-icon-denial">+</span>
+                        <span class="accordion-icon-denial"></span>
                     </label>
                     <div class="accordion-content-denial">
                         <p>
@@ -766,7 +834,7 @@
                     <input type="checkbox" id="acc5" class="accordion-checkbox-denial">
                     <label for="acc5" class="accordion-header-denial">
                         <span>Are coordination of benefits (COB) errors affecting payments?</span>
-                        <span class="accordion-icon-denial">+</span>
+                        <span class="accordion-icon-denial"></span>
                     </label>
                     <div class="accordion-content-denial">
                         <p>
@@ -889,17 +957,33 @@
                 </div>
             </div>
         </section>
+  @include('partials.cta-section', [
+    'title' => 'Ready to Streamline Your Billing?',
+    'description' => 'We handle claims and coding so your team can focus on patients.',
+    'buttonText' => 'Explore Solutions',
+    'buttonLink' => url('contact-us.php')
+])
 
-        <!-- CTA -->
-        <section class="cta-pricing-section-denial">
-            <div class="cta-container-denial">
-                <div class="cta-content-denial">
-                    <h2>Ready to Streamline Your Billing?</h2>
-                    <p>We handle claims and coding so your team can focus on patients.</p>
-                    <button class="cta-request-btn-denial">Get Started</button>
-                </div>
-            </div>
         </section>
     </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const accordionCheckboxes = document.querySelectorAll('.accordion-checkbox-denial');
+    
+    accordionCheckboxes.forEach(function(checkbox) {
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                // Close all other accordions
+                accordionCheckboxes.forEach(function(otherCheckbox) {
+                    if (otherCheckbox !== checkbox) {
+                        otherCheckbox.checked = false;
+                    }
+                });
+            }
+        });
+    });
+});
+</script>
 @endsection

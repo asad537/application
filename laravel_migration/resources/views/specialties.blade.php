@@ -104,38 +104,49 @@
     }
 
     @media (max-width: 768px) {
+        .hero-section {
+            min-height: auto;
+            padding: 0 0 30px 0;
+            background-image: none !important;
+            flex-direction: column;
+            background-color: #002147;
+        }
+
+        .hero-section::before {
+            display: none;
+        }
+
         .hero-content {
-            padding-left: 30px;
+            padding-left: 20px;
             padding-right: 20px;
+            text-align: center;
+            width: 100%;
         }
 
         .hero-section h1 {
             font-size: 28px;
+            text-align: center;
             max-width: 100%;
         }
 
         .hero-section p {
             font-size: 15px;
             max-width: 100%;
+            text-align: center;
+        }
+
+        .mobile-hero-img {
+            display: block !important;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            margin-bottom: 20px;
         }
     }
 
-    @media (max-width: 480px) {
-        .hero-content {
-            padding-left: 20px;
-            padding-right: 15px;
-        }
-
-        .hero-section h1 {
-            font-size: 24px;
-        }
-
-        .hero-section p {
-            font-size: 14px;
-        }
+    .mobile-hero-img {
+        display: none;
     }
-
-    /* Billing Solutions Section */
     .billing-solutions {
         padding: 35px 20px 30px;
         text-align: center;
@@ -527,8 +538,8 @@
     }
 
     .pricing-btn {
-        background-color: transparent;
-        color: #002147;
+        background-color: #002147;
+        color: #ffff;
         border: 2px solid #002147;
         padding: 10px 30px;
         font-size: 14px;
@@ -540,8 +551,8 @@
     }
 
     .pricing-btn:hover {
-        background-color: #002147;
-        color: white;
+        background-color: #ffff;
+        color: #000000;
     }
 
     /* Boost Revenue Section */
@@ -570,7 +581,7 @@
 
     .boost-subtitle {
         font-size: 15px;
-        color: #333;
+        color: #000000;
         font-weight: 400;
         max-width: 750px;
         margin: 0 auto;
@@ -604,7 +615,7 @@
     .boost-pricing-btn {
         background-color: #002147;
         color: white;
-        border: none;
+        border: 2px solid #002147;
         padding: 9px 28px;
         font-size: 14px;
         font-weight: 600;
@@ -615,7 +626,73 @@
     }
 
     .boost-pricing-btn:hover {
-        background-color: #003366;
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #000000;
+    }
+
+    @media (max-width: 968px) {
+        .boost-content-custom {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .boost-header-custom h2 {
+            font-size: 30px;
+        }
+
+        .boost-img {
+            max-width: 100%;
+            height: 350px;
+            margin: 0 auto;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .boost-section-custom {
+            padding: 20px 15px;
+        }
+
+        .boost-header-custom h2 {
+            font-size: 26px;
+        }
+
+        .boost-subtitle {
+            font-size: 14px;
+        }
+
+        .boost-description-custom {
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .boost-img {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .boost-header-custom h2 {
+            font-size: 22px;
+        }
+
+        .boost-subtitle {
+            font-size: 13px;
+        }
+
+        .boost-description-custom {
+            font-size: 14px;
+        }
+
+        .boost-img {
+            height: 250px;
+            border-radius: 20px;
+        }
+
+        .boost-pricing-btn {
+            padding: 8px 24px;
+            font-size: 13px;
+        }
     }
 
     /* EHR Section */
@@ -634,7 +711,7 @@
 
     .ehr-subtitle {
         font-size: 16px;
-        color: #666;
+        color: #000000;
         max-width: 800px;
         margin: 0 auto 25px;
         line-height: 1.6;
@@ -686,15 +763,61 @@
         color: white;
     }
 
+    .ehr-explore-btn-custom:hover {
+        background: #ffffff;
+        border: 1px solid #000000;
+        color: black;
+    }
+
     @media (max-width: 991px) {
         .ehr-grid-custom {
             grid-template-columns: repeat(2, 1fr);
+        }
+
+        .ehr-title-custom {
+            font-size: 30px;
+        }
+
+        .ehr-subtitle {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .ehr-section-custom {
+            padding: 20px 15px;
+        }
+
+        .ehr-title-custom {
+            font-size: 26px;
+        }
+
+        .ehr-subtitle {
+            font-size: 14px;
+        }
+
+        .ehr-grid-custom {
+            gap: 20px;
         }
     }
 
     @media (max-width: 575px) {
         .ehr-grid-custom {
             grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .ehr-title-custom {
+            font-size: 22px;
+        }
+
+        .ehr-card-custom {
+            padding: 20px 15px;
+        }
+
+        .ehr-explore-btn-custom {
+            padding: 12px 40px;
+            font-size: 14px;
         }
     }
 
@@ -805,6 +928,20 @@
         text-align: center;
     }
 
+    .cta-label {
+        color: #ffffff;
+        font-size: 16px;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .cta-content h2 {
+        color: #ffffff;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
     .cta-request-btn {
         background-color: white;
         color: #002147;
@@ -816,10 +953,54 @@
         cursor: pointer;
         margin-top: 20px;
     }
+
+    @media (max-width: 768px) {
+        .cta-pricing-section-custom {
+            padding: 0 15px;
+        }
+
+        .cta-container-custom {
+            padding: 30px 20px;
+            border-radius: 15px;
+        }
+
+        .cta-label {
+            font-size: 14px;
+        }
+
+        .cta-content h2 {
+            font-size: 26px;
+        }
+
+        .cta-request-btn {
+            padding: 12px 35px;
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .cta-container-custom {
+            padding: 25px 15px;
+        }
+
+        .cta-label {
+            font-size: 13px;
+        }
+
+        .cta-content h2 {
+            font-size: 22px;
+        }
+
+        .cta-request-btn {
+            padding: 10px 30px;
+            font-size: 14px;
+        }
+    }
 </style>
 
 <div class="specialties-page">
     <section class="hero-section">
+        <img src="{{ asset('assets/images/specialties/hero-specilization.jpg') }}" alt="Specialties" class="mobile-hero-img">
         <div class="hero-content">
             <h1>Medical Billing Services for All Specialties</h1>
             <p>We offer accurate, compliant, and revenue-driven billing solutions for healthcare providers.</p>
@@ -960,7 +1141,7 @@
             </div>
 
             <div style="text-align: center;">
-                <a href="#" class="ehr-explore-btn-custom">Explore More</a>
+                <a href="{{ url('specialty-ehr') }}" class="ehr-explore-btn-custom">Explore More</a>
             </div>
         </div>
     </section>

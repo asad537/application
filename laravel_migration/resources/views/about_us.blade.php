@@ -78,7 +78,7 @@
 
         .why-section {
             max-width: 100%;
-            margin: 60px auto;
+            margin: 30px auto;
             padding: 0 20px;
             box-sizing: border-box;
         }
@@ -254,7 +254,7 @@
         .circle p {
             width: 100%;
             max-width: 250px;
-            font-size: 15px;
+            font-size: 1.5rem;
             font-weight: 400;
             color: #666;
             line-height: 1.5;
@@ -376,7 +376,7 @@
             }
 
             .circle p {
-                font-size: 14px;
+                font-size: 1.5rem;
                 max-width: 220px;
                 line-height: 1.5;
                 padding: 0;
@@ -418,11 +418,11 @@
             }
 
             .value-box p {
-                font-size: 14px;
+                font-size: 1.5rem;
             }
 
             .technical-mastery-section {
-                padding: 40px 15px;
+                padding: 30px 15px;
                 width: 100%;
             }
 
@@ -433,7 +433,7 @@
             }
 
             .operational-excellence-section {
-                padding: 40px 15px;
+                padding: 30px 15px;
                 width: 100%;
             }
 
@@ -466,7 +466,7 @@
             }
 
             .quote-box::before {
-                top: 18px;
+                top: 20px;
                 left: 18px;
                 width: 30px;
                 height: 30px;
@@ -505,7 +505,7 @@
             }
 
             .circle p {
-                font-size: 11px;
+                font-size: 1.5rem;
                 max-width: 170px;
                 line-height: 1.3;
                 padding: 0;
@@ -559,9 +559,9 @@
         }
 
         .technical-mastery-section {
-            max-width: 100%;
-            margin: 80px auto;
-            padding: 60px 20px;
+            width: 90%;
+            margin: 20px auto 30px;
+            padding: 30px 20px 20px;
             text-align: center;
             box-sizing: border-box;
         }
@@ -574,9 +574,9 @@
         }
 
         .technical-mastery-section>p {
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 50px;
+            font-size: 1.5rem;
+            color: #00000;
+            margin-bottom: 40px;
         }
 
         .tech-cards {
@@ -651,7 +651,7 @@
         }
 
         .tech-card p {
-            font-size: 1rem;
+            font-size: 1.5rem;
             color: #666;
             line-height: 1.6;
         }
@@ -669,8 +669,8 @@
 
         .operational-excellence-section {
             max-width: 100%;
-            margin: 80px auto;
-            padding: 60px 20px;
+            margin: 30px auto 30px;
+            padding: 30px 20px;
             text-align: center;
             background-color: #f5f5f5;
             box-sizing: border-box;
@@ -678,7 +678,7 @@
 
         .operational-excellence-section h2 {
             font-size: 2.8rem;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
             color: #000;
             font-weight: 700;
         }
@@ -894,31 +894,173 @@
             }
 
             .flow-circle {
-                width: 130px;
-                height: 130px;
+                width: 180px;
+                height: 180px;
                 margin: 0;
                 background: #fff;
                 position: relative;
                 z-index: 2;
+                padding: 25px;
             }
 
             .flow-icon {
-                width: 40px;
-                height: 40px;
+                width: 45px;
+                height: 45px;
+                margin-bottom: 8px;
             }
 
             .flow-text {
-                font-size: 10px;
+                font-size: 0.85rem;
+                width: auto;
+                max-width: 130px;
+                line-height: 1.2;
+                text-align: center;
             }
 
             .operational-excellence-section h2 {
                 font-size: 2.2rem;
             }
         }
+        
+        @media (max-width: 640px) {
+            .flow-circle {
+                width: 170px;
+                height: 170px;
+                padding: 22px;
+            }
+            
+            .flow-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            .flow-text {
+                font-size: 0.8rem;
+                max-width: 120px;
+                line-height: 1.2;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .flow-circle {
+                width: 160px;
+                height: 160px;
+                padding: 20px;
+            }
+            
+            .flow-text {
+                font-size: 0.75rem;
+                max-width: 110px;
+                line-height: 1.2;
+            }
+            
+            .flow-icon {
+                width: 35px;
+                height: 35px;
+            }
+        }
 
+        .cta-container-radiology {
+        background: linear-gradient(135deg, #001a33 0%, #002d5a 100%);
+        border-radius: 40px;
+        padding: 60px 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        min-height: 280px;
+        margin: 40px auto;
+        max-width: 1200px;
+    }
+
+    .cta-container-radiology::before {
+        content: '';
+        position: absolute;
+        top: -44px;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("{{ asset('assets/images/radiology/radiology-img/wave.png') }}");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right center;
+        opacity: 0.4;
+        z-index: 1;
+    }
+
+    .cta-content-radiology {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+    }
+
+    .cta-content-radiology h2 {
+        font-size: 40px;
+        font-weight: 700;
+        color: white !important;
+        margin-bottom: 12px;
+        border: none;
+    }
+
+    .cta-content-radiology p {
+        font-size: 20px;
+        color: #FFFFFF;
+        opacity: 0.9;
+        margin-bottom: 25px;
+    }
+
+    .cta-request-btn-radiology {
+        background-color: white;
+        color: #002147;
+        padding: 14px 45px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+    }
+        @media (max-width: 768px) {
+            .consultation-box {
+                border-radius: 30px;
+                padding: 50px 30px;
+            }
+
+            .consultation-box h2 {
+                font-size: 2rem;
+            }
+            .consultation-box p {
+                font-size: 1.5rem;
+            }
+
+            .consultation-btn {
+                padding: 12px 35px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .consultation-box {
+                border-radius: 25px;
+                padding: 40px 20px;
+            }
+
+            .consultation-box h2 {
+                font-size: 1.8rem;
+            }
+
+            .consultation-btn {
+                padding: 12px 30px;
+                font-size: 0.95rem;
+            }
+        }
         .consultation-section {
             max-width: 100%;
-            margin: 80px auto 60px;
+            margin: 30px auto 40px;
             padding: 0 20px;
             box-sizing: border-box;
         }
@@ -1028,60 +1170,59 @@
                 font-size: 0.95rem;
             }
         }
-        /* Compliance Section */
+/* Compliance Section */
 .compliance-section {
-    padding: 60px 20px;
+    padding: 30px 40px 30px;
     margin: 0;
     background-color: #f8f9fa;
     text-align: center;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .compliance-section h2 {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
     color: #000;
     font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .compliance-section .subtitle {
-    font-size: 0.9rem;
-    color: #6c757d;
+    font-size: 1.5rem;
+    color: #666;
     margin-bottom: 40px;
-    max-width: 800px;
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.6;
 }
 
 .compliance-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    max-width: 1200px;
+    gap: 30px;
+    max-width: 1300px;
     margin: 0 auto;
     width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .compliance-card {
     background: #fff;
     border-radius: 24px;
-    padding: 40px 25px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    padding: 45px 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     position: relative;
     border: 2px solid transparent;
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
     width: 100%;
-    max-width: 277px;
-    height: 280px;
+    min-height: 320px;
     margin: 0 auto;
 }
 
@@ -1091,11 +1232,12 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 120px;
-    height: 70px;
+    width: 100px;
+    height: 60px;
     border-top: 5px solid #002b5c;
     border-right: 5px solid #002b5c;
     border-radius: 0 24px 0 0;
+    z-index: 1;
 }
 
 /* Bottom-left corner border */
@@ -1104,104 +1246,293 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 120px;
-    height: 70px;
+    width: 100px;
+    height: 60px;
     border-bottom: 5px solid #002b5c;
     border-left: 5px solid #002b5c;
     border-radius: 0 0 0 24px;
+    z-index: 1;
 }
 
-.compliance-card:hover {
+/* .compliance-card:hover {
     border-color: #002b5c;
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-}
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+} */
 
 .compliance-card-image {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 20px;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 25px;
     background: #002b5c;
-    border-radius: 14px;
-    padding: 12px;
+    border-radius: 16px;
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    z-index: 2;
+    position: relative;
 }
 
 .compliance-card-image img {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
     object-fit: contain;
 }
 
 .compliance-card h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 2rem;
+    font-weight: 700;
     color: #000;
-    margin-bottom: 15px;
-    line-height: 1.3;
+    margin-bottom: 18px;
+    line-height: 1.4;
     text-align: center;
     width: 100%;
     display: block;
+    z-index: 2;
+    position: relative;
 }
 
 .compliance-card p {
-    font-size: 0.9rem;
-    color: #666;
-    line-height: 1.5;
+    font-size: 1.5rem;
+    color: #333;
+    line-height: 1.8;
     margin: 0;
     text-align: center;
     width: 100%;
     display: block;
-}
-
-.compliance-card-content {
-    z-index: 3;
+    z-index: 2;
     position: relative;
+    font-weight: 500;
 }
 
-.compliance-icon {
-    display: none;
-}
-
-.compliance-icon i {
-    font-size: 28px;
-    color: #fff;
-}
-
-.compliance-card h3 {
-    font-size: 1.2rem;
-    color: #002b5c;
-    font-weight: 700;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.compliance-card p {
-    font-size: 0.95rem;
-    color: #6c757d;
-    line-height: 1.6;
-    text-align: left;
+@media (max-width: 1024px) {
+    .compliance-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
 }
 
 @media (max-width: 768px) {
+    .compliance-section {
+        padding: 30px 20px 20px;
+    }
+
     .compliance-section h2 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+    }
+    .compliance-section .subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
     }
     
     .compliance-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+        padding: 0 10px;
+    }
+
+    .compliance-card {
+        min-height: 280px;
+        padding: 40px 25px;
+    }
+
+    .compliance-card h3 {
+        font-size: 1.3rem;
+    }
+    .compliance-card p {
+        font-size: 1.5rem;
     }
 }
+
+@media (max-width: 480px) {
+    .compliance-section {
+        padding: 25px 15px 20px;
+    }
+
+    .compliance-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .compliance-card {
+        padding: 35px 20px;
+    }
+}
+ /* CTA Section */
+    .cta-pricing-section {
+        width: 80%;
+        margin: 36px auto;
+        padding-bottom: 0px;
+    }
+
+    .cta-container {
+        background: linear-gradient(135deg, #001a33 0%, #002d5a 100%);
+        border-radius: 40px;
+        padding: 60px 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        min-height: 280px;
+        margin: 40px;
+    }
+
+    .cta-container::before {
+        content: '';
+        position: absolute;
+        top: -44px;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('{{ asset("assets/images/patient-services/wave.png") }}');
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: right center;
+        opacity: 0.4;
+        z-index: 1;
+    }
+
+    .cta-content {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+    }
+
+    .cta-content h2 {
+        font-size: 40px;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 12px;
+        line-height: 1.2;
+    }
+
+    .cta-content p {
+        width: 100%;
+        margin: 0 auto 25px;
+        font-weight: 400;
+        text-align: center;
+        font-size: 20px;
+        line-height: 30px;
+        color: #FFFFFF;
+        opacity: 0.9;
+    }
+
+    .cta-request-btn {
+        background-color: white;
+        color: #002147;
+        border: none;
+        padding: 14px 45px;
+        font-size: 16px;
+        font-weight: 600;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .cta-request-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        background-color: #f8f8f8;
+        color: #002147;
+    }
+    
+    /* CTA Responsive */
+    @media (max-width: 768px) {
+        .cta-pricing-section {
+            width: 90%;
+            padding-bottom: 40px;
+        }
+        
+        .cta-container { 
+            padding: 40px 30px; 
+            border-radius: 30px;
+            margin: 20px;
+            min-height: 240px;
+        }
+        
+        .cta-content h2 { 
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .cta-content p {
+            font-size: 16px;
+            line-height: 24px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-request-btn {
+            padding: 12px 35px;
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .cta-pricing-section {
+            width: 95%;
+        }
+        
+        .cta-container {
+            padding: 30px 20px;
+            margin: 20px 15px;
+            border-radius: 20px;
+            min-height: 220px;
+        }
+        
+        .cta-content h2 {
+            font-size: 24px;
+        }
+        
+        .cta-content p {
+            font-size: 14px;
+            line-height: 22px;
+        }
+        
+        .cta-request-btn {
+            padding: 12px 30px;
+            font-size: 14px;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .cta-pricing-section {
+            width: 100%;
+            padding-bottom: 20px;
+        }
+        
+        .cta-container {
+            padding: 25px 15px;
+            margin: 15px 10px;
+            min-height: 200px;
+        }
+        
+        .cta-content h2 {
+            font-size: 22px;
+        }
+        
+        .cta-content p {
+            font-size: 13px;
+            line-height: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .cta-request-btn {
+            padding: 10px 25px;
+            font-size: 13px;
+        }
+    }
     </style>
 </head>
 
 <body>
     <section class="about-section">
-        <h2>About</h2>
+        <h2>About US</h2>
     </section>
 
     <section class="why-section">
@@ -1442,16 +1773,16 @@
         </div>
     </section>
 
-    <section class="consultation-section">
-        <div class="consultation-box">
-            <div class="consultation-content">
-                <h2>Schedule a Free Consultation</h2>
-                <p>Protect and Optimize Your Revenue Today</p>
-                <a href="{{ url('contact-us.php') }}" class="consultation-btn">Get Started</a>
+      <!-- CTA Section -->
+        <section class="cta-pricing-section">
+            <div class="cta-container">
+                <div class="cta-content">
+                    <h2>Schedule a Free Consultation</h2>
+                    <p>Protect and Optimize Your Revenue Today</p>
+                    <a href="{{ url('contact-us.php') }}" class="cta-request-btn">Get Started</a>
+                </div>
             </div>
-        </div>
-    </section>
-
+        </section>
 </body>
 
 </html>
