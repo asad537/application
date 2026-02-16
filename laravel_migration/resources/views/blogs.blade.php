@@ -6,7 +6,7 @@
         max-width: 100%;
         min-height: 448px;
         background-color: #002147;
-        background-image: url('{{ asset("assets/images/ehr/ehr-soloution.png") }}');
+        background-image: url('{{ asset("assets/images/blog/blog_page.jpeg") }}');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -322,7 +322,7 @@
 </style>
 
 <section class="hero-section">
-    <img src="{{ asset("assets/images/ehr/ehr-soloution.png") }}" alt="Blogs" class="mobile-hero-img">
+    <img src="{{ asset("assets/images/blog/blog_page.jpeg") }}" alt="Blogs" class="mobile-hero-img">
     <div class="hero-content">
         <h1>Blogs</h1>
         <p>

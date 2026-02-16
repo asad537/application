@@ -221,9 +221,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 60px 97px;
+        padding: 40px 97px;
         background-color: #ffffff;
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
 
     .healthcare-services-container {
@@ -234,7 +234,7 @@
     .healthcare-content-grid {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 0;
+        gap: 40px;
         align-items: center;
     }
 
@@ -242,48 +242,122 @@
         width: 100%;
         height: 100%;
         display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 40px;
+        /* align-items: center;
+        justify-content: center; */
+        padding: 0;
     }
 
     .healthcare-doctor-image {
         width: 100%;
-        max-width: 578px;
+        max-width: 100%;
         height: auto;
+        max-height: 350px;
         object-fit: cover;
         border-radius: 20px;
         box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     }
 
     .healthcare-text-section {
-        padding: 60px 50px;
+        padding: 0px 40px;
     }
 
     .healthcare-main-heading {
-        font-size: 34px;
+        font-size: 32px;
         font-weight: 700;
         color: #002147;
         line-height: 1.2;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
         border: none;
         text-align: left;
     }
 
     .healthcare-description-text {
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 400;
-        line-height: 1.8;
+        line-height: 1.6;
         text-align: left;
         color: #000000;
     }
 
     @media (max-width: 968px) {
+        .healthcare-services-wrapper {
+            padding: 40px 50px;
+            margin-bottom: 40px;
+        }
+
         .healthcare-content-grid {
             grid-template-columns: 1fr;
+            gap: 30px;
         }
+
+        .healthcare-image-container {
+            padding: 20px;
+        }
+
+        .healthcare-doctor-image {
+            max-width: 100%;
+        }
+
         .healthcare-text-section {
-            padding: 40px 20px;
+            padding: 20px;
+        }
+
+        .healthcare-main-heading {
+            font-size: 28px;
+        }
+
+        .healthcare-description-text {
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .healthcare-services-wrapper {
+            padding: 30px 30px;
+            margin-bottom: 30px;
+        }
+
+        .healthcare-image-container {
+            padding: 10px;
+        }
+
+        .healthcare-main-heading {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .healthcare-description-text {
+            font-size: 14px;
+            line-height: 1.6;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .healthcare-services-wrapper {
+            padding: 20px 20px;
+            margin-bottom: 20px;
+        }
+
+        .healthcare-image-container {
+            padding: 5px;
+        }
+
+        .healthcare-doctor-image {
+            border-radius: 10px;
+        }
+
+        .healthcare-text-section {
+            padding: 15px 10px;
+        }
+
+        .healthcare-main-heading {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .healthcare-description-text {
+            font-size: 13px;
+            line-height: 1.5;
         }
     }
 

@@ -1339,7 +1339,7 @@
     }
 
     .compliance-card h3 {
-        font-size: 1.3rem;
+        font-size: 2rem;
     }
     .compliance-card p {
         font-size: 1.5rem;
@@ -1352,11 +1352,18 @@
     }
 
     .compliance-section h2 {
-        font-size: 1.2rem;
+        font-size: 2rem;
+    }
+    .compliance-section p {
+        font-size: 1.5rem;
     }
 
     .compliance-card {
         padding: 35px 20px;
+        
+    }
+    .compliance-card h2{
+                    font-size:1.5rem;
     }
 }
  /* CTA Section */
